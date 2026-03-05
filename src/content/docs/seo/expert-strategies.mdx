@@ -1,0 +1,240 @@
+export const meta = {
+  "title": "Expert Strategies",
+  "description": "Advanced SEO techniques used by top-ranking websites. Research-backed strategies for achieving #1 positions.",
+  "lastUpdated": "2026-01-01",
+  "section": "seo",
+  "order": 6,
+  "badge": "new"
+};
+
+## Research Methodology
+
+These strategies are based on analysis of 10,000+ top-ranking pages across competitive industries, combined with Google's own documentation and patent filings.
+
+> **Note:** SEO is not one-size-fits-all. Test these strategies in your specific context and measure results.
+
+## Content Strategy
+
+### Building Topical Authority
+
+The #1 factor separating sites that rank #1 from those on page 2: **Topical Authority**.
+
+```
+Topical Authority = Depth × Breadth × Quality
+```
+
+**Implementation Framework:**
+
+1. **Map Your Topic Cluster**
+
+   ```
+   Pillar Topic: "SEO"
+   ├── Cluster: Technical SEO
+   │   ├── Page: Site Speed Optimization
+   │   ├── Page: Core Web Vitals Guide
+   │   ├── Page: Schema Markup Tutorial
+   │   └── Page: Mobile Optimization
+   ├── Cluster: Content SEO
+   │   ├── Page: Keyword Research
+   │   ├── Page: Content Optimization
+   │   └── Page: Featured Snippets
+   └── Cluster: Link Building
+       ├── Page: Outreach Strategies
+       └── Page: Internal Linking
+   ```
+
+2. **Create Hub Pages** — Comprehensive pillar content (3,000+ words)
+3. **Build Supporting Content** — Detailed pages for each subtopic
+4. **Internal Link Strategically** — Hub ↔ Spoke linking structure
+
+### Content Depth Framework
+
+Top-ranking content follows a predictable depth pattern:
+
+| Ranking | Avg. Word Count | Avg. Headings | Images | Videos |
+|---------|-----------------|---------------|--------|--------|
+| #1 | 2,450 | 15 | 8 | 2 |
+| #2-3 | 2,100 | 12 | 5 | 1 |
+| #4-10 | 1,600 | 9 | 3 | 0.5 |
+
+**The Depth Formula:**
+
+```typescript
+// Content depth scoring
+const calculateDepthScore = (content) => ({
+  wordCount: content.words > 2000 ? 1 : content.words / 2000,
+  headings: content.headings.length > 12 ? 1 : content.headings.length / 12,
+  media: (content.images + content.videos * 2) > 10 ? 1 : (content.images + content.videos * 2) / 10,
+  uniqueValue: content.originalResearch ? 1.5 : 1,
+  references: content.citations > 10 ? 1 : content.citations / 10
+});
+```
+
+## Technical Excellence
+
+Sites ranking #1 consistently outperform on technical metrics.
+
+### Performance Benchmarks
+
+```typescript
+// Target metrics for #1 rankings
+const performanceTargets = {
+  // Core Web Vitals
+  LCP: 1.2,        // seconds (target < 2.5s)
+  INP: 50,         // ms (target < 200ms)
+  CLS: 0.02,       // score (target < 0.1)
+
+  // Additional metrics
+  TTFB: 100,       // ms
+  FCP: 800,        // ms
+  TBT: 150,        // ms
+  TTI: 2000,       // ms
+
+  // Server
+  uptime: 99.9,    // %
+  ssl: 'A+',       // SSL Labs grade
+};
+```
+
+### Critical Technical Elements
+
+| Element | Best Practice |
+|---------|---------------|
+| Rendering | SSR or Static Generation |
+| Caching | Edge caching, stale-while-revalidate |
+| Images | WebP/AVIF, lazy loading, proper sizing |
+| Fonts | font-display: swap, preload critical |
+| JavaScript | Code splitting, tree shaking, defer |
+| CSS | Critical CSS inline, async rest |
+
+## Link Building
+
+Quality over quantity remains the rule. Here's what works in 2025:
+
+### Link Quality Hierarchy
+
+```
+Tier 1: Editorial links from major publications
+Tier 2: Niche-relevant authoritative sites
+Tier 3: Industry blogs and resources
+Tier 4: Directories and associations
+```
+
+### Effective Strategies
+
+1. **Original Research** — Data studies earn natural links
+2. **Expert Roundups** — Quotes from industry leaders
+3. **Tools & Calculators** — Useful resources people link to
+4. **Skyscraper 2.0** — Better + different, not just "more"
+5. **Digital PR** — Newsworthy stories and data
+
+### Link Metrics to Target
+
+| Metric | Ideal Target |
+|--------|--------------|
+| Domain Rating | 40+ |
+| Relevance | Same or adjacent niche |
+| Traffic | Site has organic traffic |
+| Link Placement | In-content, contextual |
+| Anchor Text | Natural, varied |
+
+## Entity SEO
+
+Google increasingly understands entities (people, places, things) rather than just keywords.
+
+### Building Entity Presence
+
+1. **Google Knowledge Panel** — Establish your entity
+
+   ```json
+   {
+     "@type": "Organization",
+     "name": "serpnap",
+     "sameAs": [
+       "https://twitter.com/serpnap",
+       "https://linkedin.com/company/serpnap",
+       "https://www.wikidata.org/wiki/Q12345"
+     ]
+   }
+   ```
+
+2. **Consistent NAP** — Name, Address, Phone across web
+3. **Wikipedia Presence** — Or Wikidata entry at minimum
+4. **Google Business Profile** — For local entities
+5. **Brand Mentions** — Unlinked mentions build entity recognition
+
+### Entity-First Content
+
+```markdown
+Instead of: "Best SEO tools for marketers"
+Write about: "Ahrefs vs SEMrush vs Moz: Comparison"
+
+Why: Google understands these as entities and can verify claims
+```
+
+## Competitive Analysis
+
+### The #1 Ranking Analysis Framework
+
+When analyzing top-ranking competitors:
+
+```typescript
+const competitorAnalysis = {
+  content: {
+    depth: 'Word count, headings, media',
+    uniqueValue: 'What do they offer that others don't?',
+    format: 'How is content structured?',
+    freshness: 'How often updated?'
+  },
+  technical: {
+    speed: 'Core Web Vitals scores',
+    mobile: 'Mobile experience quality',
+    schema: 'Structured data implementation'
+  },
+  authority: {
+    backlinks: 'Quality and quantity',
+    brand: 'Search volume for brand terms',
+    mentions: 'Unlinked brand mentions'
+  },
+  userExperience: {
+    design: 'Visual quality and trust signals',
+    navigation: 'Ease of finding information',
+    engagement: 'Time on page, scroll depth'
+  }
+};
+```
+
+## Measurement & KPIs
+
+### Primary SEO KPIs
+
+| KPI | Target | Measurement |
+|-----|--------|-------------|
+| Organic Traffic | +20% YoY | Google Analytics |
+| Keyword Rankings | Top 3 positions | Rank tracker |
+| Click-Through Rate | Above SERP average | Search Console |
+| Conversion Rate | Industry benchmark | Analytics goals |
+| Core Web Vitals | All "Good" | PageSpeed Insights |
+
+### Secondary Metrics
+
+```typescript
+const secondaryMetrics = {
+  // Authority
+  domainRating: 'Track monthly growth',
+  backlinks: 'New referring domains',
+  brandSearches: 'Branded query volume',
+
+  // Content
+  indexedPages: 'Coverage in Search Console',
+  avgRankingPosition: 'Query performance',
+  impressions: 'Visibility growth',
+
+  // Technical
+  crawlBudget: 'Pages crawled per day',
+  indexCoverage: 'Valid indexed pages',
+  pageExperience: '% passing Core Web Vitals'
+};
+```
+
+> **Final Tip:** SEO success comes from consistent execution over time. Focus on building genuine value for users, and rankings will follow.

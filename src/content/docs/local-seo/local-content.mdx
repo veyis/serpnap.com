@@ -1,0 +1,92 @@
+export const meta = {
+  "title": "Local Content Strategy",
+  "description": "Create location-specific content that ranks and converts.",
+  "lastUpdated": "2026-01-01",
+  "section": "local-seo",
+  "order": 5
+};
+
+## Local Landing Pages
+
+Create dedicated pages for each service area or location.
+
+```
+Page Structure:
+├── H1: [Service] in [City/Neighborhood]
+├── Intro with local relevance
+├── Services specific to area
+├── Local testimonials
+├── Area-specific FAQs
+├── Contact info with map
+
+Avoid:
+├── Duplicate content across pages
+├── Thin content (< 500 words)
+├── No unique local value
+├── Doorway pages
+```
+
+## Local Blog Content
+
+```
+Content Ideas:
+├── Local events coverage
+├── Community involvement
+├── Local guides and resources
+├── Area-specific tips
+├── Local case studies
+├── Neighborhood spotlights
+
+Example Topics:
+├── "Best [Service] Tips for [City] Homeowners"
+├── "[City] Guide to [Topic]"
+├── "Our Team at [Local Event]"
+├── "[Neighborhood] Business Spotlight"
+```
+
+## Local Schema Markup
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Business Name",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main St",
+    "addressLocality": "Philadelphia",
+    "addressRegion": "PA",
+    "postalCode": "19103"
+  },
+  "telephone": "+1-215-555-0123",
+  "openingHoursSpecification": {...},
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.9526,
+    "longitude": -75.1652
+  }
+}
+```
+
+## On-Page Optimization
+
+```
+Title Tag:
+├── [Service] in [City] | [Brand]
+├── Keep under 60 characters
+├── City name near beginning
+
+Meta Description:
+├── Include city/neighborhood
+├── Highlight local benefit
+├── Clear CTA
+├── 150-160 characters
+
+Content:
+├── Mention city/area naturally
+├── Use neighborhood names
+├── Include local landmarks
+├── Reference local events/news
+```
+
+> **Pro Tip:** Each location page should have unique content—not just a city name swap. Include local photos, testimonials from that area, and specific service details relevant to the location.

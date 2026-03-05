@@ -1,0 +1,1091 @@
+export const meta = {
+  title: "Review Management",
+  description: "Master review generation, reputation management, and response strategies for local SEO success. Complete guide to building positive reviews and handling negative feedback across all platforms.",
+  lastUpdated: "2026-01-11",
+  section: "local-seo",
+  order: 4,
+  badge: "Essential",
+  seo: {
+    metaTitle: "Review Management Guide 2026 | Generate Reviews & Reputation Management",
+    metaDescription: "Complete guide to review generation and management for local businesses. Learn strategies to generate positive reviews, respond professionally, and manage your online reputation.",
+    keywords: [
+      "review management",
+      "Google reviews",
+      "review generation",
+      "reputation management",
+      "online reviews",
+      "review response",
+      "local business reviews",
+    ],
+  },
+};
+
+# Review Management Guide
+
+Online reviews are a critical local ranking factor and the primary trust signal for potential customers. With 93% of consumers reading reviews before making a purchase and reviews accounting for approximately 15-20% of local pack ranking factors, a strategic review management program is essential for local SEO success.
+
+## Review Impact on Rankings
+
+### How Reviews Affect Local SEO
+
+```
+Review Ranking Factor Breakdown:
+═══════════════════════════════════════════════════════════════════════════
+
+REVIEW SIGNALS IN LOCAL SEO (~15-20% of ranking factors):
+────────────────────────────────────────────────────────────────────────
+
+                    ┌─────────────────────────────────────┐
+                    │      REVIEW SIGNAL COMPONENTS       │
+                    └─────────────────────────────────────┘
+
+    Review Quantity (5%)     ████████████████████████████████████
+    Review Recency (4%)      ████████████████████████████
+    Review Quality (3%)      ████████████████████████
+    Review Velocity (2%)     ████████████████
+    Review Diversity (2%)    ████████████████
+    Response Rate (1%)       ████████
+
+
+SIGNAL DEFINITIONS:
+────────────────────────────────────────────────────────────────────────
+
+Quantity:       Total number of reviews (Google prioritized)
+Recency:        Reviews in last 90 days weighted higher
+Quality:        Average star rating + review content depth
+Velocity:       Consistent flow of new reviews over time
+Diversity:      Reviews across multiple platforms
+Response Rate:  Business engagement with reviews
+
+
+BENCHMARK COMPARISON:
+────────────────────────────────────────────────────────────────────────
+
+Metric              Poor        Average     Good        Excellent
+────────────────────────────────────────────────────────────────────────
+Total Reviews       <20         20-50       50-100      100+
+Average Rating      <4.0        4.0-4.3     4.4-4.7     4.8-5.0
+Monthly New         0-1         2-3         4-6         7+
+Response Rate       <25%        25-50%      50-75%      >75%
+Response Time       >7 days     3-7 days    1-2 days    <24 hours
+────────────────────────────────────────────────────────────────────────
+```
+
+### Review Quality Signals
+
+```typescript
+// Review Quality Assessment
+interface ReviewQuality {
+  // Content signals
+  content: {
+    length: 'short' | 'medium' | 'detailed'; // <50, 50-200, 200+ words
+    specificity: boolean; // Mentions specific services/products
+    keywords: string[]; // Relevant keywords mentioned
+    sentiment: 'positive' | 'neutral' | 'negative';
+  };
+
+  // Reviewer signals
+  reviewer: {
+    isLocalGuide: boolean; // Google Local Guide status
+    reviewCount: number; // Reviewer's total reviews
+    profileAge: number; // Account age in days
+    hasPhoto: boolean;
+  };
+
+  // Authenticity signals
+  authenticity: {
+    uniqueIP: boolean;
+    naturalLanguage: boolean;
+    verifiedPurchase: boolean;
+    detailedExperience: boolean;
+  };
+}
+
+// Example high-quality review
+const highQualityReview = {
+  rating: 5,
+  content: `Had an emergency with a burst pipe at 2 AM and Joe's
+Plumbing came out within 45 minutes. Mike, the plumber who helped us,
+was professional, explained everything clearly, and fixed the issue
+quickly. They even helped clean up the water damage. Fair pricing
+and no surprise charges. Already recommended them to three neighbors!`,
+
+  qualitySignals: {
+    wordCount: 68,
+    specificity: ['emergency', 'burst pipe', 'plumber Mike', '45 minutes'],
+    servicesMentioned: ['emergency plumbing', 'water damage'],
+    emotionalIndicators: ['professional', 'fair pricing', 'recommended'],
+    reviewerCredibility: 'Local Guide Level 5, 127 reviews',
+  },
+};
+```
+
+## Review Generation Strategies
+
+### Ethical Review Generation
+
+```
+Review Generation Framework:
+═══════════════════════════════════════════════════════════════════════════
+
+GOLDEN RULES OF REVIEW GENERATION:
+────────────────────────────────────────────────────────────────────────
+✅ DO:
+├── Ask satisfied customers to share their experience
+├── Make the process as easy as possible
+├── Time requests appropriately (after positive interaction)
+├── Send follow-up reminders (once, not multiple)
+├── Provide direct links to review platforms
+└── Thank customers who leave reviews
+
+❌ DON'T:
+├── Offer incentives for reviews (Google violation)
+├── Ask only happy customers (review gating)
+├── Write fake reviews or have employees review
+├── Use review generation "services"
+├── Pressure or manipulate customers
+└── Buy reviews from any source
+
+
+TIMING YOUR ASK:
+────────────────────────────────────────────────────────────────────────
+
+                    ┌─────────────────────────────────────┐
+                    │    OPTIMAL REVIEW REQUEST TIMING    │
+                    └─────────────────────────────────────┘
+
+    Service Businesses:
+    ─────────────────
+    Immediate ──► Ask at completion of successful service
+                 (When customer expresses satisfaction)
+
+    Day 1-2 ────► Follow-up email/SMS with review link
+                 (While experience is fresh)
+
+    Day 5-7 ────► Final reminder (if no review)
+                 (Last chance, not pushy)
+
+    Product/Retail:
+    ───────────────
+    Point of Sale ──► Mention reviews at checkout
+
+    Day 3-5 ────────► After product delivery/use
+
+    Day 7-14 ───────► Follow-up reminder
+
+
+ASK METHODS BY CHANNEL:
+────────────────────────────────────────────────────────────────────────
+
+In-Person (Highest Conversion):
+├── "If you're happy with our service, we'd really appreciate
+│    if you could share your experience on Google."
+└── Hand them a card with QR code to review link
+
+Email (Most Scalable):
+├── Subject: "How did we do?"
+├── Short, personal message
+├── Direct button to review
+└── Mobile-optimized
+
+SMS (High Open Rate):
+├── Keep message short (<160 chars)
+├── Include review link
+├── Sent from recognized number
+└── 98% open rate average
+
+QR Codes:
+├── Table tents in location
+├── On receipts
+├── Business cards
+└── Post-service handouts
+```
+
+### Review Request Templates
+
+```typescript
+// Review request email template
+interface ReviewRequestEmail {
+  subject: string;
+  body: string;
+  cta: string;
+  reviewLink: string;
+}
+
+const reviewEmailTemplates = {
+  postService: {
+    subject: "Quick question about your recent service",
+    body: `
+Hi {{customer_name}},
+
+Thanks for choosing {{business_name}} for your {{service_type}}.
+We hope everything went smoothly!
+
+If you have a moment, we'd really appreciate hearing about your
+experience. Your feedback helps other customers find us and helps
+us continue to improve.
+
+[Leave a Review Button]
+
+Thank you for your support!
+
+Best,
+{{team_name}}
+{{business_name}}
+    `.trim(),
+    timing: 'Send 24-48 hours after service',
+    expectedRate: '10-15%',
+  },
+
+  followUp: {
+    subject: "Your feedback matters to us",
+    body: `
+Hi {{customer_name}},
+
+We noticed you haven't had a chance to review your recent
+experience with us. We completely understand - life gets busy!
+
+If you have just 30 seconds, a quick review on Google would
+mean the world to us. Just click the button below.
+
+[Leave a Review Button]
+
+No pressure at all - we just wanted to make sure you had
+the link if you wanted to share.
+
+Thanks again for choosing us!
+
+{{business_name}}
+    `.trim(),
+    timing: 'Send 5-7 days after initial request',
+    expectedRate: '3-5%',
+  },
+
+  sms: {
+    message: `
+Hi {{name}}! Thanks for using {{business}}. Mind sharing
+a quick review? {{review_link}} - it really helps us out!
+    `.trim(),
+    timing: 'Send 24 hours after service',
+    expectedRate: '12-18%',
+  },
+};
+
+// Google review link generator
+function generateGoogleReviewLink(placeId: string): string {
+  return `https://search.google.com/local/writereview?placeid=${placeId}`;
+}
+
+// Short link for SMS/print
+function createShortReviewLink(placeId: string): string {
+  // Use g.page for business or URL shortener
+  return `https://g.page/r/${placeId}/review`;
+}
+```
+
+### Systematic Review Generation
+
+```
+Review Generation System:
+═══════════════════════════════════════════════════════════════════════════
+
+AUTOMATION WORKFLOW:
+────────────────────────────────────────────────────────────────────────
+
+    Customer           Transaction         Satisfaction        Review
+    Interaction ──────► Complete ─────────► Check ────────────► Request
+         │                  │                   │                  │
+         │                  │                   │                  │
+         ▼                  ▼                   ▼                  ▼
+    CRM Capture      Job Marked          Survey/Feedback      Email/SMS
+    Contact Info     Complete            (Optional)           Triggered
+
+
+TECH STACK OPTIONS:
+────────────────────────────────────────────────────────────────────────
+
+All-in-One Platforms:
+├── Birdeye ($299-599/month)
+│   └── Review requests, monitoring, response, reporting
+├── Podium ($289-599/month)
+│   └── SMS-focused, webchat, payments
+├── GatherUp ($75-175/month)
+│   └── Small business focused, affordable
+└── Grade.us ($90-200/month)
+    └── White-label options for agencies
+
+DIY Stack:
+├── Email: Mailchimp/SendGrid + templates
+├── SMS: Twilio + automation
+├── CRM: HubSpot/Salesforce triggers
+├── Monitoring: Google Alerts + manual
+└── Reporting: Spreadsheet tracking
+
+
+INTEGRATION POINTS:
+────────────────────────────────────────────────────────────────────────
+
+1. Job/Service Completion
+   ├── Connect to job management software
+   ├── Trigger on status change to "Complete"
+   └── Capture customer email/phone
+
+2. Point of Sale
+   ├── Post-transaction email capture
+   ├── Receipt-based QR codes
+   └── Staff training on verbal ask
+
+3. Follow-Up Sequences
+   ├── Day 1: Thank you + review request
+   ├── Day 5: Reminder (if no review)
+   └── Day 30: General check-in + ask
+```
+
+## Responding to Reviews
+
+### Response Strategy
+
+```
+Review Response Framework:
+═══════════════════════════════════════════════════════════════════════════
+
+WHY RESPOND TO EVERY REVIEW:
+────────────────────────────────────────────────────────────────────────
+• Shows you value customer feedback
+• Opportunity to include keywords naturally
+• Builds trust with potential customers
+• Can influence reviewer to update negative reviews
+• Engagement signals for algorithm
+
+
+RESPONSE TIMING:
+────────────────────────────────────────────────────────────────────────
+
+Review Type          Target Response Time    Maximum
+────────────────────────────────────────────────────────────────────────
+Negative (1-2 star)     4-12 hours          24 hours
+Mixed (3 star)          24-48 hours         72 hours
+Positive (4-5 star)     48-72 hours         1 week
+────────────────────────────────────────────────────────────────────────
+
+
+POSITIVE REVIEW RESPONSE:
+────────────────────────────────────────────────────────────────────────
+
+Elements to Include:
+├── Thank the customer by name
+├── Reference something specific from their review
+├── Mention the service/product naturally (keywords)
+├── Express appreciation
+└── Invite them back
+
+
+EXAMPLE POSITIVE RESPONSES:
+────────────────────────────────────────────────────────────────────────
+
+Template 1 (Service Business):
+"Thank you so much, [Name]! We're thrilled that Mike was able
+to get your [emergency plumbing issue] resolved quickly. Our
+team takes pride in providing fast, reliable service to
+[Philadelphia] homeowners. We appreciate you taking the time
+to share your experience and look forward to serving you again!"
+
+Template 2 (Retail):
+"[Name], thank you for the kind words! We're so glad you love
+your new [product]. Our team works hard to help customers find
+exactly what they need. Thanks for shopping with us - we hope
+to see you again soon!"
+
+Template 3 (Restaurant):
+"Thank you for dining with us, [Name]! We're delighted you
+enjoyed the [specific dish mentioned]. Our chef will be thrilled
+to hear your feedback. Can't wait to welcome you back for
+another great meal!"
+```
+
+### Handling Negative Reviews
+
+```
+Negative Review Response System:
+═══════════════════════════════════════════════════════════════════════════
+
+NEGATIVE REVIEW RESPONSE FRAMEWORK (A.R.M.):
+────────────────────────────────────────────────────────────────────────
+
+A - Acknowledge
+├── Thank them for feedback
+├── Acknowledge their frustration
+└── Don't be defensive
+
+R - Respond
+├── Apologize for their experience
+├── Address specific issues mentioned
+├── Explain what should have happened
+└── Don't make excuses
+
+M - Move Offline
+├── Provide direct contact information
+├── Invite them to discuss privately
+├── Offer to make it right
+└── Follow through!
+
+
+RESPONSE DO'S AND DON'TS:
+────────────────────────────────────────────────────────────────────────
+
+✅ DO:
+├── Respond promptly (ideally same day)
+├── Use their name
+├── Acknowledge the issue
+├── Apologize sincerely
+├── Offer to resolve offline
+├── Keep it professional
+├── Learn from the feedback
+└── Follow up after resolution
+
+❌ DON'T:
+├── Get defensive or argumentative
+├── Blame the customer
+├── Make excuses
+├── Offer compensation publicly
+├── Copy/paste generic responses
+├── Ignore the review
+├── Violate privacy (discuss details)
+└── Ask them to remove the review
+
+
+NEGATIVE REVIEW RESPONSE TEMPLATES:
+────────────────────────────────────────────────────────────────────────
+
+Template 1 (Service Issue):
+"[Name], thank you for sharing your feedback. I'm sorry to hear
+that your experience didn't meet our usual standards. This isn't
+the level of service we aim to provide, and I'd like to make
+this right. Please contact me directly at [email/phone] so we
+can discuss how to resolve this for you. - [Owner Name], Owner"
+
+Template 2 (Wait Time/Communication):
+"[Name], I apologize for the delay you experienced. We understand
+your time is valuable, and this isn't acceptable. We're reviewing
+our scheduling process to prevent this. I'd appreciate the chance
+to speak with you directly - please reach out at [contact info].
+We'd like to make this right."
+
+Template 3 (Pricing Complaint):
+"[Name], thank you for your feedback about pricing. We strive to
+be transparent with all costs upfront. I'd like to understand
+what happened and discuss your concerns. Please contact me at
+[email/phone] so we can review your invoice together."
+```
+
+### Review Recovery Process
+
+```typescript
+// Review recovery workflow
+interface ReviewRecoveryProcess {
+  step: number;
+  action: string;
+  timeframe: string;
+  owner: string;
+  outcome: string;
+}
+
+const recoveryProcess: ReviewRecoveryProcess[] = [
+  {
+    step: 1,
+    action: 'Acknowledge review publicly',
+    timeframe: 'Within 4 hours',
+    owner: 'Manager on duty',
+    outcome: 'Professional response posted',
+  },
+  {
+    step: 2,
+    action: 'Internal investigation',
+    timeframe: 'Same day',
+    owner: 'Operations manager',
+    outcome: 'Root cause identified',
+  },
+  {
+    step: 3,
+    action: 'Contact customer directly',
+    timeframe: 'Within 24 hours',
+    owner: 'Owner/senior manager',
+    outcome: 'Personal conversation, understanding',
+  },
+  {
+    step: 4,
+    action: 'Offer resolution',
+    timeframe: 'During call/email',
+    owner: 'Owner/senior manager',
+    outcome: 'Appropriate remedy provided',
+  },
+  {
+    step: 5,
+    action: 'Implement fix',
+    timeframe: 'Depends on resolution',
+    owner: 'Operations team',
+    outcome: 'Customer issue resolved',
+  },
+  {
+    step: 6,
+    action: 'Follow up',
+    timeframe: '3-5 days after resolution',
+    owner: 'Customer service',
+    outcome: 'Confirm satisfaction',
+  },
+  {
+    step: 7,
+    action: 'Request update (optional)',
+    timeframe: 'Only if appropriate',
+    owner: 'Customer service',
+    outcome: 'Customer may update review',
+  },
+];
+
+// Success metrics
+const recoveryMetrics = {
+  targetResponseTime: '4 hours',
+  targetResolutionTime: '48 hours',
+  targetRecoveryRate: '40%', // Reviews updated or removed
+  targetRetentionRate: '60%', // Customer returns
+};
+```
+
+## Multi-Platform Review Management
+
+### Platform Priorities
+
+```
+Review Platform Strategy:
+═══════════════════════════════════════════════════════════════════════════
+
+PLATFORM PRIORITY MATRIX:
+────────────────────────────────────────────────────────────────────────
+
+                              SEO Impact
+                         Low                    High
+                    ┌──────────────┬──────────────────┐
+            High    │              │ HIGH PRIORITY    │
+            Traffic │ Facebook     │ Google           │
+                    │              │ Yelp             │
+                    ├──────────────┼──────────────────┤
+            Low     │ Low Priority │ MEDIUM PRIORITY  │
+            Traffic │ Random       │ Industry-specific│
+                    │ directories  │ (Avvo, Zocdoc)   │
+                    └──────────────┴──────────────────┘
+
+
+PLATFORM-SPECIFIC STRATEGIES:
+────────────────────────────────────────────────────────────────────────
+
+Google (Primary):
+├── Highest SEO impact
+├── Shows in search results and Maps
+├── Use Google review link shortener
+├── Monitor via GBP dashboard
+└── Respond to all reviews
+
+Yelp:
+├── Important for restaurants, home services
+├── "Do not ask for reviews" officially
+├── Focus on service that generates organic reviews
+├── Respond professionally
+└── Claim and optimize business page
+
+Facebook:
+├── Social proof for paid advertising
+├── Lower SEO impact but high visibility
+├── Respond publicly
+├── Enables back-and-forth conversation
+└── Good for detailed responses
+
+Industry-Specific:
+├── High relevance signal
+├── Often include backlinks
+├── Important for credibility
+├── Examples: Avvo (legal), Healthgrades (medical)
+└── Build reviews naturally over time
+
+
+REVIEW DISTRIBUTION TARGETS:
+────────────────────────────────────────────────────────────────────────
+
+Platform           Priority    Target %    Minimum Reviews
+────────────────────────────────────────────────────────────────────────
+Google             Critical    60-70%      50+
+Facebook           High        15-20%      20+
+Yelp               High        10-15%      15+
+Industry Sites     Medium      5-10%       10+ each
+Other              Low         <5%         As they come
+────────────────────────────────────────────────────────────────────────
+```
+
+### Review Aggregation
+
+```typescript
+// Review aggregation and monitoring
+interface ReviewAggregation {
+  platforms: Platform[];
+  totalReviews: number;
+  weightedRating: number;
+  monthlyVelocity: number;
+}
+
+interface Platform {
+  name: string;
+  reviews: number;
+  rating: number;
+  weight: number; // Importance weight
+  lastChecked: Date;
+}
+
+// Calculate weighted average rating
+function calculateWeightedRating(platforms: Platform[]): number {
+  const totalWeight = platforms.reduce((sum, p) => sum + (p.reviews * p.weight), 0);
+
+  const weightedSum = platforms.reduce(
+    (sum, p) => sum + (p.rating * p.reviews * p.weight),
+    0
+  );
+
+  return Math.round((weightedSum / totalWeight) * 100) / 100;
+}
+
+// Example aggregation
+const reviewAggregation: ReviewAggregation = {
+  platforms: [
+    { name: 'Google', reviews: 127, rating: 4.7, weight: 1.0, lastChecked: new Date() },
+    { name: 'Yelp', reviews: 43, rating: 4.5, weight: 0.8, lastChecked: new Date() },
+    { name: 'Facebook', reviews: 31, rating: 4.8, weight: 0.6, lastChecked: new Date() },
+    { name: 'BBB', reviews: 12, rating: 4.9, weight: 0.5, lastChecked: new Date() },
+  ],
+  totalReviews: 213,
+  weightedRating: 4.68,
+  monthlyVelocity: 8.3,
+};
+```
+
+## Review Monitoring & Alerts
+
+### Monitoring System Setup
+
+```
+Review Monitoring Framework:
+═══════════════════════════════════════════════════════════════════════════
+
+MONITORING CHANNELS:
+────────────────────────────────────────────────────────────────────────
+
+Built-in Platform Notifications:
+├── Google Business Profile app
+├── Yelp for Business app
+├── Facebook Page notifications
+└── Most platforms offer email alerts
+
+Google Alerts:
+├── Set up alert for "[Business Name]"
+├── Include variations and misspellings
+├── Monitor "review" mentions
+└── Daily digest option
+
+Third-Party Tools:
+├── ReviewTrackers ($49-199/month)
+├── Grade.us (included in plan)
+├── Mention ($29-99/month)
+├── Hootsuite (social monitoring)
+└── Brand24 ($49-199/month)
+
+
+ALERT CONFIGURATION:
+────────────────────────────────────────────────────────────────────────
+
+                    ┌─────────────────────────────────────┐
+                    │       ALERT PRIORITY MATRIX         │
+                    └─────────────────────────────────────┘
+
+Alert Type          Urgency     Notification Method
+────────────────────────────────────────────────────────────────────────
+1-star review       Immediate   SMS + Email + Slack
+2-star review       High        SMS + Email
+3-star review       Medium      Email
+4-5 star review     Low         Daily digest
+Competitor review   Low         Weekly report
+Brand mention       Medium      Email alert
+────────────────────────────────────────────────────────────────────────
+
+
+RESPONSE SLA:
+────────────────────────────────────────────────────────────────────────
+1-2 stars:  Respond within 4 hours (during business hours)
+3 stars:    Respond within 24 hours
+4-5 stars:  Respond within 48-72 hours
+```
+
+### serpnap Review Integration
+
+```typescript
+// serpnap Review Management Integration
+import { serpnap } from '@/lib/analytics';
+
+// Configure review monitoring
+await serpnap.reviews.configure({
+  locations: [
+    {
+      id: 'loc_001',
+      name: 'Main Location',
+      platforms: {
+        google: { placeId: 'ChIJ...' },
+        yelp: { businessId: 'joes-plumbing-philadelphia' },
+        facebook: { pageId: '123456789' },
+      },
+    },
+  ],
+
+  monitoring: {
+    enabled: true,
+    checkFrequency: 'hourly',
+
+    platforms: ['google', 'yelp', 'facebook', 'bbb'],
+
+    alerts: {
+      newReview: {
+        enabled: true,
+        channels: ['email', 'slack'],
+      },
+      negativeReview: {
+        threshold: 3, // 3 stars or below
+        channels: ['sms', 'email', 'slack'],
+        escalation: ['owner@company.com'],
+      },
+      ratingDrop: {
+        threshold: 0.2, // Alert if avg drops 0.2+
+        channels: ['email'],
+      },
+      noReviews: {
+        days: 14, // Alert if no reviews in 14 days
+        channels: ['email'],
+      },
+    },
+  },
+
+  responseTracking: {
+    enabled: true,
+    slaTargets: {
+      negative: 4, // hours
+      neutral: 24, // hours
+      positive: 72, // hours
+    },
+    alertOnMissedSLA: true,
+  },
+
+  reporting: {
+    frequency: 'weekly',
+    recipients: ['marketing@company.com'],
+    metrics: [
+      'total_reviews',
+      'average_rating',
+      'review_velocity',
+      'response_rate',
+      'sentiment_analysis',
+      'competitor_comparison',
+    ],
+  },
+});
+
+// Get review dashboard
+const reviewDashboard = await serpnap.reviews.getDashboard({
+  location: 'loc_001',
+  dateRange: 'last30days',
+});
+
+// Review dashboard structure
+interface ReviewDashboard {
+  summary: {
+    totalReviews: number;
+    averageRating: number;
+    ratingChange: number;
+    newReviewsThisPeriod: number;
+    responseRate: number;
+    avgResponseTime: number; // hours
+  };
+
+  byPlatform: {
+    platform: string;
+    reviews: number;
+    rating: number;
+    trend: 'up' | 'stable' | 'down';
+  }[];
+
+  recentReviews: {
+    id: string;
+    platform: string;
+    rating: number;
+    text: string;
+    date: Date;
+    responded: boolean;
+    sentiment: 'positive' | 'neutral' | 'negative';
+  }[];
+
+  sentiment: {
+    positive: number;
+    neutral: number;
+    negative: number;
+    topPositiveKeywords: string[];
+    topNegativeKeywords: string[];
+  };
+
+  pendingResponses: {
+    reviewId: string;
+    platform: string;
+    rating: number;
+    hoursOld: number;
+    slaBreach: boolean;
+  }[];
+
+  competitors: {
+    name: string;
+    avgRating: number;
+    reviewCount: number;
+    recentReviews: number;
+  }[];
+}
+
+// Generate review response with AI assistance
+const suggestedResponse = await serpnap.reviews.generateResponse({
+  reviewId: 'review_123',
+  reviewText: "Great service! Mike was professional and fixed our issue quickly.",
+  rating: 5,
+  customerName: 'John',
+  businessContext: {
+    services: ['plumbing', 'emergency service'],
+    location: 'Philadelphia',
+    teamMembers: ['Mike', 'Joe', 'Sarah'],
+  },
+  tone: 'professional',
+  includeKeywords: ['plumbing service', 'Philadelphia'],
+});
+```
+
+## Reputation Crisis Management
+
+### Handling Review Attacks
+
+```
+Review Attack Response Protocol:
+═══════════════════════════════════════════════════════════════════════════
+
+IDENTIFYING FAKE/ATTACK REVIEWS:
+────────────────────────────────────────────────────────────────────────
+
+Red Flags:
+├── Multiple negative reviews in short timeframe
+├── Similar language patterns across reviews
+├── Reviewers with no/few other reviews
+├── Reviews from outside service area
+├── No record of customer in your system
+├── Vague complaints, no specifics
+├── Competitor names mentioned positively
+└── Reviews don't match services offered
+
+
+RESPONSE PROTOCOL:
+────────────────────────────────────────────────────────────────────────
+
+Step 1: Document Everything
+├── Screenshot all suspicious reviews
+├── Note timestamps and patterns
+├── Check customer records
+├── Save reviewer profile information
+
+Step 2: Respond Publicly (Even to Fakes)
+├── Professional, calm response
+├── "We have no record of this visit"
+├── Invite them to contact you
+├── Shows other readers you care
+
+Step 3: Report to Platform
+├── Google: Flag review → "This is spam"
+├── Yelp: Report Review button
+├── Facebook: Report review
+├── Include documentation
+
+Step 4: Monitor Closely
+├── Watch for more attacks
+├── Track removal progress
+├── Continue responding professionally
+
+Step 5: Proactive Reputation
+├── Encourage legitimate reviews
+├── Share positive testimonials
+├── Maintain strong review velocity
+
+
+PLATFORM-SPECIFIC REPORTING:
+────────────────────────────────────────────────────────────────────────
+
+Google:
+├── GBP Dashboard → Reviews → Flag inappropriate
+├── Options: Off-topic, spam, conflict of interest
+├── Legal requests via Google legal form
+└── Response time: 3-14 days (varies)
+
+Yelp:
+├── Business account → Report Review
+├── Provide evidence
+├── Yelp reviews all reported content
+└── Response time: 1-7 days
+
+Facebook:
+├── Click "..." on review → Find support
+├── Select "Review doesn't apply to my business"
+├── Appeals available
+└── Response time: 1-5 days
+```
+
+## Review Performance Metrics
+
+### KPIs and Benchmarks
+
+```
+Review Performance Dashboard:
+═══════════════════════════════════════════════════════════════════════════
+
+KEY METRICS TO TRACK:
+────────────────────────────────────────────────────────────────────────
+
+Volume Metrics:
+├── Total review count (all platforms)
+├── Monthly review velocity
+├── Reviews per platform
+└── Year-over-year growth
+
+Quality Metrics:
+├── Average star rating (weighted)
+├── Rating distribution (% 5-star, 4-star, etc.)
+├── Sentiment analysis score
+└── Review content depth (word count)
+
+Engagement Metrics:
+├── Response rate (% responded)
+├── Average response time
+├── Response quality score
+└── Customer follow-up rate
+
+Competitive Metrics:
+├── Rating vs. competitors
+├── Volume vs. competitors
+├── Share of voice
+└── Review velocity comparison
+
+
+MONTHLY REVIEW REPORT TEMPLATE:
+────────────────────────────────────────────────────────────────────────
+
+                    ┌─────────────────────────────────────┐
+                    │    MONTHLY REVIEW REPORT            │
+                    │    January 2026                     │
+                    └─────────────────────────────────────┘
+
+SUMMARY
+───────────────────────────────────────────────────────────
+Total Reviews:        157 (+12 this month)
+Average Rating:       4.7 ★ (+0.1 vs last month)
+Response Rate:        94% (14 of 15 responded)
+Avg Response Time:    8.2 hours
+
+BY PLATFORM
+───────────────────────────────────────────────────────────
+Google:     98 reviews, 4.8 avg (+7 new)
+Yelp:       32 reviews, 4.5 avg (+3 new)
+Facebook:   27 reviews, 4.7 avg (+2 new)
+
+RATING DISTRIBUTION
+───────────────────────────────────────────────────────────
+5 star: ████████████████████████████████████████  68%
+4 star: ██████████████████                        22%
+3 star: ████                                       6%
+2 star: █                                          2%
+1 star: █                                          2%
+
+TOP POSITIVE THEMES
+───────────────────────────────────────────────────────────
+• "Professional" - mentioned 8 times
+• "Fast response" - mentioned 6 times
+• "Fair pricing" - mentioned 5 times
+
+AREAS FOR IMPROVEMENT
+───────────────────────────────────────────────────────────
+• Communication during wait - 2 mentions
+• Scheduling availability - 1 mention
+
+ACTION ITEMS
+───────────────────────────────────────────────────────────
+□ Continue review request emails (maintaining velocity)
+□ Address scheduling feedback with operations
+□ Increase Yelp review efforts (below target)
+```
+
+## Review Management Checklist
+
+```
+Complete Review Management Checklist:
+═══════════════════════════════════════════════════════════════════════════
+
+SETUP
+□ Claim all review platform profiles
+□ Set up Google review short link
+□ Create review request email templates
+□ Create review request SMS templates
+□ Train staff on asking for reviews
+□ Set up monitoring alerts
+□ Designate review response owner
+□ Create response templates (positive/negative)
+
+GENERATION
+□ Implement automated review requests
+□ Add QR codes to physical locations
+□ Include review link in email signatures
+□ Train staff to ask at point of service
+□ Follow up with satisfied customers
+□ Target 4+ new reviews per month
+
+MONITORING
+□ Check Google reviews daily
+□ Check Yelp reviews weekly
+□ Check Facebook reviews weekly
+□ Check industry sites monthly
+□ Set up negative review alerts
+□ Track review velocity
+
+RESPONDING
+□ Respond to all reviews (goal: 100%)
+□ Respond to negative reviews within 4 hours
+□ Respond to positive reviews within 72 hours
+□ Personalize every response
+□ Include keywords naturally
+□ Take negative issues offline
+
+ANALYSIS
+□ Track monthly review metrics
+□ Analyze sentiment trends
+□ Compare to competitors
+□ Identify improvement areas
+□ Share insights with team
+□ Adjust strategy based on data
+
+REPUTATION
+□ Address negative feedback internally
+□ Implement service improvements
+□ Monitor for fake reviews
+□ Report policy violations
+□ Build review velocity to dilute negatives
+□ Showcase testimonials on website
+```
+
+## Related Documentation
+
+- [Local SEO Complete Guide](/docs/local-seo/complete-guide) - Overall local SEO strategy
+- [Google Business Profile](/docs/local-seo/google-business-profile) - GBP optimization
+- [Local Citations](/docs/local-seo/citations) - Directory listings
+- [Local Content](/docs/local-seo/local-content) - Location page optimization
+- [Local Link Building](/docs/local-seo/local-link-building) - Local backlinks

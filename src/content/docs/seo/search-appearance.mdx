@@ -1,0 +1,166 @@
+export const meta = {
+  "title": "Search Appearance",
+  "description": "Optimize how your pages appear in Google Search results with titles, descriptions, and rich results.",
+  "lastUpdated": "2026-01-01",
+  "section": "seo",
+  "order": 3,
+  "badge": "updated"
+};
+
+## Title Links
+
+The title link is the clickable headline in search results—your first impression with users.
+
+### Best Practices
+
+```html
+<!-- Optimal title tag -->
+<title>Primary Keyword - Secondary Keyword | Brand Name</title>
+
+<!-- Example -->
+<title>Complete SEO Guide 2025 - Rankings & Traffic | serpnap</title>
+```
+
+**Title Optimization Rules:**
+- **Length:** 50-60 characters (Google may truncate longer titles)
+- **Primary Keyword:** Include near the beginning
+- **Brand:** Add at end with separator (| or -)
+- **Unique:** Each page needs a distinct title
+- **Compelling:** Write for clicks, not just keywords
+
+### Why Google Rewrites Titles
+
+Google may modify your title when:
+
+| Issue | Google's Response |
+|-------|-------------------|
+| Too long | Truncates or rewrites |
+| Keyword stuffing | Simplifies the title |
+| Doesn't match content | Uses H1 or other elements |
+| Too short/vague | Adds context from page |
+| Missing brand | May append site name |
+
+## Meta Descriptions
+
+The snippet below your title—crucial for click-through rate.
+
+```html
+<meta name="description" content="Master SEO in 2025 with our comprehensive guide. Learn ranking factors, technical optimization, and strategies used by top sites. Updated for latest algorithm changes.">
+```
+
+**Optimization Guidelines:**
+- **Length:** 150-160 characters optimal
+- **Include keywords:** They appear bold when matching query
+- **Call to action:** Encourage clicks ("Learn more", "Discover")
+- **Unique value:** What makes your page special?
+- **Match intent:** Align with what users are searching for
+
+## Featured Snippets
+
+Position zero—the highlighted answer box above regular results.
+
+### Snippet Types
+
+1. **Paragraph Snippets** — Direct answer (40-60 words)
+2. **List Snippets** — Numbered or bulleted lists
+3. **Table Snippets** — Comparative data
+4. **Video Snippets** — Video with timestamp
+
+### Optimization Strategies
+
+```html
+<!-- Target paragraph snippets -->
+<p>What is SEO? SEO (Search Engine Optimization) is the practice
+of optimizing websites to rank higher in search engine results
+pages, increasing organic traffic and visibility.</p>
+
+<!-- Target list snippets -->
+<h2>How to Improve SEO</h2>
+<ol>
+  <li>Optimize page titles and meta descriptions</li>
+  <li>Create high-quality, relevant content</li>
+  <li>Build authoritative backlinks</li>
+  <li>Improve page speed and Core Web Vitals</li>
+</ol>
+```
+
+## Rich Results
+
+Enhanced search results with additional visual elements:
+
+### Common Rich Result Types
+
+| Type | Requirements | Impact |
+|------|--------------|--------|
+| FAQ | FAQPage schema | Expandable Q&A |
+| How-to | HowTo schema | Step-by-step visuals |
+| Product | Product schema | Price, reviews, availability |
+| Recipe | Recipe schema | Image, time, calories |
+| Review | Review schema | Star ratings |
+| Event | Event schema | Date, location, tickets |
+
+### Testing Rich Results
+
+```bash
+# Test your structured data
+https://search.google.com/test/rich-results
+
+# Validate schema markup
+https://validator.schema.org/
+```
+
+## Image Optimization
+
+Images can appear in Google Images and enhance regular results.
+
+### Image SEO Checklist
+
+```html
+<img
+  src="seo-guide-infographic.webp"
+  alt="Infographic showing the complete SEO process from crawling to ranking"
+  width="1200"
+  height="630"
+  loading="lazy"
+>
+```
+
+**Requirements:**
+- **Descriptive filename:** `seo-guide-2025.webp` not `IMG_001.jpg`
+- **Alt text:** Describe the image content accurately
+- **Optimal format:** WebP for web, SVG for icons
+- **Compression:** Balance quality and file size
+- **Dimensions:** Provide width/height to prevent CLS
+
+## Video Optimization
+
+Video can significantly increase visibility and engagement.
+
+### Video Schema Example
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Complete SEO Tutorial 2025",
+  "description": "Learn everything about SEO in this comprehensive tutorial",
+  "thumbnailUrl": "https://example.com/thumbnail.jpg",
+  "uploadDate": "2025-01-10",
+  "duration": "PT15M30S",
+  "contentUrl": "https://example.com/video.mp4"
+}
+```
+
+## Sitelinks
+
+Additional links shown below your main result for branded searches.
+
+### Earning Sitelinks
+
+Sitelinks are algorithmically generated. Improve your chances:
+
+1. **Clear site structure** — Logical hierarchy
+2. **Descriptive navigation** — Clear menu labels
+3. **Internal linking** — Connect important pages
+4. **XML sitemap** — Submit to Search Console
+5. **Unique page titles** — Distinct titles for each page

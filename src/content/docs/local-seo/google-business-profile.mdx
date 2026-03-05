@@ -1,0 +1,1249 @@
+export const meta = {
+  title: "Google Business Profile Optimization",
+  description: "Complete guide to optimizing your Google Business Profile for maximum local visibility, including setup, categories, photos, posts, and advanced features for improved local pack rankings.",
+  lastUpdated: "2026-01-11",
+  section: "local-seo",
+  order: 2,
+  badge: "Essential",
+  seo: {
+    metaTitle: "Google Business Profile Optimization Guide 2026 | GBP SEO",
+    metaDescription: "Master Google Business Profile optimization with complete setup guide, category selection, photo strategy, Google Posts, Q&A optimization, and GBP Insights analysis.",
+    keywords: [
+      "Google Business Profile",
+      "GBP optimization",
+      "Google My Business",
+      "local SEO",
+      "local pack ranking",
+      "GBP categories",
+      "GBP posts",
+    ],
+  },
+};
+
+# Google Business Profile Optimization
+
+Google Business Profile (formerly Google My Business) is the single most important factor for local pack rankings. A fully optimized GBP directly impacts your visibility in Google Maps, local search results, and the coveted 3-pack. This guide covers every optimization opportunity from basic setup to advanced features.
+
+## Profile Setup & Verification
+
+### Claiming Your Profile
+
+```
+GBP Claim Process:
+═══════════════════════════════════════════════════════════════════════════
+
+STEP 1: SEARCH FOR YOUR BUSINESS
+────────────────────────────────────────────────────────────────────────
+• Go to business.google.com
+• Search for your business name and address
+• If found: Claim existing listing
+• If not found: Add new business
+
+STEP 2: VERIFICATION OPTIONS
+────────────────────────────────────────────────────────────────────────
+
+Method              Timeline        Best For
+────────────────────────────────────────────────────────────────────────
+Postcard            5-14 days       Most businesses (default)
+Phone               Instant         Eligible established businesses
+Email               1-3 days        Some businesses with domain email
+Instant             Instant         Already verified via Search Console
+Video               1-3 days        When other methods unavailable
+In-store visit      1-2 weeks       Google representatives verify
+
+STEP 3: POST-VERIFICATION
+────────────────────────────────────────────────────────────────────────
+• Complete 100% of profile
+• Add photos immediately
+• Set accurate hours
+• Write business description
+• Add services/products
+• Enable messaging
+```
+
+### Business Information Optimization
+
+```typescript
+// GBP Information Completeness
+interface GBPProfile {
+  // Core information (Required)
+  businessName: {
+    value: string;
+    rules: [
+      'Exact legal business name only',
+      'No keywords in name (violation)',
+      'No location in name unless part of legal name',
+      'No taglines or slogans',
+    ];
+  };
+
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    country: string;
+    rules: [
+      'Exact match with website and citations',
+      'Use USPS standardized format',
+      'Suite/unit number consistent everywhere',
+      'No PO boxes for storefronts',
+    ];
+  };
+
+  phone: {
+    primary: string; // Local number preferred
+    rules: [
+      'Local area code strongly preferred',
+      'Same number on website',
+      'Avoid tracking numbers as primary',
+      'Call tracking via website instead',
+    ];
+  };
+
+  website: {
+    url: string;
+    rules: [
+      'Link to relevant landing page',
+      'Location-specific page if multi-location',
+      'Must be HTTPS',
+      'No redirect chains',
+    ];
+  };
+
+  // Hours (Critical)
+  hours: {
+    regular: HoursOfOperation;
+    special: SpecialHours[]; // Holidays, events
+    moreHours: {
+      delivery?: HoursOfOperation;
+      driveThrough?: HoursOfOperation;
+      seniorHours?: HoursOfOperation;
+      pickupHours?: HoursOfOperation;
+    };
+  };
+
+  // Description (750 characters)
+  description: {
+    maxLength: 750;
+    guidelines: [
+      'Lead with most important information',
+      'Include primary service/product',
+      'Mention service area naturally',
+      'Include unique value proposition',
+      'No promotional language',
+      'No URLs or phone numbers',
+      'No ALL CAPS',
+    ];
+  };
+}
+
+// Example optimized description
+const optimizedDescription = `
+Joe's Plumbing provides residential and commercial plumbing services
+throughout Philadelphia and surrounding counties. Our licensed, insured
+team specializes in emergency repairs, water heater installation, drain
+cleaning, and bathroom remodeling. Family-owned since 1985, we're known
+for same-day service, upfront pricing, and a satisfaction guarantee.
+We serve Center City, South Philly, Fishtown, and the entire metro area.
+`.trim(); // 498 characters - leaves room for updates
+```
+
+## Category Selection Strategy
+
+### Primary Category Selection
+
+The primary category has the highest impact on which searches trigger your listing:
+
+```
+GBP Category Selection Framework:
+═══════════════════════════════════════════════════════════════════════════
+
+PRIMARY CATEGORY RULES:
+────────────────────────────────────────────────────────────────────────
+• Most specific category that describes your CORE business
+• Research what category top-ranking competitors use
+• Check which category triggers for target keywords
+• Can only have ONE primary category
+
+                    ┌─────────────────────────────────────┐
+                    │     CATEGORY SPECIFICITY LADDER     │
+                    └─────────────────────────────────────┘
+
+                    Too Broad             Just Right           Too Narrow
+                    ─────────             ──────────           ──────────
+                    Business              Law Firm             DUI Lawyer
+                    Legal Services        Personal Injury      (if only
+                    Lawyer                Lawyer               service)
+
+                    Restaurant            Italian Restaurant   Neapolitan
+                    Food                  Pizza Restaurant     Pizza
+                    Dining                                     Restaurant
+
+                    Contractor            Plumber              Emergency
+                    Home Services         Plumbing Service     Plumber
+                    Repair Service                             (if niche)
+
+
+SECONDARY CATEGORIES (Up to 9):
+────────────────────────────────────────────────────────────────────────
+• Add ALL relevant categories for your services
+• Don't add aspirational categories
+• More isn't always better - relevance matters
+• Categories affect which searches show your listing
+
+
+CATEGORY RESEARCH PROCESS:
+────────────────────────────────────────────────────────────────────────
+1. Search your main keyword in Google Maps
+2. Click on top 3 competitors
+3. Note their primary category (shows in header)
+4. Check PlePer, GMB Spy for full category list
+5. Compile list of relevant categories
+6. Test which categories competitors rank for
+```
+
+### Category Examples by Industry
+
+| Business Type | Primary Category | Secondary Categories |
+|---------------|------------------|---------------------|
+| Dentist | Dentist | Cosmetic Dentist, Pediatric Dentist, Emergency Dental Service |
+| Plumber | Plumber | Plumbing Service, Water Heater Installation, Drain Cleaning |
+| Law Firm | Law Firm | Personal Injury Attorney, Criminal Justice Attorney |
+| Restaurant | [Cuisine] Restaurant | Restaurant, Caterer, Banquet Hall |
+| Auto Repair | Auto Repair Shop | Brake Shop, Oil Change Service, Tire Shop |
+| Real Estate | Real Estate Agency | Real Estate Agent, Property Management |
+| HVAC | HVAC Contractor | Air Conditioning Contractor, Heating Contractor |
+
+## Services & Products
+
+### Services Optimization
+
+```
+GBP Services Setup:
+═══════════════════════════════════════════════════════════════════════════
+
+SERVICE STRUCTURE:
+────────────────────────────────────────────────────────────────────────
+
+Category-Based Services (Auto-suggested):
+├── Linked to your selected categories
+├── Toggle on/off as applicable
+├── Add custom services within categories
+└── Keep relevant ones enabled
+
+Custom Services:
+├── Add services not in Google's list
+├── Include keywords naturally
+├── Write descriptions (up to 300 chars)
+├── Group related services
+└── Include pricing if consistent
+
+
+SERVICE DESCRIPTION TEMPLATE:
+────────────────────────────────────────────────────────────────────────
+[Service Name]
+Our [service] includes [key features]. Ideal for [customer type] needing
+[outcome]. [Unique differentiator]. [Service area if relevant].
+
+
+EXAMPLE SERVICES STRUCTURE:
+────────────────────────────────────────────────────────────────────────
+
+Plumbing Services
+├── Emergency Plumbing
+│   └── "24/7 emergency plumbing repairs including burst pipes,
+│       severe leaks, and flooding. 1-hour response time in
+│       Philadelphia metro area."
+├── Water Heater Installation
+│   └── "Professional water heater installation and replacement.
+│       Tank and tankless options. Same-day installation available."
+├── Drain Cleaning
+│   └── "Professional drain cleaning using hydro jetting and
+│       camera inspection. Removes tough clogs and prevents backups."
+└── Bathroom Remodeling
+    └── "Full bathroom renovations including fixtures, tiling,
+        and plumbing updates. Licensed contractors, free estimates."
+```
+
+### Products Setup (Retail/E-commerce)
+
+```typescript
+// GBP Product Optimization
+interface GBPProduct {
+  name: string; // 58 chars max displayed
+  category: string;
+  price: number | { min: number; max: number };
+  description: string; // 1000 chars max
+  photos: string[]; // Multiple angles
+  link: string; // Product page URL
+
+  bestPractices: [
+    'Use high-quality product photos',
+    'Include price (or price range)',
+    'Link to specific product page',
+    'Update inventory status',
+    'Add multiple products per category',
+    'Feature bestsellers first',
+  ];
+}
+
+// Product collection strategy
+const productStrategy = {
+  collections: [
+    {
+      name: 'Featured Products',
+      purpose: 'Bestsellers and high-margin items',
+      productCount: '5-10 products',
+      updateFrequency: 'Monthly',
+    },
+    {
+      name: 'New Arrivals',
+      purpose: 'Recent additions, seasonal items',
+      productCount: '5-10 products',
+      updateFrequency: 'As stock changes',
+    },
+    {
+      name: 'Sale Items',
+      purpose: 'Promotions, clearance',
+      productCount: 'As applicable',
+      updateFrequency: 'As sales change',
+    },
+  ],
+
+  photoGuidelines: {
+    format: 'JPEG or PNG',
+    minSize: '250x250px',
+    recommendedSize: '1200x1200px',
+    background: 'White or clean background',
+    angles: 'Multiple angles for each product',
+  },
+};
+```
+
+## Photo Optimization Strategy
+
+### Photo Types and Requirements
+
+```
+GBP Photo Strategy:
+═══════════════════════════════════════════════════════════════════════════
+
+PHOTO CATEGORIES:
+────────────────────────────────────────────────────────────────────────
+
+Logo (1 required)
+├── Square format (1:1)
+├── Min 250x250px, Rec 720x720px
+├── Clean background
+└── Recognizable at small sizes
+
+Cover Photo (1 required)
+├── Landscape format (16:9)
+├── Min 480x270px, Rec 1080x608px
+├── Best representation of business
+└── Updated seasonally
+
+Interior Photos (3+ recommended)
+├── Multiple angles of space
+├── Show amenities and atmosphere
+├── Natural lighting preferred
+└── Staff and customers (with permission)
+
+Exterior Photos (3+ recommended)
+├── Storefront from street view
+├── Signage clearly visible
+├── Parking and entrance
+├── Day and night shots
+
+Team Photos (3+ recommended)
+├── Professional headshots
+├── Team in action
+├── Uniforms/branding visible
+└── Builds trust and connection
+
+At Work/Product Photos (5+ recommended)
+├── Products/services in use
+├── Before/after (if applicable)
+├── Process shots
+└── Quality and detail shots
+
+
+PHOTO REQUIREMENTS:
+────────────────────────────────────────────────────────────────────────
+Format: JPG or PNG
+Size: 10KB minimum, 5MB maximum
+Resolution: 720px wide minimum recommended
+No: Stock photos, heavy filters, text overlays
+Yes: Real photos, good lighting, current imagery
+
+
+PHOTO UPLOAD SCHEDULE:
+────────────────────────────────────────────────────────────────────────
+Week 1: Logo, cover, 3 exterior, 3 interior
+Week 2: 3 team photos, 5 product/service photos
+Week 3: Additional work samples, customer photos
+Ongoing: 2-4 new photos monthly
+Seasonal: Update cover photo quarterly
+```
+
+### Photo Optimization Technical
+
+```typescript
+// Photo optimization for GBP
+interface GBPPhotoOptimization {
+  // File naming (affects alt text)
+  filename: {
+    format: '[business-name]-[location]-[description].jpg';
+    examples: [
+      'joes-plumbing-philadelphia-storefront.jpg',
+      'joes-plumbing-bathroom-remodel-project.jpg',
+      'joes-plumbing-team-photo.jpg',
+    ];
+  };
+
+  // Geotagging (adds location signal)
+  geotag: {
+    enabled: true;
+    coordinates: {
+      latitude: number;
+      longitude: number;
+    };
+    tools: ['GeoSetter', 'ExifTool', 'Lightroom'];
+    impact: 'Minor ranking signal, authenticity indicator';
+  };
+
+  // EXIF data optimization
+  exifData: {
+    copyright: 'Business Name';
+    author: 'Business Name';
+    description: 'Relevant keyword description';
+    dateTime: 'Current date'; // Shows photos are recent
+  };
+
+  // Competitive benchmarking
+  benchmark: {
+    analyze: [
+      'Competitor photo count',
+      'Photo types used',
+      'Photo views in Insights',
+      'Photo quality assessment',
+    ];
+    target: 'More photos than competitor average';
+  };
+}
+
+// Photo audit checklist
+const photoAudit = {
+  quantity: {
+    minimum: 20,
+    target: 50,
+    excellect: '100+',
+  },
+
+  coverage: {
+    logo: { required: true, count: 1 },
+    cover: { required: true, count: 1 },
+    exterior: { required: true, count: 3 },
+    interior: { required: true, count: 5 },
+    team: { recommended: true, count: 3 },
+    atWork: { recommended: true, count: 10 },
+    products: { ifApplicable: true, count: 'all products' },
+  },
+
+  quality: [
+    'Well-lit, professional appearance',
+    'High resolution (not blurry)',
+    'Current (not outdated)',
+    'Real (not stock)',
+    'Geotagged to location',
+  ],
+};
+```
+
+## Google Posts Strategy
+
+### Post Types and Best Practices
+
+```
+GBP Posts Guide:
+═══════════════════════════════════════════════════════════════════════════
+
+POST TYPES:
+────────────────────────────────────────────────────────────────────────
+
+What's New (General Updates)
+├── Duration: 6 months (then archives)
+├── Best for: General business updates, news, tips
+├── CTA options: Book, Order, Buy, Learn more, etc.
+└── Frequency: 1-2 per week recommended
+
+Events
+├── Duration: Until event date passes
+├── Best for: Workshops, sales events, webinars
+├── Required: Title, start/end date and time
+├── Optional: Ticket link, description
+└── Frequency: As events occur
+
+Offers
+├── Duration: Until offer expires
+├── Best for: Discounts, promotions, coupons
+├── Required: Offer title, terms
+├── Optional: Coupon code, redemption link
+└── Frequency: 1-2 active at a time
+
+Products (Retail only)
+├── Duration: Ongoing until removed
+├── Best for: Product highlights
+├── Required: Product name, price
+└── Frequency: Update as inventory changes
+
+
+POST SPECIFICATIONS:
+────────────────────────────────────────────────────────────────────────
+Photo/Video: 1200x900px minimum (4:3 ratio)
+Text: 1500 characters max (100-300 recommended)
+CTA: Choose from preset buttons
+Video: 30 seconds max, 100MB max
+
+
+POST CONTENT STRATEGY:
+────────────────────────────────────────────────────────────────────────
+
+Week 1:
+├── Mon: Educational tip related to services
+└── Thu: Behind-the-scenes or team highlight
+
+Week 2:
+├── Mon: Customer success story (anonymized)
+└── Thu: Service highlight or promotion
+
+Week 3:
+├── Mon: Community involvement or local content
+└── Thu: FAQ answer or how-to content
+
+Week 4:
+├── Mon: Industry news or seasonal relevance
+└── Thu: Special offer or event announcement
+```
+
+### Post Optimization Framework
+
+```typescript
+// GBP Post optimization
+interface GBPPost {
+  type: 'update' | 'event' | 'offer' | 'product';
+  photo: {
+    url: string;
+    dimensions: '1200x900'; // 4:3 ratio
+    format: 'JPEG' | 'PNG';
+    filename: string; // Include keywords
+  };
+  content: {
+    text: string;
+    maxLength: 1500;
+    optimalLength: '100-300';
+    includeKeywords: boolean;
+    cta: CTAButton;
+  };
+}
+
+// High-performing post templates
+const postTemplates = {
+  educational: {
+    template: `
+💡 [Service] Tip: [Headline]
+
+[2-3 sentence educational content with actionable advice]
+
+Need help with [service]? [CTA text]
+
+#[city][service] #[industry]tip
+    `.trim(),
+    example: `
+💡 Plumbing Tip: Prevent Frozen Pipes This Winter
+
+Insulate exposed pipes in unheated areas and let faucets drip during extreme cold.
+A small drip can prevent costly burst pipe repairs.
+
+Need winterization help? Schedule a free inspection today!
+
+#PhiladelphiaPlumber #WinterTips
+    `.trim(),
+  },
+
+  promotion: {
+    template: `
+🎉 [Offer Headline]
+
+[Offer details - what customer gets]
+
+✅ [Benefit 1]
+✅ [Benefit 2]
+✅ [Benefit 3]
+
+[Urgency/deadline if applicable]
+
+[CTA]
+    `.trim(),
+    example: `
+🎉 $50 Off Any Water Heater Installation
+
+Upgrade to an energy-efficient water heater and save $50 this month!
+
+✅ Same-day installation available
+✅ 10-year warranty included
+✅ Free old unit removal
+
+Offer ends January 31st. Book now!
+    `.trim(),
+  },
+
+  behindTheScenes: {
+    template: `
+👷 Meet the Team: [Name/Team]
+
+[Brief introduction and expertise]
+
+[Fun fact or personal touch]
+
+[Why this matters to customers]
+    `.trim(),
+    example: `
+👷 Meet the Team: Master Plumber Mike
+
+Mike has been solving Philadelphia's plumbing problems for 15 years.
+His specialty? Diagnosing tricky leaks that others can't find.
+
+Fun fact: Mike's rescued 3 wedding rings from drains this year alone!
+
+When you call Joe's Plumbing, you're getting real expertise.
+    `.trim(),
+  },
+};
+
+// Post performance tracking
+interface PostAnalytics {
+  postId: string;
+  type: string;
+  publishDate: Date;
+  metrics: {
+    views: number;
+    clicks: number;
+    ctaClicks: number;
+    shares: number;
+  };
+  engagement: {
+    rate: number; // clicks / views
+    benchmark: number;
+  };
+}
+```
+
+## Q&A Optimization
+
+### Proactive Q&A Strategy
+
+```
+GBP Q&A Best Practices:
+═══════════════════════════════════════════════════════════════════════════
+
+PRE-SEED YOUR Q&A:
+────────────────────────────────────────────────────────────────────────
+• Ask and answer your own common questions
+• Use a Google account (not the business owner account)
+• Covers FAQs before customers ask
+• Opportunity for keyword-rich content
+• Improves GBP completeness signals
+
+TOP Q&A CATEGORIES TO PRE-SEED:
+────────────────────────────────────────────────────────────────────────
+
+1. Services & Pricing
+   Q: "Do you offer [specific service]?"
+   Q: "What are your prices for [service]?"
+   Q: "Do you provide free estimates?"
+
+2. Service Area
+   Q: "Do you serve [neighborhood/city]?"
+   Q: "How far do you travel for service calls?"
+
+3. Scheduling & Availability
+   Q: "Do you offer same-day appointments?"
+   Q: "What are your hours?"
+   Q: "Do you offer emergency services?"
+
+4. Payment & Policies
+   Q: "What payment methods do you accept?"
+   Q: "Do you offer financing?"
+   Q: "What is your cancellation policy?"
+
+5. Credentials & Trust
+   Q: "Are you licensed and insured?"
+   Q: "How long have you been in business?"
+   Q: "Do you offer warranties?"
+
+
+ANSWER GUIDELINES:
+────────────────────────────────────────────────────────────────────────
+• Answer within 24 hours
+• Be helpful and complete
+• Include relevant keywords naturally
+• Avoid promotional language
+• Upvote good questions and answers
+• Monitor for inappropriate content
+```
+
+### Q&A Implementation
+
+```typescript
+// Q&A management strategy
+interface QAManagement {
+  preSeeded: QAPair[];
+  monitoring: {
+    checkFrequency: 'daily';
+    responseTime: '24 hours max';
+    alertOnNew: boolean;
+  };
+}
+
+interface QAPair {
+  question: string;
+  answer: string;
+  category: string;
+  keywords: string[];
+}
+
+// Example pre-seeded Q&A
+const preSeededQA: QAPair[] = [
+  {
+    question: 'Do you offer emergency plumbing services in Philadelphia?',
+    answer: `Yes! We provide 24/7 emergency plumbing services throughout
+Philadelphia and surrounding areas. Our emergency team typically arrives
+within 1 hour. Call our emergency line anytime for burst pipes, severe
+leaks, flooding, or other urgent plumbing issues.`,
+    category: 'Services',
+    keywords: ['emergency plumbing', 'Philadelphia', '24/7'],
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: `We serve the entire Philadelphia metro area including Center
+City, South Philadelphia, Fishtown, Northern Liberties, University City,
+and Manayunk. We also service Bucks, Montgomery, Delaware, and Chester
+counties. Call us to confirm service in your specific location.`,
+    category: 'Service Area',
+    keywords: ['Philadelphia', 'service area', 'metro area'],
+  },
+  {
+    question: 'Are your plumbers licensed and insured?',
+    answer: `Absolutely. All our plumbers are fully licensed, bonded, and
+insured in Pennsylvania. We carry comprehensive liability insurance and
+workers' compensation coverage. We're happy to provide proof of licensing
+and insurance upon request.`,
+    category: 'Credentials',
+    keywords: ['licensed', 'insured', 'Pennsylvania'],
+  },
+  {
+    question: 'Do you offer free estimates?',
+    answer: `Yes, we provide free estimates for most plumbing projects.
+For standard repairs, we can often provide an estimate over the phone.
+For larger projects like bathroom remodels or water heater installations,
+we'll schedule a free in-home consultation.`,
+    category: 'Pricing',
+    keywords: ['free estimate', 'consultation'],
+  },
+];
+
+// Q&A monitoring automation
+async function monitorQA(gbpId: string) {
+  const newQuestions = await fetchNewQuestions(gbpId);
+
+  for (const question of newQuestions) {
+    // Alert team
+    await sendNotification({
+      channel: 'slack',
+      message: `New GBP Q&A: "${question.text}"`,
+      priority: 'high',
+    });
+
+    // Log for response tracking
+    await logQuestion({
+      questionId: question.id,
+      text: question.text,
+      timestamp: new Date(),
+      status: 'pending_response',
+    });
+  }
+}
+```
+
+## Attributes Optimization
+
+### Available Attributes
+
+```
+GBP Attributes Guide:
+═══════════════════════════════════════════════════════════════════════════
+
+ATTRIBUTE CATEGORIES:
+────────────────────────────────────────────────────────────────────────
+
+Accessibility
+├── Wheelchair accessible entrance
+├── Wheelchair accessible parking
+├── Wheelchair accessible restroom
+├── Wheelchair accessible seating
+└── Assistive hearing loop
+
+Amenities
+├── Wi-Fi
+├── Restroom
+├── Gender-neutral restroom
+├── Good for kids
+├── Dogs allowed
+└── [Industry-specific amenities]
+
+Crowd
+├── LGBTQ+ friendly
+├── Transgender safe space
+└── [Demographic-specific]
+
+From the Business
+├── Identifies as [owned/operated by]
+│   ├── Black-owned
+│   ├── Latino-owned
+│   ├── Veteran-owned
+│   ├── Women-owned
+│   └── LGBTQ+ owned
+├── Founded year
+└── Business highlights
+
+Health & Safety
+├── Mask required
+├── Staff wear masks
+├── Temperature check required
+├── Appointment required
+└── [COVID-related attributes]
+
+Payments
+├── Credit cards accepted
+├── Debit cards accepted
+├── NFC mobile payments
+├── Checks accepted
+└── Cash only
+
+Service Options
+├── Online appointments
+├── Onsite services
+├── In-store pickup
+├── Curbside pickup
+├── Delivery
+├── Same-day delivery
+├── No-contact delivery
+├── Dine-in
+├── Takeout
+└── Drive-through
+
+
+ATTRIBUTE IMPACT:
+────────────────────────────────────────────────────────────────────────
+• Improves profile completeness score
+• Enables filtered search matching
+• Builds trust with specific audiences
+• Shows in prominent profile location
+• Can trigger featured snippets
+```
+
+### Attribute Strategy
+
+```typescript
+// Attribute optimization
+interface GBPAttributes {
+  factual: {
+    // Set these accurately - they're verifiable
+    accessibility: AccessibilityAttributes;
+    payments: PaymentAttributes;
+    serviceOptions: ServiceAttributes;
+  };
+
+  subjective: {
+    // These can be more flexible
+    crowd: CrowdAttributes;
+    fromBusiness: BusinessIdentityAttributes;
+  };
+
+  priority: [
+    'serviceOptions', // Directly affects search matching
+    'payments', // Practical customer info
+    'accessibility', // Legal/compliance, trust
+    'fromBusiness', // Differentiation
+    'crowd', // Specific audience targeting
+  ];
+}
+
+// Attribute audit
+function auditAttributes(currentAttributes: string[]): AttributeAudit {
+  const availableAttributes = getAvailableAttributes(businessCategory);
+  const missingAttributes = availableAttributes.filter(
+    attr => !currentAttributes.includes(attr)
+  );
+
+  return {
+    current: currentAttributes.length,
+    available: availableAttributes.length,
+    completeness: currentAttributes.length / availableAttributes.length,
+    missing: missingAttributes,
+    recommendations: missingAttributes.filter(attr =>
+      relevantToBusinesss(attr)
+    ),
+  };
+}
+```
+
+## GBP Insights & Analytics
+
+### Understanding GBP Insights
+
+```
+GBP Insights Dashboard:
+═══════════════════════════════════════════════════════════════════════════
+
+PERFORMANCE OVERVIEW:
+────────────────────────────────────────────────────────────────────────
+
+                    ┌─────────────────────────────────────┐
+                    │         VISIBILITY FUNNEL           │
+                    └─────────────────────────────────────┘
+
+                         Searches (Impressions)
+                                │
+                                ▼
+                    ┌─────────────────────────┐
+                    │       10,000            │ ← Times shown in results
+                    └─────────────────────────┘
+                                │
+                                ▼
+                    ┌─────────────────────────┐
+                    │        2,000            │ ← Profile views
+                    └─────────────────────────┘
+                                │
+                    ┌───────────┼───────────┐
+                    ▼           ▼           ▼
+               Calls        Website     Directions
+               (150)         (800)        (300)
+                    │           │           │
+                    └───────────┼───────────┘
+                                ▼
+                         Conversions
+                           (varies)
+
+
+KEY METRICS TO TRACK:
+────────────────────────────────────────────────────────────────────────
+
+Metric                  Good Benchmark      Action if Low
+────────────────────────────────────────────────────────────────────────
+Search Impressions      Growing MoM         Improve categories, posts
+Views (Maps)            40% of searches     Optimize for Maps searches
+Views (Search)          60% of searches     Normal distribution
+Website Clicks          10-15% of views     Improve CTA, description
+Phone Calls             5-10% of views      Check phone number visible
+Direction Requests      5-15% of views      Varies by business type
+────────────────────────────────────────────────────────────────────────
+
+
+SEARCH QUERY DATA:
+────────────────────────────────────────────────────────────────────────
+• Shows actual searches triggering your listing
+• Identifies keyword opportunities
+• Reveals customer intent
+• Groups: Direct (brand) vs Discovery (category)
+• Use for category and content optimization
+```
+
+### Tracking and Reporting
+
+```typescript
+// GBP Performance Tracking
+interface GBPInsightsData {
+  period: {
+    start: Date;
+    end: Date;
+    comparison: 'previousPeriod' | 'previousYear';
+  };
+
+  visibility: {
+    searches: {
+      total: number;
+      maps: number;
+      search: number;
+      change: number;
+    };
+    views: {
+      total: number;
+      maps: number;
+      search: number;
+      change: number;
+    };
+  };
+
+  actions: {
+    websiteClicks: { count: number; change: number };
+    phoneCalls: { count: number; change: number };
+    directionRequests: { count: number; change: number };
+    messages: { count: number; change: number };
+    bookings: { count: number; change: number };
+  };
+
+  content: {
+    photoViews: { count: number; vsCompetitors: number };
+    postViews: { count: number; engagement: number };
+  };
+
+  searchQueries: {
+    query: string;
+    impressions: number;
+    type: 'direct' | 'discovery';
+  }[];
+}
+
+// serpnap GBP integration
+import { serpnap } from '@/lib/analytics';
+
+// Configure GBP tracking
+await serpnap.gbp.configure({
+  profiles: [
+    {
+      id: 'gbp_001',
+      accountId: 'accounts/123/locations/456',
+      name: 'Main Location',
+    },
+  ],
+
+  tracking: {
+    insights: {
+      enabled: true,
+      frequency: 'daily',
+      metrics: [
+        'searches', 'views', 'actions',
+        'photos', 'posts', 'queries',
+      ],
+    },
+
+    competitors: {
+      enabled: true,
+      competitors: ['competitor_gbp_1', 'competitor_gbp_2'],
+      metrics: ['reviews', 'photos', 'posts'],
+    },
+  },
+
+  alerts: {
+    significantChange: { threshold: 0.2, direction: 'both' },
+    reviewAlert: { enabled: true, minStars: 3 },
+    queryOpportunity: { enabled: true, minImpressions: 50 },
+  },
+
+  reporting: {
+    frequency: 'weekly',
+    recipients: ['marketing@company.com'],
+    compareWith: 'previousPeriod',
+  },
+});
+
+// Generate GBP performance report
+const gbpReport = await serpnap.gbp.getReport({
+  period: 'last30days',
+  sections: [
+    'visibility_summary',
+    'action_breakdown',
+    'search_queries',
+    'photo_performance',
+    'post_analytics',
+    'competitor_comparison',
+    'recommendations',
+  ],
+});
+```
+
+## Advanced GBP Features
+
+### Messaging
+
+```
+GBP Messaging Setup:
+═══════════════════════════════════════════════════════════════════════════
+
+ENABLE MESSAGING:
+────────────────────────────────────────────────────────────────────────
+1. Go to GBP dashboard
+2. Select "Messages" from menu
+3. Turn on messaging
+4. Set up welcome message
+5. Download GBP app for notifications
+
+WELCOME MESSAGE:
+────────────────────────────────────────────────────────────────────────
+Character limit: 120
+Purpose: Auto-response when customer messages
+Include: Greeting + response time expectation
+
+Example:
+"Thanks for reaching out to Joe's Plumbing! We typically respond
+within 1 hour during business hours. For emergencies, call
+215-555-0100."
+
+RESPONSE BEST PRACTICES:
+────────────────────────────────────────────────────────────────────────
+• Respond within 24 hours (faster = better)
+• Response time affects messaging visibility
+• Professional, helpful tone
+• Move complex inquiries to phone/email
+• Don't share sensitive info via message
+```
+
+### Booking Integration
+
+```typescript
+// Booking button configuration
+interface GBPBooking {
+  providers: [
+    'Google Reserve', // Native integration
+    'Schedulicity',
+    'Acuity Scheduling',
+    'Calendly',
+    'Square Appointments',
+    'Reserve with Google partners',
+  ];
+
+  setup: {
+    requirements: [
+      'Compatible booking software',
+      'Verified GBP listing',
+      'Active booking calendar',
+    ];
+    process: [
+      'Connect booking provider to GBP',
+      'Configure available services',
+      'Set pricing and duration',
+      'Enable online booking',
+    ];
+  };
+
+  benefits: [
+    'Book button appears prominently',
+    'Reduces friction to conversion',
+    'Captures customer directly',
+    'Integrates with calendar',
+  ];
+}
+```
+
+### Multi-Location Management
+
+```
+Multi-Location GBP Management:
+═══════════════════════════════════════════════════════════════════════════
+
+ORGANIZATION STRUCTURE:
+────────────────────────────────────────────────────────────────────────
+
+                    Organization Account
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+     Location 1       Location 2       Location 3
+          │                │                │
+     ┌────┴────┐      ┌────┴────┐      ┌────┴────┐
+     Users     │      Users     │      Users     │
+     - Owner   │      - Owner   │      - Owner   │
+     - Manager │      - Manager │      - Manager │
+     - Comms   │      - Comms   │      - Comms   │
+
+
+ACCESS LEVELS:
+────────────────────────────────────────────────────────────────────────
+Owner: Full access, can transfer ownership
+Manager: Edit info, posts, photos, respond to reviews
+Communications Manager: Respond to reviews, messages only
+
+
+BULK MANAGEMENT FEATURES:
+────────────────────────────────────────────────────────────────────────
+• Bulk upload locations via spreadsheet
+• Bulk edit hours, descriptions
+• Bulk upload photos
+• Centralized review management
+• Cross-location analytics
+• API access for automation
+```
+
+## GBP Optimization Checklist
+
+```
+Complete GBP Optimization Checklist:
+═══════════════════════════════════════════════════════════════════════════
+
+PROFILE BASICS
+□ Business name (exact legal name)
+□ Address (verified, consistent)
+□ Phone number (local, consistent)
+□ Website URL (HTTPS, relevant page)
+□ Hours (regular + special)
+□ Business description (750 chars, optimized)
+
+CATEGORIES
+□ Primary category (most specific, relevant)
+□ Secondary categories (all applicable)
+□ Categories match competitor research
+
+SERVICES/PRODUCTS
+□ All services listed
+□ Service descriptions written
+□ Pricing added (if consistent)
+□ Products added (if retail)
+
+PHOTOS
+□ Logo uploaded
+□ Cover photo set
+□ 3+ exterior photos
+□ 5+ interior photos
+□ 3+ team photos
+□ 10+ work/product photos
+□ Photos geotagged
+
+POSTS
+□ Weekly posting schedule
+□ Mix of post types
+□ CTAs included
+□ High-quality images
+
+Q&A
+□ 5+ pre-seeded questions
+□ Monitoring active
+□ Quick response system
+
+ATTRIBUTES
+□ All relevant attributes set
+□ Service options accurate
+□ Accessibility accurate
+□ Payment methods listed
+
+ENGAGEMENT
+□ Messaging enabled
+□ Welcome message set
+□ Booking button (if applicable)
+□ Review response process
+
+TRACKING
+□ GBP Insights monitored
+□ Monthly reporting
+□ Competitor benchmarking
+```
+
+## Related Documentation
+
+- [Local SEO Complete Guide](/docs/local-seo/complete-guide) - Overall local SEO strategy
+- [Local Citations](/docs/local-seo/citations) - NAP consistency and directories
+- [Review Management](/docs/local-seo/reviews) - Review generation and response
+- [Local Content](/docs/local-seo/local-content) - Location page optimization
+- [Local Link Building](/docs/local-seo/local-link-building) - Local backlink strategies

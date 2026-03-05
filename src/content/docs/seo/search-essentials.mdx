@@ -1,0 +1,118 @@
+export const meta = {
+  "title": "Search Essentials",
+  "description": "Master the fundamental requirements for appearing in Google Search results.",
+  "lastUpdated": "2026-01-01",
+  "section": "seo",
+  "order": 2
+};
+
+## Technical Requirements
+
+To appear in Google Search results, your pages must meet these fundamental requirements:
+
+### Googlebot Access
+
+Ensure Google can access your content:
+
+```txt
+# robots.txt - Allow Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Sitemap location
+Sitemap: https://example.com/sitemap.xml
+```
+
+**Critical Checks:**
+- Pages return 200 OK status
+- No `noindex` meta tag (unless intended)
+- Not blocked in robots.txt
+- Canonical tag points to preferred URL
+- Content is in the HTML (not JavaScript-only)
+
+### HTTP Status Codes
+
+Use correct status codes to communicate with Google:
+
+| Code | Meaning | SEO Impact |
+|------|---------|------------|
+| 200 | OK | Page is indexable |
+| 301 | Permanent Redirect | Passes ~90-99% link equity |
+| 302 | Temporary Redirect | May not pass equity |
+| 404 | Not Found | Page removed from index |
+| 410 | Gone | Faster removal than 404 |
+| 503 | Service Unavailable | Temporary, will retry |
+
+## Spam Policies
+
+Google penalizes these practices—avoid them completely:
+
+### Content Spam
+- **Keyword Stuffing** — Unnatural keyword repetition
+- **Cloaking** — Showing different content to Google vs users
+- **Doorway Pages** — Low-quality pages targeting specific queries
+- **Scraped Content** — Copying content from other sites
+- **Auto-Generated Content** — Low-quality AI content without value
+
+### Link Spam
+- **Paid Links** — Buying links for PageRank
+- **Link Schemes** — Excessive link exchanges
+- **Hidden Links** — Links users can't see
+- **Widget Links** — Embedded links in widgets
+- **Forum/Comment Spam** — Links in low-quality comments
+
+> **Warning:** Violating spam policies can result in manual actions that remove your site from search results entirely.
+
+## Key Best Practices
+
+### Create Quality Content
+
+```markdown
+✓ Original research and insights
+✓ Comprehensive coverage of topic
+✓ Written by subject matter experts
+✓ Regularly updated for accuracy
+✓ Properly cited sources
+✓ Clear, scannable formatting
+```
+
+### Optimize Page Experience
+
+```typescript
+// Core Web Vitals targets
+const coreWebVitals = {
+  LCP: '< 2.5s',   // Largest Contentful Paint
+  INP: '< 200ms', // Interaction to Next Paint
+  CLS: '< 0.1',   // Cumulative Layout Shift
+};
+```
+
+### Mobile-First Indexing
+
+Google primarily uses your mobile site for indexing:
+
+- Responsive design is strongly recommended
+- Same content on mobile and desktop
+- Images and videos accessible on mobile
+- Fast loading on mobile networks
+
+## Crawl Budget Optimization
+
+For large sites, optimize how Google allocates crawling resources:
+
+1. **Reduce Low-Value Pages** — Noindex thin content
+2. **Fix Crawl Errors** — Eliminate 404s and redirect chains
+3. **Improve Server Response** — Keep TTFB under 200ms
+4. **Use Internal Linking** — Guide crawlers to important pages
+5. **Update Sitemap** — Include only indexable URLs
+
+## Common Mistakes to Avoid
+
+| Mistake | Impact | Solution |
+|---------|--------|----------|
+| Blocking CSS/JS | Poor rendering | Allow in robots.txt |
+| Duplicate content | Diluted rankings | Use canonical tags |
+| Slow page speed | Lower rankings | Optimize performance |
+| Missing meta tags | Poor CTR | Add title/description |
+| Broken internal links | Wasted crawl budget | Regular audits |
+| No HTTPS | Security warnings | Install SSL certificate |
