@@ -12,7 +12,9 @@ import {
   Bot,
   Type,
   FileCode,
+  ArrowRight,
 } from "lucide-react";
+import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 
 export const metadata: Metadata = {
   title: "Free SEO Tools",
@@ -29,7 +31,7 @@ const TOOLS = [
     description: "Comprehensive SEO audit with 50+ checks. Get your score and actionable recommendations.",
     href: "/tools/seo-checker",
     icon: Search,
-    badge: "Most Popular",
+    featured: true,
   },
   {
     name: "Technical Audit",
@@ -97,41 +99,48 @@ export default function ToolsPage() {
   return (
     <section className="hero-padding container-padding">
       <div className="container-wide mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-eyebrow text-muted-foreground mb-4">
-            Free SEO Tools
-          </p>
-          <h1 className="text-hero">All SEO Tools</h1>
-          <p className="text-subheadline text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Free, powerful tools to audit, analyze, and optimize your website for
-            search engines. No sign-up required.
-          </p>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground mb-4">
+              Free SEO Tools
+            </p>
+            <h1 className="text-hero">All Tools</h1>
+            <p className="text-subheadline mt-5 max-w-lg mx-auto">
+              Everything you need to optimize your website.
+              No signup required.
+            </p>
+          </div>
+        </RevealOnScroll>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {TOOLS.map((tool) => {
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {TOOLS.map((tool, i) => {
             const Icon = tool.icon;
             return (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group relative rounded-xl border border-border/60 p-6 transition-all hover:border-border hover:shadow-md hover:-translate-y-0.5"
-              >
-                {"badge" in tool && tool.badge && (
-                  <span className="absolute top-4 right-4 text-[10px] font-medium uppercase tracking-wider text-muted-foreground bg-accent px-2 py-0.5 rounded-full">
-                    {tool.badge}
-                  </span>
-                )}
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent mb-4">
-                  <Icon className="h-5 w-5 text-foreground" />
-                </div>
-                <h2 className="text-base font-semibold mb-2 group-hover:text-foreground">
-                  {tool.name}
-                </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {tool.description}
-                </p>
-              </Link>
+              <RevealOnScroll key={tool.href} delay={Math.min(i * 30, 200)}>
+                <Link
+                  href={tool.href}
+                  className="group relative flex flex-col rounded-2xl border border-border/40 p-6 transition-all duration-300 hover:border-border/80 hover:shadow-lg hover:-translate-y-0.5 bg-background"
+                >
+                  {"featured" in tool && tool.featured && (
+                    <span className="absolute top-4 right-4 text-[10px] font-medium tracking-wider text-foreground/50 bg-foreground/[0.04] px-2.5 py-1 rounded-full">
+                      POPULAR
+                    </span>
+                  )}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground/[0.04] mb-4 transition-colors group-hover:bg-foreground/[0.07]">
+                    <Icon className="h-[18px] w-[18px] text-foreground/70" />
+                  </div>
+                  <h2 className="text-[15px] font-semibold mb-1.5">
+                    {tool.name}
+                  </h2>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">
+                    {tool.description}
+                  </p>
+                  <div className="mt-4 flex items-center text-[12px] font-medium text-muted-foreground/60 group-hover:text-foreground/60 transition-colors">
+                    <span>Try it free</span>
+                    <ArrowRight className="h-3 w-3 ml-1 transition-transform group-hover:translate-x-0.5" />
+                  </div>
+                </Link>
+              </RevealOnScroll>
             );
           })}
         </div>

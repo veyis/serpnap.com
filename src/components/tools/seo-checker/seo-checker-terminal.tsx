@@ -233,8 +233,8 @@ export function SEOCheckerTerminal() {
               }}
             >
               <Image
-                src="/pxl_peak_gold.png"
-                alt="SEO Analysis Dashboard"
+                src="/pxlpeak-logo.png"
+                alt="PxlPeak Logo"
                 fill
                 className="object-contain"
                 sizes="(max-width: 640px) 96px, 112px"
