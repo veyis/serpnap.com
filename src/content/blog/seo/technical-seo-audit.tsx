@@ -49,7 +49,7 @@ export function Content({ className }: BlogContentProps) {
   return (
     <article className={className}>
       <P>Technical SEO is the foundation. If Google can't crawl and index your site properly, great content won't rank. I've seen it happen dozens of times: businesses spending thousands on content creation, only to realize their site has technical issues preventing Google from even seeing their pages.</P>
-      <P>Here's a truth that changed how I think about SEO: you can have the best content in the world, but if Google can't crawl it, index it, or understand it, you'll never rank. Technical SEO isn't glamorous, but it's the difference between content that ranks and content that sits in obscurity.</P>
+      <P>Here's a truth that changed how I think about SEO: you can have the best content in the world, but if Google can't crawl it, index it, or understand it, you'll never rank. Technical SEO isn't glamorous, but it's the difference between content that ranks and content that sits in obscurity. Start with our <Link href="/tools/technical-audit">{"free Technical Audit"}</Link> to identify your most critical issues.</P>
       <H2 id="why-technical-seo-matters-the-foundation-that-everything-else-builds-on">Why Technical SEO Matters: The Foundation That Everything Else Builds On</H2>
       <P>I used to think technical SEO was boring. Then I saw the impact it has on rankings, and I realized it's the most important part of SEO. Here's why:</P>
       <UL>
@@ -124,6 +124,7 @@ export function Content({ className }: BlogContentProps) {
         <LI>[ ] Breadcrumbs implemented</LI>
       </UL>
       <H3 id="performance-core-web-vitals">Performance (Core Web Vitals)</H3>
+      <P>Quick check: run your site through our <Link href="/tools/page-speed-estimator">{"free Page Speed Estimator"}</Link> to see where you stand on each metric below.</P>
       <P><Strong>Largest Contentful Paint (LCP)</Strong></P>
       <UL>
         <LI>[ ] Under 2.5 seconds</LI>
@@ -218,6 +219,9 @@ export function Content({ className }: BlogContentProps) {
           { href: "/blog/seo/technical-seo-checklist-2026-complete-guide", label: "Complete Technical SEO Checklist for 2026" },
           { href: "/blog/seo/structured-data-implementation-guide", label: "Structured Data Implementation Guide" },
           { href: "/tools/seo-checker", label: "Free SEO Checker Tool" },
+          { href: "/tools/technical-audit", label: "Technical Audit Report Generator" },
+          { href: "/tools/page-speed-estimator", label: "Page Speed Estimator" },
+          { href: "/tools/sitemap-validator", label: "Sitemap Validator" },
           { href: "/tools/redirect-checker", label: "Redirect Checker Tool" },
           { href: "/tools/robots-txt-generator", label: "Robots.txt Generator Tool" },
         ]}

@@ -58,7 +58,7 @@ export function Content({ className }: BlogContentProps) {
         After managing SEO for over 150 clients across 8 years, I've learned that SEO success comes from ruthless prioritization. Some items on typical checklists can double your organic traffic. Others are nice-to-haves that won't move the needle at all.
       </P>
       <P>
-        This checklist is different. I've organized everything by actual impact—what I prioritize when I audit a new client's site. I've also explained why each item matters, because understanding the "why" helps you make better decisions when situations are ambiguous.
+        This checklist is different. I've organized everything by actual impact—what I prioritize when I <Link href="/blog/seo/how-to-do-seo-audit">{"audit a new client's site"}</Link>. I've also explained why each item matters, because understanding the "why" helps you make better decisions when situations are ambiguous.
       </P>
       <P>
         Let's get into it.
@@ -136,7 +136,7 @@ export function Content({ className }: BlogContentProps) {
         <LI><Strong>CLS (Cumulative Layout Shift)</Strong>: Under 0.1. Elements shouldn't jump around as the page loads.</LI>
       </UL>
       <P>
-        Failing Core Web Vitals is a confirmed ranking factor. I've seen sites gain 15-25% traffic just from fixing these.
+        Failing Core Web Vitals is a confirmed ranking factor. I've seen sites gain 15-25% traffic just from fixing these. Use our <Link href="/tools/page-speed-estimator">{"free Page Speed Estimator"}</Link> to quickly benchmark your site's performance.
       </P>
       <P>
         <Strong>8. No intrusive interstitials</Strong>
@@ -184,7 +184,7 @@ export function Content({ className }: BlogContentProps) {
         <Strong>13. Title tags are unique and optimized</Strong>
       </P>
       <P>
-        Each page needs a unique title. Include primary keyword near the front. Keep under 60 characters (or it gets cut off in search results). Make it compelling—titles affect click-through rate.
+        Each page needs a unique title. Include primary keyword near the front. Keep under 60 characters (or it gets cut off in search results). Make it compelling—titles affect click-through rate. For a detailed walkthrough, see our <Link href="/blog/seo/how-to-write-meta-tags">{"guide to writing perfect meta tags"}</Link>.
       </P>
       <P>
         <Strong>14. Meta descriptions are compelling</Strong>

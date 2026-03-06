@@ -91,7 +91,7 @@ export function Content({ className }: BlogContentProps) {
       <P>Google and Microsoft have confirmed they use Schema for their generative features. You must implement high-density JSON-LD, specifically <Strong>Organization</Strong>, <Strong>FAQPage</Strong>, and <Strong>HowTo</Strong>.</P>
       
       <CalloutBox variant="info" title="Implementation Note">
-        <P>Use our <Link href="/tools/schema-generator">{"Free Schema Generator"}</Link> to create valid JSON-LD for your Local Business and FAQ sections in seconds.</P>
+        <P>Use our <Link href="/tools/schema-generator">{"Free Schema Generator"}</Link> to create valid JSON-LD for your Local Business and FAQ sections in seconds. Then run a <Link href="/tools/neural-audit">{"Neural Audit"}</Link> to verify your AI search visibility.</P>
       </CalloutBox>
 
       <H2 id="authority-building">Part 4: Building Authority and Trust</H2>

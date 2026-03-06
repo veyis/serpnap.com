@@ -7,6 +7,7 @@ import {
   getFAQPageSchema,
 } from "@/lib/utils/seo";
 import { config } from "@/lib/config";
+import { ToolsNav } from "@/components/tools/tools-nav";
 
 export const metadata: Metadata = {
   title: "Free Headline Analyzer Tool | Score Your Headlines",
@@ -105,6 +106,58 @@ function getFAQSchema() {
   ]);
 }
 
+const FAQ_ITEMS = [
+  {
+    question: "What does the Headline Analyzer measure?",
+    answer:
+      "Our analyzer scores 5 key factors: Length (optimal 6-12 words), Power Words (emotional triggers that increase clicks), Emotional Appeal (questions, numbers, urgency), Clarity (removing weak filler words), and Uniqueness (standing out from common formats). Each factor is weighted to give you an overall score out of 100.",
+  },
+  {
+    question: "What are power words in headlines?",
+    answer:
+      "Power words are emotionally-charged words that trigger a psychological response and increase click-through rates. Examples include: 'Ultimate', 'Proven', 'Exclusive', 'Secret', 'Guaranteed', 'Essential', 'Instant', and 'Free'. Headlines with 1-3 power words typically see 20-30% higher engagement.",
+  },
+  {
+    question: "How long should my headline be?",
+    answer:
+      "The ideal headline length is 6-12 words or 50-70 characters. This length is optimal for Google search results (which truncate at ~60 characters), social media sharing, and email subject lines.",
+  },
+  {
+    question: "Can I use this for blog titles and email subjects?",
+    answer:
+      "Absolutely! Our analyzer works for any type of headline: blog post titles, email subject lines, ad copy, social media posts, YouTube video titles, podcast episode names, and landing page headlines.",
+  },
+  {
+    question: "Is this headline analyzer free?",
+    answer:
+      "Yes, completely free with no signup required. Get full detailed analysis, suggestions, and AI-generated improved versions instantly. Analyze unlimited headlines without creating an account.",
+  },
+];
+
+function FAQSection() {
+  return (
+    <section className="section-padding container-padding">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-[22px] font-semibold tracking-tight mb-8 text-center">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-6">
+          {FAQ_ITEMS.map((item) => (
+            <div key={item.question}>
+              <h3 className="text-[15px] font-semibold tracking-tight mb-2">
+                {item.question}
+              </h3>
+              <p className="text-[14px] text-muted-foreground leading-relaxed">
+                {item.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HeadlineAnalyzerPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
@@ -118,6 +171,8 @@ export default function HeadlineAnalyzerPage() {
         schemas={[breadcrumbSchema, getHeadlineAnalyzerSchema(), getFAQSchema()]}
       />
       <HeadlineAnalyzer />
+      <FAQSection />
+      <ToolsNav />
     </>
   );
 }

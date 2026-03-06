@@ -87,9 +87,9 @@ export const config = {
       phone: "",
     },
     social: {
-      twitter: "",
-      linkedin: "",
-      github: "",
+      twitter: "https://x.com/serpnap",
+      linkedin: "https://www.linkedin.com/company/serpnap",
+      github: "https://github.com/serpnap",
     },
   },
 } as const;

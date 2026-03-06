@@ -15,13 +15,32 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
+import { config } from "@/lib/config";
+import { MultipleStructuredData } from "@/components/seo/structured-data";
+import { getBreadcrumbSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
-  title: "Free SEO Tools",
+  title: "11 Free SEO Tools — Audit, Analyze & Optimize Your Website",
   description:
-    "Free, powerful SEO tools to audit, analyze, and optimize your website. SEO checker, meta tag generator, schema generator, sitemap validator, and more.",
+    "Free SEO tools: SEO checker, meta tag generator, schema generator, sitemap validator, keyword density checker, page speed estimator, redirect checker, and more. No signup required.",
+  keywords: [
+    "free seo tools",
+    "seo tools online free",
+    "free seo audit tools",
+    "website seo tools",
+    "seo checker free",
+    "free meta tag generator",
+    "free schema generator",
+    "free sitemap validator",
+  ],
   alternates: {
     canonical: "/tools",
+  },
+  openGraph: {
+    title: "11 Free SEO Tools — Audit, Analyze & Optimize",
+    description:
+      "Professional-grade SEO tools — all free, no signup. SEO checker, meta tag generator, schema generator, and 8 more tools.",
+    type: "website",
   },
 };
 
@@ -96,7 +115,14 @@ const TOOLS = [
 ] as const;
 
 export default function ToolsPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: config.appUrl },
+    { name: "Free SEO Tools", url: `${config.appUrl}/tools` },
+  ]);
+
   return (
+    <>
+    <MultipleStructuredData schemas={[breadcrumbSchema]} />
     <section className="hero-padding container-padding">
       <div className="container-wide mx-auto">
         <RevealOnScroll>
@@ -104,10 +130,11 @@ export default function ToolsPage() {
             <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground mb-4">
               Free SEO Tools
             </p>
-            <h1 className="text-hero">All Tools</h1>
+            <h1 className="text-hero">
+              Free SEO Tools
+            </h1>
             <p className="text-subheadline mt-5 max-w-lg mx-auto">
-              Everything you need to optimize your website.
-              No signup required.
+              11 professional-grade tools to audit, analyze, and optimize your website. No signup required.
             </p>
           </div>
         </RevealOnScroll>
@@ -146,5 +173,6 @@ export default function ToolsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

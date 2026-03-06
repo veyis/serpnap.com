@@ -10,6 +10,7 @@ import { Code2, Copy, Check, Info, FileJson } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
+import { ToolsNav } from "@/components/tools/tools-nav";
 import { cn } from "@/lib/utils";
 
 type SchemaType = "LocalBusiness" | "FAQPage" | "Service" | "Review";
@@ -226,6 +227,49 @@ export default function SchemaGeneratorPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="pb-20 container-padding">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold tracking-tight mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "What is schema markup?",
+                a: "Schema markup is structured data you add to your HTML that helps search engines understand your content. It uses the Schema.org vocabulary in JSON-LD format. When Google understands your content better, it can display rich snippets — star ratings, FAQs, business hours, and more — directly in search results.",
+              },
+              {
+                q: "Does schema markup improve SEO?",
+                a: "Schema markup doesn't directly boost rankings, but it can significantly increase click-through rates by enabling rich snippets. Pages with rich results can see 20-30% higher CTR. It also helps search engines understand your content's context, which can improve relevance for specific queries.",
+              },
+              {
+                q: "What is JSON-LD and where do I add it?",
+                a: "JSON-LD (JavaScript Object Notation for Linked Data) is Google's recommended format for structured data. Add the generated script tag to your page's <head> section, or use Google Tag Manager to inject it. Unlike microdata, JSON-LD doesn't require modifying your HTML content.",
+              },
+              {
+                q: "Which schema types should I use?",
+                a: "Start with the schema types most relevant to your business: LocalBusiness for local companies, FAQPage for FAQ sections, Product for e-commerce, Article for blog posts, and Service for service pages. Use Google's Rich Results Test to verify your markup.",
+              },
+              {
+                q: "Is this schema generator free?",
+                a: "Yes, completely free with no signup. Select your schema type, fill in the fields, and copy the valid JSON-LD code. Works for LocalBusiness, FAQPage, and more.",
+              },
+            ].map((item) => (
+              <div key={item.q}>
+                <h3 className="text-[15px] font-semibold tracking-tight mb-2">
+                  {item.q}
+                </h3>
+                <p className="text-[14px] text-muted-foreground leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ToolsNav />
       <CTASection />
     </main>
   );

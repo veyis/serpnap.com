@@ -10,6 +10,7 @@ import { Copy, Check, Info, Search, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
+import { ToolsNav } from "@/components/tools/tools-nav";
 import { cn } from "@/lib/utils";
 
 export default function MetaTagGeneratorPage() {
@@ -152,6 +153,49 @@ export default function MetaTagGeneratorPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="pb-20 container-padding">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold tracking-tight mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "What are meta tags and why do they matter for SEO?",
+                a: "Meta tags are HTML elements that provide search engines with information about your page. The title tag and meta description are the most important — they directly control how your page appears in Google search results and influence click-through rates.",
+              },
+              {
+                q: "What is the ideal title tag length?",
+                a: "Keep title tags between 30-60 characters. Google truncates titles longer than ~60 characters in search results. Include your primary keyword near the beginning and your brand name at the end, separated by a pipe (|) or dash (—).",
+              },
+              {
+                q: "What is the ideal meta description length?",
+                a: "Meta descriptions should be 120-160 characters. Google may truncate descriptions longer than ~160 characters. Include your target keyword naturally, add a clear value proposition, and end with a call-to-action when appropriate.",
+              },
+              {
+                q: "Do meta descriptions affect rankings?",
+                a: "Meta descriptions don't directly affect rankings, but they significantly impact click-through rates (CTR). A compelling description can increase your CTR by 20-30%, which indirectly improves rankings since Google considers user engagement signals.",
+              },
+              {
+                q: "Is this meta tag generator free?",
+                a: "Yes, completely free with no signup. Enter your title and description, preview how they'll appear in Google search results on desktop and mobile, and copy the HTML code instantly.",
+              },
+            ].map((item) => (
+              <div key={item.q}>
+                <h3 className="text-[15px] font-semibold tracking-tight mb-2">
+                  {item.q}
+                </h3>
+                <p className="text-[14px] text-muted-foreground leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ToolsNav />
       <CTASection />
     </main>
   );

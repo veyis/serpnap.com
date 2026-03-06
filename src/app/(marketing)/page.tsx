@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Search,
   FileText,
@@ -16,6 +17,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
+import { BeforeAfterSeo } from "@/components/marketing/before-after-seo";
+import { RoiCalculator } from "@/components/marketing/roi-calculator";
+import { Pricing } from "@/components/marketing/pricing";
+import { FAQ } from "@/components/blog/faq-section";
 
 const TOOLS = [
   {
@@ -112,7 +117,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="hero-padding container-padding relative overflow-hidden">
         {/* Subtle gradient orb */}
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] opacity-[0.03] dark:opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--color-foreground)_0%,_transparent_70%)]" />
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] opacity-[0.03] dark:opacity-[0.04] bg-[radial-gradient(ellipse_at_center,var(--color-foreground)_0%,transparent_70%)]" />
 
         <div className="container-wide mx-auto text-center relative">
           <RevealOnScroll>
@@ -126,9 +131,9 @@ export default function HomePage() {
 
           <RevealOnScroll delay={50}>
             <h1 className="text-hero max-w-4xl mx-auto">
-              Snap Your SEO
+              Free SEO Tools
               <br />
-              <span className="text-muted-foreground">Into Shape.</span>
+              <span className="text-muted-foreground">That Actually Work.</span>
             </h1>
           </RevealOnScroll>
 
@@ -202,11 +207,11 @@ export default function HomePage() {
                     className="group relative flex flex-col rounded-2xl border border-border/40 p-6 transition-all duration-300 hover:border-border/80 hover:shadow-lg hover:-translate-y-0.5 bg-background"
                   >
                     {"featured" in tool && tool.featured && (
-                      <span className="absolute top-4 right-4 text-[10px] font-medium tracking-wider text-foreground/50 bg-foreground/[0.04] px-2.5 py-1 rounded-full">
-                        POPULAR
-                      </span>
-                    )}
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground/[0.04] mb-4 transition-colors group-hover:bg-foreground/[0.07]">
+                        <span className="absolute top-4 right-4 text-[10px] font-medium tracking-wider text-foreground/50 bg-foreground/4 px-2.5 py-1 rounded-full">
+                          POPULAR
+                        </span>
+                      )}
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground/4 mb-4 transition-colors group-hover:bg-foreground/[0.07]">
                       <Icon className="h-[18px] w-[18px] text-foreground/70" />
                     </div>
                     <h3 className="text-[15px] font-semibold mb-1.5">
@@ -273,13 +278,134 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Story / Vision Section with Images */}
+      <section className="section-padding container-padding bg-muted/30">
+        <div className="container-wide mx-auto">
+          <RevealOnScroll>
+            <div className="text-center mb-16">
+              <h2 className="text-section">Built for Shopify owners who value time.</h2>
+              <p className="text-subheadline mt-4 max-w-lg mx-auto">
+                Stop guessing what&apos;s wrong with your SEO. SerpNap handles the hard work so you can focus on running your business.
+              </p>
+            </div>
+          </RevealOnScroll>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <RevealOnScroll delay={100}>
+              <div className="rounded-2xl overflow-hidden border border-border/40 bg-background/50 group h-full flex flex-col">
+                <div className="relative overflow-hidden h-[300px]">
+                  <Image 
+                    src="/images/business_woman_macbook_1772745760011.png" 
+                    alt="E-commerce store owner working" 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-[15px] font-semibold mb-2">Complete Store Audits</h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">Automatically scan your entire product catalog for missing tags, thin content, and broken images in minutes.</p>
+                </div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={200}>
+              <div className="rounded-2xl overflow-hidden border border-border/40 bg-background/50 group h-full flex flex-col">
+                <div className="relative overflow-hidden h-[300px]">
+                  <Image 
+                    src="/images/entrepreneur_ipad_analytics_1772745781022.png" 
+                    alt="Checking SEO analytics on iPad" 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-[15px] font-semibold mb-2">One-Click AI Fixes</h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">Generate revenue-driving meta descriptions and title tags optimized simply by tapping a button.</p>
+                </div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={300}>
+              <div className="rounded-2xl overflow-hidden border border-border/40 bg-background/50 group h-full flex flex-col">
+                <div className="relative overflow-hidden h-[300px]">
+                  <Image 
+                    src="/images/creative_ecommerce_owner_1772745803754.png" 
+                    alt="Creative e-commerce owner" 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-[15px] font-semibold mb-2">Set It & Forget It</h3>
+                  <p className="text-[13px] text-muted-foreground leading-relaxed flex-1">Weekly automated re-scans detect new issues immediately, ensuring your SEO is always sharp while you sleep.</p>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Before & After SEO ── */}
+      <BeforeAfterSeo />
+        
+      {/* ── ROI Calculator ── */}
+      <RoiCalculator />
+
+      {/* ── Pricing ── */}
+      <Pricing />
+
+      {/* ── FAQ ── */}
+      <section className="section-padding container-padding">
+        <div className="container-narrow mx-auto">
+          <RevealOnScroll>
+            <div className="text-center mb-12">
+              <h2 className="text-section text-[32px] sm:text-[40px] tracking-tight mb-4">
+                Frequently asked questions
+              </h2>
+              <p className="text-[15px] text-muted-foreground">
+                Everything you need to know about the product and billing.
+              </p>
+            </div>
+          </RevealOnScroll>
+          
+          <RevealOnScroll delay={100}>
+            <FAQ
+              includeSchema
+              items={[
+                {
+                  question: "How does SerpNap differ from other SEO apps?",
+                  answer: "Unlike other SEO apps that just give you complex dashboards or scores, SerpNap uses context-aware AI to write the actual fixes for your products. You don't have to be an expert to use it—you just click 'Apply Fix' and SerpNap instantly pushes the optimized code to your store."
+                },
+                {
+                  question: "Will this slow down my Shopify theme?",
+                  answer: "Not at all. SerpNap interacts directly with Shopify's Admin API to update your metadata and alt text natively. We don't inject unoptimized JavaScript into your theme code, so you keep your blazing-fast loading speeds."
+                },
+                {
+                  question: "I have 5,000+ products. Will it work for me?",
+                  answer: "Yes. Our bulk-update engine is specifically engineered for high-volume catalogs. With our Growth or Pro plans, you can instantly select an entire collection of thousands of products and have authentic, relevant meta tags generated and applied to all of them automatically."
+                },
+                {
+                  question: "Do I need any SEO experience to see results?",
+                  answer: "None. We built SerpNap for store owners to use. The platform identifies critical issues (like empty meta descriptions or poor title tags), explains why it hurts your sales in plain English, and provides the best-practice fix right below it."
+                },
+                {
+                  question: "What happens when my 7-day free trial ends?",
+                  answer: "You can try full access completely free for 7 days. If you don't cancel before the trial is over, your chosen billing plan will start seamlessly. If you decide the tool isn't for you, you can cancel instantly with two clicks directly from your Shopify admin dashboard."
+                }
+              ]}
+            />
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding container-padding">
         <div className="container-narrow mx-auto">
           <RevealOnScroll variant="scale">
             <div className="relative rounded-3xl bg-foreground px-8 py-16 sm:px-16 sm:py-20 text-center overflow-hidden">
               {/* Subtle glow */}
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.05)_0%,_transparent_60%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.05)_0%,transparent_60%)]" />
 
               <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-background/40 mb-6 relative">
                 Need expert help?

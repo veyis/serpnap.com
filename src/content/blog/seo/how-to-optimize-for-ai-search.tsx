@@ -72,7 +72,7 @@ export function Content({ className }: BlogContentProps) {
       <H2 id="step-2-high-density-schema">Step 2: High-Density Schema Markup</H2>
       <P>This is the single most important technical step. While AI can read text, it <Strong>loves</Strong> structured data because it reduces the model's computational uncertainty.</P>
       <CalloutBox variant="info" title="Expert Tip">
-        <P>Don't just use basic 'Article' schema. Use nested 'About' and 'Mentions' properties to tell the AI exactly which experts and data points you are citing. This increases your 'Trust Score' within the model's retrieval window.</P>
+        <P>Don't just use basic 'Article' schema. Use nested 'About' and 'Mentions' properties to tell the AI exactly which experts and data points you are citing. This increases your 'Trust Score' within the model's retrieval window. Run our <Link href="/tools/neural-audit">{"free Neural Audit"}</Link> to measure your current AI visibility score.</P>
       </CalloutBox>
 
       <H2 id="step-3-the-answer-engine-format">Step 3: The 'Answer Engine' Format</H2>

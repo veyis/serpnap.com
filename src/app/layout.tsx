@@ -123,6 +123,11 @@ export default function RootLayout({
                     contactType: "customer service",
                     email: config.business.contact.email,
                   },
+                  sameAs: [
+                    config.business.social.twitter,
+                    config.business.social.linkedin,
+                    config.business.social.github,
+                  ].filter(Boolean),
                 },
                 {
                   "@type": "WebSite",

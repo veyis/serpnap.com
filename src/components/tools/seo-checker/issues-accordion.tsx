@@ -8,9 +8,11 @@ import {
   ChevronDown,
   ChevronUp,
   Copy,
+  Lock,
   XCircle,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { SEOCheckResult, SEOIssue } from "@/schemas/seo-checker";
 import { CATEGORY_LABEL_TO_KEY } from "@/lib/data/seo-references";
@@ -175,16 +177,23 @@ function IssueSection({
                     </p>
 
                     {issue.fix && (
-                      <div className="mt-3 p-3 rounded-lg bg-warning/5 border border-warning/10">
-                        <div className="flex items-center gap-2 mb-1.5">
+                      <div className="relative mt-3 p-3 rounded-lg bg-warning/5 border border-warning/10 overflow-hidden group/fix">
+                        <div className="flex items-center gap-2 mb-1.5 opacity-50">
                           <Zap className="w-3.5 h-3.5 text-warning" />
                           <span className="text-[11px] font-semibold text-warning uppercase tracking-wider">
-                            Fix
+                            AI Recommended Fix
                           </span>
                         </div>
-                        <p className="text-[12px] text-[var(--seo-text-secondary)] leading-relaxed">
+                        <p className="text-[12px] text-[var(--seo-text-secondary)] leading-relaxed blur-[5px] select-none opacity-60">
                           {issue.fix}
                         </p>
+                        
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/20 backdrop-blur-[1.5px] opacity-0 group-hover/fix:opacity-100 transition-opacity duration-300">
+                          <Link href="/#pricing" className="px-4 py-1.5 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-colors text-[11px] font-bold shadow-md flex items-center gap-1.5">
+                            <Lock className="w-3 h-3" />
+                            Unlock all fixes
+                          </Link>
+                        </div>
                       </div>
                     )}
                   </div>

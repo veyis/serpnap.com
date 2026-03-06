@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { config } from "@/lib/config";
 import { getAllPosts } from "@/lib/blog";
 import { getAllDocPaths } from "@/lib/docs/loader";
+import { getAllGlossarySlugs } from "@/lib/glossary";
 
 const TOOLS = [
   "seo-checker",
@@ -46,6 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: "2026-03-05",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/docs`,
       lastModified: "2026-03-05",
       changeFrequency: "weekly",
@@ -83,5 +90,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Docs may not be available during build
   }
 
-  return [...staticPages, ...toolPages, ...blogPages, ...docPages];
+  // Glossary pages
+  const glossarySlugs = getAllGlossarySlugs();
+  const glossaryIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/glossary`,
+      lastModified: "2026-03-05",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+  const glossaryPages: MetadataRoute.Sitemap = glossarySlugs.map((slug) => ({
+    url: `${baseUrl}/glossary/${slug}`,
+    lastModified: "2026-03-05",
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...toolPages, ...blogPages, ...docPages, ...glossaryIndex, ...glossaryPages];
 }

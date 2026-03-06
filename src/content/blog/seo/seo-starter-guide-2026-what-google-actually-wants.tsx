@@ -92,6 +92,7 @@ export function Content({ className }: BlogContentProps) {
         <LI>Update it when you add new content</LI>
         <LI>Don't include pages you don't want indexed</LI>
         <LI>Focus on promotion first, sitemap second</LI>
+        <LI>Validate your sitemap before submitting — use our <Link href="/tools/sitemap-validator">{"free Sitemap Validator"}</Link></LI>
       </UL>
       <H3 id="verification-is-google-seeing-your-site">Verification: Is Google Seeing Your Site?</H3>
       <P>Before optimizing anything, check if Google has already found your content:</P>
@@ -417,7 +418,7 @@ export function Content({ className }: BlogContentProps) {
         <LI>Ensure CSS and JavaScript are accessible to Googlebot</LI>
         <LI>Use robots.txt appropriately (don't block important resources)</LI>
         <LI>Implement structured data where relevant</LI>
-        <LI>Optimize page speed (target: under 2.5 seconds LCP)</LI>
+        <LI>Optimize page speed (target: under 2.5 seconds LCP) — check yours with our <Link href="/tools/page-speed-estimator">{"Page Speed Estimator"}</Link></LI>
         <LI>Ensure mobile responsiveness</LI>
         <LI>Set up Google Search Console</LI>
         <LI>Submit sitemap (helpful but not required)</LI>
@@ -496,7 +497,7 @@ export function Content({ className }: BlogContentProps) {
       <UL>
         <LI>[ ] Set up Google Search Console</LI>
         <LI>[ ] Verify your site is indexed (site:yourdomain.com)</LI>
-        <LI>[ ] Audit your current content quality</LI>
+        <LI>[ ] Audit your current content quality — follow our <Link href="/blog/seo/how-to-do-seo-audit">{"step-by-step SEO audit guide"}</Link></LI>
         <LI>[ ] Check technical SEO basics (speed, mobile, accessibility)</LI>
       </UL>
       <H3 id="week-2-4-content-optimization">Week 2-4: Content Optimization</H3>

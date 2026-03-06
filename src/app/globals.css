@@ -55,9 +55,9 @@
   --text-h2: 1.875rem;
   --text-h2-tablet: 2.5rem;
   --text-h2-desktop: 3rem;
-  --text-h1: 2.5rem;
-  --text-h1-tablet: 3.5rem;
-  --text-h1-desktop: 4rem;
+  --text-h1: 2.75rem;
+  --text-h1-tablet: 3.75rem;
+  --text-h1-desktop: 4.5rem;
 
   /* Layout */
   --hero-max-w: 48rem;

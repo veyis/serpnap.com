@@ -32,16 +32,18 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 z-50 w-full transition-all duration-300",
+          "fixed top-0 z-50 w-full transition-all duration-500",
           scrolled
-            ? "glass border-b border-border/50 shadow-xs"
+            ? "glass border-b border-border/40 shadow-xs"
             : "bg-transparent"
         )}
       >
@@ -49,20 +51,20 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 font-semibold text-[15px] tracking-tight transition-opacity hover:opacity-70"
+            className="flex items-center gap-2.5 font-semibold text-[15px] tracking-tight transition-opacity duration-300 hover:opacity-70"
           >
             <Image
               src="/pxlpeak-logo.png"
               alt="PxlPeak Logo"
-              width={28}
-              height={28}
+              width={26}
+              height={26}
               className="rounded-lg"
             />
-            <span>SerpNap</span>
+            <span className="tracking-[-0.02em]">SerpNap</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden sm:flex items-center gap-1">
+          <nav className="hidden sm:flex items-center gap-0.5">
             {NAV_ITEMS.map((item) => {
               const isActive = pathname.startsWith(item.href);
               return (
@@ -70,10 +72,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "relative px-3.5 py-1.5 text-[13px] font-medium rounded-full transition-colors",
+                    "relative px-4 py-1.5 text-[13px] font-medium rounded-full transition-all duration-300",
                     isActive
-                      ? "text-foreground bg-foreground/[0.05]"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-foreground bg-foreground/[0.06]"
+                      : "text-muted-foreground hover:text-foreground hover:bg-foreground/[0.03]"
                   )}
                 >
                   {item.label}
@@ -83,15 +85,19 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="inline-flex sm:hidden h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground hover:bg-accent/50"
+              className="inline-flex sm:hidden h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors duration-200 hover:text-foreground hover:bg-accent/50"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              {mobileOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
             </button>
           </div>
         </div>
@@ -101,10 +107,10 @@ export function Header() {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 sm:hidden">
           <div
-            className="absolute inset-0 bg-background/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-background/60 backdrop-blur-md"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="absolute top-14 left-0 right-0 glass border-b border-border/50 p-4">
+          <div className="absolute top-14 left-0 right-0 glass border-b border-border/40 p-5">
             <nav className="flex flex-col gap-1">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname.startsWith(item.href);
@@ -113,7 +119,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "px-4 py-2.5 text-[15px] font-medium rounded-xl transition-colors",
+                      "px-4 py-3 text-[15px] font-medium rounded-xl transition-colors duration-200",
                       isActive
                         ? "text-foreground bg-foreground/[0.05]"
                         : "text-muted-foreground hover:text-foreground hover:bg-accent/30"

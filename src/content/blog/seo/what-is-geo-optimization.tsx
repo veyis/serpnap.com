@@ -95,7 +95,7 @@ export function Content({ className }: BlogContentProps) {
         While AI models are getting better at reading messy human text, they are <Strong>addicted</Strong> to structured data. High-density JSON-LD schema markup acts as a cheat sheet for AI crawlers.
       </P>
       <P>
-        By providing explicit relationships in your code (e.g., this Person works at this Organization which provides this Service to this Industry), you eliminate the 'hallucination' risk for the AI, making it more likely to trust and cite your information.
+        By providing explicit relationships in your code (e.g., this Person works at this Organization which provides this Service to this Industry), you eliminate the 'hallucination' risk for the AI, making it more likely to trust and cite your information. Use our <Link href="/tools/neural-audit">{"Neural Audit"}</Link> to check how well AI models currently understand your brand.
       </P>
 
       <H3 id="authority-injection">3. Authority Injection</H3>

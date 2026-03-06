@@ -3,8 +3,9 @@ import { Suspense } from 'react';
 import { TechnicalAuditReport } from '@/components/tools/technical-audit-report';
 import { CTASection } from '@/components/agency';
 import { MultipleStructuredData } from '@/components/seo/structured-data';
-import { getBreadcrumbSchema, getSoftwareApplicationSchema } from '@/lib/utils/seo';
+import { getBreadcrumbSchema, getSoftwareApplicationSchema, getFAQPageSchema, getHowToSchema } from '@/lib/utils/seo';
 import { config } from '@/lib/config';
+import { ToolsNav } from '@/components/tools/tools-nav';
 
 export const metadata: Metadata = {
   title: 'Technical Audit Report Generator | Client Diagnostic Tool',
@@ -180,15 +181,45 @@ export default function TechnicalAuditPage() {
     applicationCategory: 'BusinessApplication',
     featureList: ['Performance analysis', 'Lead response audit', 'Competitive positioning', 'PDF export'],
   });
+  const faqSchema = getFAQPageSchema([
+    {
+      question: 'What is a technical SEO audit?',
+      answer: 'A technical SEO audit is a comprehensive analysis of your website\'s infrastructure, performance, and crawlability. It identifies issues like slow page speed, broken links, missing meta tags, and poor mobile optimization that prevent search engines from properly indexing your content.',
+    },
+    {
+      question: 'How often should I run a technical audit?',
+      answer: 'Run a full technical audit quarterly, or after major website changes like redesigns, CMS migrations, or large content updates. Monthly spot-checks on Core Web Vitals and crawl errors help catch issues early.',
+    },
+    {
+      question: 'What does this audit report include?',
+      answer: 'The report covers website performance metrics, Core Web Vitals analysis, lead response time evaluation, competitive positioning, and actionable recommendations. It generates a professional PDF you can share with clients or stakeholders.',
+    },
+    {
+      question: 'Is this technical audit tool free?',
+      answer: 'Yes, completely free with no signup required. Generate professional diagnostic reports instantly and download them as PDF.',
+    },
+  ]);
+  const howToSchema = getHowToSchema({
+    name: 'How to Generate a Technical Audit Report',
+    description: 'Create a professional technical audit report using the free SerpNap Technical Audit Generator.',
+    totalTime: 'PT5M',
+    steps: [
+      { name: 'Enter client data', text: 'Input the practice or business name, location, and key performance metrics.' },
+      { name: 'Add performance metrics', text: 'Enter PageSpeed data, Core Web Vitals scores, and bounce rates for technical analysis.' },
+      { name: 'Review the diagnostic', text: 'Examine the generated report covering performance, lead response, and competitive positioning.' },
+      { name: 'Export and share', text: 'Download the professional PDF report to share with clients or your team.' },
+    ],
+  });
 
   return (
     <>
-      <MultipleStructuredData schemas={[breadcrumbSchema, appSchema]} />
+      <MultipleStructuredData schemas={[breadcrumbSchema, appSchema, faqSchema, howToSchema]} />
 
       <HeroSection />
       <ToolSection />
       <HowItWorksSection />
       <TipsSection />
+      <ToolsNav />
       <CTASection
         description="Found issues? Our AI-powered SEO service fixes technical problems and builds a strategy to grow your organic traffic."
         buttonText="Explore SEO Services"

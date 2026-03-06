@@ -45,6 +45,12 @@ import * as geo_vs_traditional_seo from "./seo/geo-vs-traditional-seo";
 import * as how_to_optimize_for_ai_search from "./seo/how-to-optimize-for-ai-search";
 import * as ai_citations_optimization_guide from "./seo/ai-citations-optimization-guide";
 import * as ranking_number_1_in_google_2026_ai_overviews from "./seo/ranking-number-1-in-google-2026-ai-overviews";
+import * as best_free_seo_tools_2026 from "./seo/best-free-seo-tools-2026";
+import * as free_ahrefs_semrush_alternative from "./seo/free-ahrefs-semrush-alternative";
+import * as how_to_do_seo_audit from "./seo/how-to-do-seo-audit";
+import * as how_to_write_meta_tags from "./seo/how-to-write-meta-tags";
+import * as how_to_add_schema_markup from "./seo/how-to-add-schema-markup";
+import * as how_to_improve_core_web_vitals from "./seo/how-to-improve-core-web-vitals";
 
 // SEO CONTENT CLUSTER
 import * as programmatic_seo_guide from "./seo/programmatic-seo-guide";
@@ -98,6 +104,12 @@ const allPosts: BlogPost[] = [
   { ...how_to_optimize_for_ai_search.metadata, Content: how_to_optimize_for_ai_search.Content },
   { ...ai_citations_optimization_guide.metadata, Content: ai_citations_optimization_guide.Content },
   { ...ranking_number_1_in_google_2026_ai_overviews.metadata, Content: ranking_number_1_in_google_2026_ai_overviews.Content },
+  { ...best_free_seo_tools_2026.metadata, Content: best_free_seo_tools_2026.Content },
+  { ...free_ahrefs_semrush_alternative.metadata, Content: free_ahrefs_semrush_alternative.Content },
+  { ...how_to_do_seo_audit.metadata, Content: how_to_do_seo_audit.Content },
+  { ...how_to_write_meta_tags.metadata, Content: how_to_write_meta_tags.Content },
+  { ...how_to_add_schema_markup.metadata, Content: how_to_add_schema_markup.Content },
+  { ...how_to_improve_core_web_vitals.metadata, Content: how_to_improve_core_web_vitals.Content },
   // SEO CONTENT CLUSTER
   { ...programmatic_seo_guide.metadata, Content: programmatic_seo_guide.Content },
   { ...topical_authority_building_guide.metadata, Content: topical_authority_building_guide.Content },

@@ -5,11 +5,22 @@ import { NeuralAuditTool } from "@/components/agency/neural-audit-tool";
 import { Search } from "lucide-react";
 import { config } from "@/lib/config";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema, getSoftwareApplicationSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getSoftwareApplicationSchema, getFAQPageSchema, getHowToSchema } from "@/lib/utils/seo";
+import { ToolsNav } from "@/components/tools/tools-nav";
 
 export const metadata: Metadata = {
   title: "Neural Search Audit Tool | Brand Visibility Analysis 2026",
   description: "Diagnose your brand's presence in AI search models like Gemini, ChatGPT, and Claude. Get a real-time 'Share of Model' audit and GEO strategy.",
+  keywords: [
+    "ai seo audit",
+    "neural search audit",
+    "ai visibility checker",
+    "generative engine optimization",
+    "share of model",
+    "llm brand visibility",
+    "ai search optimization",
+    "geo audit tool",
+  ],
   alternates: {
     canonical: `${config.appUrl}/tools/neural-audit`,
   },
@@ -28,6 +39,7 @@ export const metadata: Metadata = {
 
 export default function NeuralAuditPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: config.appUrl },
     { name: "Tools", url: `${config.appUrl}/tools` },
     { name: "Neural Search Audit", url: `${config.appUrl}/tools/neural-audit` },
   ]);
@@ -44,10 +56,43 @@ export default function NeuralAuditPage() {
       "GEO strategy recommendations",
     ],
   });
+  const faqSchema = getFAQPageSchema([
+    {
+      question: "What is a Neural Search Audit?",
+      answer: "A Neural Search Audit analyzes your brand's visibility within AI-powered search engines like ChatGPT, Gemini, Perplexity, and Claude. It measures your 'Share of Model' — how often AI models cite or recommend your brand when users ask relevant questions.",
+    },
+    {
+      question: "What is Generative Engine Optimization (GEO)?",
+      answer: "GEO is the practice of optimizing your content to be cited and recommended by AI search engines. Unlike traditional SEO which optimizes for Google's algorithm, GEO focuses on ensuring AI models understand your brand's authority, entity relationships, and topical expertise.",
+    },
+    {
+      question: "Why does AI search visibility matter?",
+      answer: "Over 64% of high-intent B2B searches now terminate within AI Overview windows. If your brand isn't cited as a primary source by AI models, you're losing leads to competitors whose content is better represented in neural search results.",
+    },
+    {
+      question: "How is Share of Model calculated?",
+      answer: "Share of Model measures how frequently AI models mention, cite, or recommend your brand relative to competitors for specific intents. It considers citation frequency, topic authority index, entity relationship mapping, and information gain scoring.",
+    },
+    {
+      question: "Is this neural audit tool free?",
+      answer: "Yes, completely free with no signup. Enter your brand and industry to get an instant AI visibility diagnostic with actionable GEO strategy recommendations.",
+    },
+  ]);
+  const howToSchema = getHowToSchema({
+    name: "How to Run a Neural Search Audit",
+    description: "Analyze your brand's AI search visibility using the free SerpNap Neural Audit Tool.",
+    totalTime: "PT2M",
+    steps: [
+      { name: "Enter your brand", text: "Input your brand name and industry to begin the AI visibility analysis." },
+      { name: "Review Share of Model", text: "See your brand's citation frequency and visibility score across major AI search engines." },
+      { name: "Analyze entity relationships", text: "Understand how AI models map your brand to relevant topics, competitors, and intents." },
+      { name: "Implement GEO strategy", text: "Follow the actionable recommendations to improve your brand's presence in AI-generated search results." },
+    ],
+  });
 
   return (
     <main className="min-h-screen bg-background">
-      <MultipleStructuredData schemas={[breadcrumbSchema, appSchema]} />
+      <MultipleStructuredData schemas={[breadcrumbSchema, appSchema, faqSchema, howToSchema]} />
       <PageHero 
         theme="emerald"
         badgeIcon={Search}
@@ -101,6 +146,7 @@ export default function NeuralAuditPage() {
          </div>
       </section>
 
+      <ToolsNav />
       <CTASection />
     </main>
   );

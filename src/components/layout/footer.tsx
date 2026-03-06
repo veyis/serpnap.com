@@ -4,14 +4,15 @@ import { config } from "@/lib/config";
 const TOOL_LINKS = [
   { label: "SEO Checker", href: "/tools/seo-checker" },
   { label: "Technical Audit", href: "/tools/technical-audit" },
+  { label: "Neural Audit", href: "/tools/neural-audit" },
   { label: "Meta Tag Generator", href: "/tools/meta-tag-generator" },
   { label: "Schema Generator", href: "/tools/schema-generator" },
-  { label: "Sitemap Validator", href: "/tools/sitemap-validator" },
   { label: "All Tools", href: "/tools" },
 ] as const;
 
 const RESOURCE_LINKS = [
   { label: "Blog", href: "/blog" },
+  { label: "SEO Glossary", href: "/glossary" },
   { label: "Documentation", href: "/docs" },
 ] as const;
 
@@ -22,31 +23,35 @@ const COMPANY_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40">
+    <footer className="border-t border-border/30">
       <div className="container-wide container-padding">
         {/* Main footer */}
-        <div className="py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="py-16 sm:py-20 grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-5">
-            <Link href="/" className="text-base font-semibold tracking-tight">
+            <Link
+              href="/"
+              className="text-[15px] font-semibold tracking-[-0.02em]"
+            >
               {config.brand.name}
             </Link>
-            <p className="mt-3 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              Free, powerful SEO tools to audit, analyze, and optimize your website for search engines.
+            <p className="mt-4 max-w-xs text-[13.5px] text-muted-foreground leading-relaxed">
+              Free, professional-grade SEO tools to audit, analyze, and optimize
+              your website for search engines.
             </p>
           </div>
 
           {/* Tools */}
           <div className="lg:col-span-3">
-            <h3 className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground mb-4">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70 mb-5">
               Tools
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {TOOL_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-[13.5px] text-muted-foreground hover:text-foreground transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -57,15 +62,15 @@ export function Footer() {
 
           {/* Resources */}
           <div className="lg:col-span-2">
-            <h3 className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground mb-4">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70 mb-5">
               Resources
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {RESOURCE_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-[13.5px] text-muted-foreground hover:text-foreground transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -76,15 +81,15 @@ export function Footer() {
 
           {/* Company */}
           <div className="lg:col-span-2">
-            <h3 className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground mb-4">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70 mb-5">
               Company
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-[13.5px] text-muted-foreground hover:text-foreground transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -95,17 +100,18 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted-foreground/70">
-            &copy; {new Date().getFullYear()} {config.brand.name}
+        <div className="py-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[12px] text-muted-foreground/60">
+            &copy; {new Date().getFullYear()} {config.brand.name}. All rights
+            reserved.
           </p>
-          <p className="text-xs text-muted-foreground/50">
+          <p className="text-[12px] text-muted-foreground/40">
             Built by{" "}
             <a
               href="https://www.pxlpeak.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-muted-foreground transition-colors"
+              className="hover:text-muted-foreground/70 transition-colors duration-200"
             >
               PxlPeak
             </a>
