@@ -1,4 +1,4 @@
-export const USER_AGENT = "Mozilla/5.0 (compatible; SerpNapBot/1.0; +https://www.serpnap.com/tools/seo-checker)";
+export const USER_AGENT = "Mozilla/5.0 (compatible; SerpNapBot/1.0; +https://serpnap.com/tools/seo-checker)";
 export const FETCH_TIMEOUT = 15000; // 15 seconds
 
 // Score weights - 8 displayed categories (performance is blended into technical)

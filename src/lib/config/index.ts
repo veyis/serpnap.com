@@ -53,7 +53,7 @@ const isProd = env.NODE_ENV === "production";
 const isDev = env.NODE_ENV === "development";
 
 export const config = {
-  appUrl: env.NEXT_PUBLIC_APP_URL || (isProd ? "https://www.serpnap.com" : "http://localhost:3000"),
+  appUrl: env.NEXT_PUBLIC_APP_URL || (isProd ? "https://serpnap.com" : "http://localhost:3000"),
   isProd,
   isDev,
   supabase: {

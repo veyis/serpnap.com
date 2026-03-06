@@ -26,7 +26,7 @@ export function ShareModal({ result, onClose }: { result: SEOCheckResult; onClos
   }, [onClose]);
 
   const shareText = `I scored ${result.overallScore}/100 on the SerpNap SEO Checker! Check your site's SEO for free:`;
-  const shareUrl = "https://www.serpnap.com/tools/seo-checker";
+  const shareUrl = "https://serpnap.com/tools/seo-checker";
 
   const handleCopy = async () => {
     try {
