@@ -9,7 +9,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/admin/"],
       },
-      // Explicitly allow AI search engine bots for GEO (Generative Engine Optimization)
+      // Explicitly allow search engine bots
+      { userAgent: "Googlebot", allow: "/" },
+      { userAgent: "bingbot", allow: "/" },
+      { userAgent: "msnbot", allow: "/" },
+      // AI search engine bots for GEO (Generative Engine Optimization)
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },
       { userAgent: "PerplexityBot", allow: "/" },
