@@ -421,7 +421,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 relative">
                 <a
-                  href="https://www.pxlpeak.com/contact"
+                  href="https://pxlpeak.com/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-medium transition-all hover:opacity-90 press-effect"

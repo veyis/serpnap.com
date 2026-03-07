@@ -568,7 +568,7 @@ export default function HomePage() {
                   </p>
                   <div className="mt-9">
                     <a
-                      href="https://www.pxlpeak.com/contact"
+                      href="https://pxlpeak.com/contact"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-2.5 rounded-full bg-background text-foreground px-7 py-3.5 text-[14px] font-semibold transition-all duration-300 hover:opacity-90 press-effect"

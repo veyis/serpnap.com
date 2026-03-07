@@ -152,7 +152,7 @@ export default function AboutPage() {
               <p className="text-subheadline max-w-lg mx-auto">
                 SerpNap is built and maintained by{" "}
                 <a
-                  href="https://www.pxlpeak.com"
+                  href="https://pxlpeak.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground font-medium hover:underline"
