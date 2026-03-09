@@ -9,7 +9,7 @@ import "./globals.css";
 const satoshi = localFont({
   src: "../../public/fonts/Satoshi-Variable.woff2",
   variable: "--font-satoshi",
-  display: "optional",
+  display: "swap",
   preload: true,
   adjustFontFallback: "Arial",
 });
@@ -105,6 +105,7 @@ export default function RootLayout({
       <head>
         <meta property="og:site_name" content={config.brand.name} />
         <meta property="og:locale" content="en_US" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -118,6 +119,12 @@ export default function RootLayout({
                   url: config.appUrl,
                   description: config.brand.description,
                   foundingDate: config.business.foundingDate,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${config.appUrl}/pxlpeak-logo.png`,
+                    width: 256,
+                    height: 256,
+                  },
                   contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "customer service",
@@ -135,6 +142,7 @@ export default function RootLayout({
                   url: config.appUrl,
                   name: config.brand.name,
                   description: config.brand.description,
+                  inLanguage: "en-US",
                   publisher: { "@id": `${config.appUrl}/#organization` },
                   potentialAction: {
                     "@type": "SearchAction",

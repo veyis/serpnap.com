@@ -26,7 +26,7 @@ export type ActionResult<T = void> = {
   data?: T;
   error?: string;
   code?: ErrorCode;
-  fields?: Record<string, string>;
+  fields?: Record<string, string | string[]>;
 };
 
 export type ErrorCode = "NOT_FOUND" | "PERMISSION_DENIED" | "CONFLICT" | "DATABASE_ERROR" | "VALIDATION_ERROR" | "RATE_LIMITED" | "TIMEOUT" | "UNKNOWN_ERROR";

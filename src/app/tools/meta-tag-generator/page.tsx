@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 export default function MetaTagGeneratorPage() {
@@ -195,6 +196,23 @@ export default function MetaTagGeneratorPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/headline-analyzer", label: "Headline Analyzer", description: "Score headlines for emotional impact and click-through potential." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Full SEO audit including meta tag validation across 50+ checks." },
+          { href: "/tools/open-graph-checker", label: "Open Graph Checker", description: "Preview how your pages look when shared on social media." },
+        ]}
+        articles={[
+          { href: "/blog/seo/how-to-write-meta-tags", title: "How to Write Perfect Meta Tags" },
+          { href: "/blog/seo/featured-snippets-rich-results-implementation-guide", title: "Featured Snippets & Rich Results Guide" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-title-tag", term: "Title Tag" },
+          { href: "/glossary/what-is-meta-description", term: "Meta Description" },
+          { href: "/glossary/what-is-on-page-seo", term: "On-Page SEO" },
+          { href: "/glossary/what-is-serp", term: "SERP" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

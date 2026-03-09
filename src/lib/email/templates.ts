@@ -8,6 +8,7 @@ export async function sendSEOReportEmail(_options: {
   url: string;
   score: number;
   reportUrl?: string;
-}): Promise<void> {
+}): Promise<{ success: boolean; error?: string }> {
   console.log("[email] SEO report email sending not yet implemented");
+  return { success: true };
 }

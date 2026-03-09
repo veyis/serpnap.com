@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 type SchemaType = "LocalBusiness" | "FAQPage" | "Service" | "Review";
@@ -269,6 +270,23 @@ export default function SchemaGeneratorPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Validate structured data and run a full 50+ check SEO audit." },
+          { href: "/tools/meta-tag-generator", label: "Meta Tag Generator", description: "Generate optimized title tags and meta descriptions." },
+          { href: "/tools/open-graph-checker", label: "Open Graph Checker", description: "Check OG tags and social media preview cards." },
+        ]}
+        articles={[
+          { href: "/blog/seo/how-to-add-schema-markup", title: "How to Add Schema Markup to Your Website" },
+          { href: "/blog/seo/featured-snippets-rich-results-implementation-guide", title: "Featured Snippets & Rich Results Guide" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-schema-markup", term: "Schema Markup" },
+          { href: "/glossary/what-is-json-ld", term: "JSON-LD" },
+          { href: "/glossary/what-is-rich-snippets", term: "Rich Snippets" },
+          { href: "/glossary/what-is-structured-data", term: "Structured Data" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

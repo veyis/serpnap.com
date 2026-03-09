@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use server";
 
 import { headers } from "next/headers";
@@ -166,7 +165,7 @@ export async function checkSEO(
     });
 
     // 6. Log the action
-    logAction("checkSEO", undefined, {
+    logAction("checkSEO", {
       url: urlString,
       hostname: parsedUrl.hostname,
       score: result.overallScore,
@@ -315,7 +314,6 @@ export async function submitSEOReportRequest(
       to: email,
       url,
       score,
-      hostname,
     });
 
     if (!emailResult.success) {
@@ -335,7 +333,7 @@ export async function submitSEOReportRequest(
     }
 
     // 5. Log the action
-    logAction("submitSEOReportRequest", undefined, {
+    logAction("submitSEOReportRequest", {
       email,
       url,
       score,

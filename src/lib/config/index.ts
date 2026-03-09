@@ -43,17 +43,24 @@ const envSchema = z.object({
 const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success && process.env.NODE_ENV === "production") {
-  console.error("❌ Invalid environment variables:", parsed.error.flatten().fieldErrors);
+  console.error(
+    "❌ Invalid environment variables:",
+    parsed.error.flatten().fieldErrors,
+  );
   throw new Error("Invalid environment variables");
 }
 
-const env = parsed.success ? parsed.data : (process.env as unknown as z.infer<typeof envSchema>);
+const env = parsed.success
+  ? parsed.data
+  : (process.env as unknown as z.infer<typeof envSchema>);
 
 const isProd = env.NODE_ENV === "production";
 const isDev = env.NODE_ENV === "development";
 
 export const config = {
-  appUrl: env.NEXT_PUBLIC_APP_URL || (isProd ? "https://serpnap.com" : "http://localhost:3000"),
+  appUrl:
+    env.NEXT_PUBLIC_APP_URL ||
+    (isProd ? "https://serpnap.com" : "http://localhost:3000"),
   isProd,
   isDev,
   supabase: {
@@ -68,7 +75,8 @@ export const config = {
   brand: {
     name: "SerpNap",
     tagline: "Free SEO Tools — Snap Your SEO Into Shape",
-    description: "Free, powerful SEO tools to audit, analyze, and optimize your website. Check your SEO score, generate meta tags, validate sitemaps, and more.",
+    description:
+      "Free, powerful SEO tools to audit, analyze, and optimize your website. Check your SEO score, generate meta tags, validate sitemaps, and more.",
   },
   business: {
     name: "SerpNap",
@@ -76,9 +84,9 @@ export const config = {
     foundingDate: "2026",
     numberOfEmployees: { min: 1, max: 10 },
     address: {
-      streetAddress: "",
-      addressLocality: "",
-      addressRegion: "",
+      streetAddress: "Remote Service",
+      addressLocality: "Online",
+      addressRegion: "Global",
       postalCode: "",
       addressCountry: "US",
     },

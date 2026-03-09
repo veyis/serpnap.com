@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { glossaryTerms } from "@/lib/glossary";
 import { config } from "@/lib/config";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
   title: "SEO Glossary — Every SEO Term Explained Simply",
@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     description: "Plain-English definitions for every SEO term you need to know. From Core Web Vitals to E-E-A-T.",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO Glossary — Every SEO Term Explained",
+    description: "Plain-English definitions for every SEO term. From Core Web Vitals to E-E-A-T.",
+  },
 };
 
 export default function GlossaryPage() {
@@ -37,6 +42,16 @@ export default function GlossaryPage() {
     { name: "Home", url: config.appUrl },
     { name: "SEO Glossary", url: `${config.appUrl}/glossary` },
   ]);
+
+  const itemListSchema = getItemListSchema({
+    name: "SEO Glossary",
+    description: `${glossaryTerms.length} essential SEO terms explained in plain English.`,
+    itemListElement: glossaryTerms.map((term) => ({
+      name: term.term,
+      url: `/glossary/${term.slug}`,
+      description: term.shortDefinition,
+    })),
+  });
 
   // Group terms alphabetically by first letter of the term
   const grouped = glossaryTerms.reduce<Record<string, typeof glossaryTerms>>((acc, term) => {
@@ -50,7 +65,7 @@ export default function GlossaryPage() {
 
   return (
     <>
-      <MultipleStructuredData schemas={[breadcrumbSchema]} />
+      <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema]} />
       <Header />
       <main id="main" className="min-h-screen pt-14">
         <section className="hero-padding container-padding">

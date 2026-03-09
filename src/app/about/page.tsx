@@ -4,6 +4,8 @@ import { Footer } from "@/components/layout/footer";
 import Link from "next/link";
 import { ArrowRight, Search, Shield, Bot, Zap } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
+import { MultipleStructuredData } from "@/components/seo/structured-data";
+import { getBreadcrumbSchema } from "@/lib/utils/seo";
 import { config } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -27,11 +29,22 @@ export const metadata: Metadata = {
     url: `${config.appUrl}/about`,
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About SerpNap — Free SEO Tools for Everyone",
+    description: "SerpNap provides free, professional-grade SEO tools. No signup, no costs, no limits.",
+  },
 };
 
 export default function AboutPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: config.appUrl },
+    { name: "About", url: `${config.appUrl}/about` },
+  ]);
+
   return (
     <>
+      <MultipleStructuredData schemas={[breadcrumbSchema]} />
       <Header />
       <main id="main" className="min-h-screen pt-14">
         {/* Hero */}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Check, Info, Sparkles } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 
@@ -136,15 +137,16 @@ export function Pricing() {
                   ))}
                 </div>
 
-                <button
-                  className={`w-full py-4 px-6 rounded-full text-sm font-semibold transition-transform active:scale-95 ${
+                <Link
+                  href={plan.price === "$0" ? "/tools/seo-checker" : "/contact"}
+                  className={`w-full py-4 px-6 rounded-full text-sm font-semibold transition-transform active:scale-95 text-center block ${
                     plan.popular
                       ? "bg-background text-foreground hover:bg-background/90 shadow-[0_4px_14px_0_rgba(255,255,255,0.2)]"
                       : "bg-foreground text-background hover:bg-foreground/90 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)]"
                   }`}
                 >
                   {plan.cta}
-                </button>
+                </Link>
               </div>
             </RevealOnScroll>
           ))}

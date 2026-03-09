@@ -25,6 +25,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 // ────────────────────────────────────────────────────────────────
@@ -600,6 +601,21 @@ export default function RedirectCheckerPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/page-speed-estimator", label: "Page Speed Estimator", description: "Check how redirects impact your Core Web Vitals and load time." },
+          { href: "/tools/sitemap-validator", label: "Sitemap Validator", description: "Ensure your sitemap doesn't contain redirecting URLs." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Full SEO audit including redirect detection." },
+        ]}
+        articles={[
+          { href: "/blog/seo/technical-seo-checklist-2026-complete-guide", title: "Technical SEO Checklist 2026" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-301-redirect", term: "301 Redirect" },
+          { href: "/glossary/what-is-crawlability", term: "Crawlability" },
+          { href: "/glossary/what-is-technical-seo", term: "Technical SEO" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

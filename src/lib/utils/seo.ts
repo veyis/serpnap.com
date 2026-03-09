@@ -23,6 +23,8 @@ export function getSoftwareApplicationSchema(app: {
 		ratingValue: number;
 		reviewCount: number;
 	};
+	datePublished?: string;
+	dateModified?: string;
 }) {
 	const schema: Record<string, unknown> = {
 		"@context": "https://schema.org",
@@ -32,6 +34,8 @@ export function getSoftwareApplicationSchema(app: {
 		url: app.url,
 		applicationCategory: app.applicationCategory || "WebApplication",
 		operatingSystem: app.operatingSystem || "Web Browser",
+		datePublished: app.datePublished || "2025-01-15",
+		dateModified: app.dateModified || "2026-03-07",
 		offers: {
 			"@type": "Offer",
 			price: app.offers?.price || "0",

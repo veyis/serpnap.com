@@ -13,14 +13,19 @@ import {
   Type,
   FileCode,
   ArrowRight,
+  LetterText,
+  Share2,
+  Unlink,
+  Lock,
+  Server,
 } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { config } from "@/lib/config";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
-  title: "11 Free SEO Tools — Audit, Analyze & Optimize Your Website",
+  title: "Free SEO Tools — Audit, Analyze & Optimize Your Website",
   description:
     "Free SEO tools: SEO checker, meta tag generator, schema generator, sitemap validator, keyword density checker, page speed estimator, redirect checker, and more. No signup required.",
   keywords: [
@@ -34,13 +39,18 @@ export const metadata: Metadata = {
     "free sitemap validator",
   ],
   alternates: {
-    canonical: "/tools",
+    canonical: `${config.appUrl}/tools`,
   },
   openGraph: {
-    title: "11 Free SEO Tools — Audit, Analyze & Optimize",
+    title: "Free SEO Tools — Audit, Analyze & Optimize",
     description:
-      "Professional-grade SEO tools — all free, no signup. SEO checker, meta tag generator, schema generator, and 8 more tools.",
+      "Professional-grade SEO tools — all free, no signup. SEO checker, meta tag generator, schema generator, and more.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free SEO Tools — Audit, Analyze & Optimize",
+    description: "Professional-grade SEO tools — all free, no signup required.",
   },
 };
 
@@ -112,6 +122,36 @@ const TOOLS = [
     href: "/tools/robots-txt-generator",
     icon: FileCode,
   },
+  {
+    name: "Word Counter",
+    description: "Count words, characters, sentences with reading time and top keyword extraction.",
+    href: "/tools/word-counter",
+    icon: LetterText,
+  },
+  {
+    name: "Open Graph Checker",
+    description: "Preview how pages look when shared on social media. Check OG and Twitter Card tags.",
+    href: "/tools/open-graph-checker",
+    icon: Share2,
+  },
+  {
+    name: "Broken Link Checker",
+    description: "Scan any page for dead links, 404 errors, and redirect issues with full status reports.",
+    href: "/tools/broken-link-checker",
+    icon: Unlink,
+  },
+  {
+    name: "SSL Checker",
+    description: "Verify SSL certificate validity, HTTPS configuration, and security headers.",
+    href: "/tools/ssl-checker",
+    icon: Lock,
+  },
+  {
+    name: "HTTP Header Checker",
+    description: "Inspect server response headers and security header configuration.",
+    href: "/tools/http-header-checker",
+    icon: Server,
+  },
 ] as const;
 
 export default function ToolsPage() {
@@ -120,9 +160,19 @@ export default function ToolsPage() {
     { name: "Free SEO Tools", url: `${config.appUrl}/tools` },
   ]);
 
+  const itemListSchema = getItemListSchema({
+    name: "Free SEO Tools by SerpNap",
+    description: "16 professional-grade SEO tools — all free, no signup required.",
+    itemListElement: TOOLS.map((tool) => ({
+      name: tool.name,
+      url: tool.href,
+      description: tool.description,
+    })),
+  });
+
   return (
     <>
-    <MultipleStructuredData schemas={[breadcrumbSchema]} />
+    <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema]} />
     <section className="hero-padding container-padding">
       <div className="container-wide mx-auto">
         <RevealOnScroll>
@@ -134,7 +184,7 @@ export default function ToolsPage() {
               Free SEO Tools
             </h1>
             <p className="text-subheadline mt-5 max-w-lg mx-auto">
-              11 professional-grade tools to audit, analyze, and optimize your website. No signup required.
+              16 professional-grade tools to audit, analyze, and optimize your website. No signup required.
             </p>
           </div>
         </RevealOnScroll>

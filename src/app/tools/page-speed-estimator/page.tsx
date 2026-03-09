@@ -30,6 +30,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 // ────────────────────────────────────────────────────────────────
@@ -1018,6 +1019,24 @@ export default function PageSpeedEstimatorPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/technical-audit", label: "Technical Audit", description: "Deep technical analysis including server headers and crawlability." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Full 50+ check audit including performance scoring." },
+          { href: "/tools/redirect-checker", label: "Redirect Checker", description: "Trace redirect chains that slow down page loading." },
+        ]}
+        articles={[
+          { href: "/blog/seo/how-to-improve-core-web-vitals", title: "How to Improve Core Web Vitals" },
+          { href: "/blog/seo/technical-seo-playbook-2026", title: "Technical SEO Playbook for 2026" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-core-web-vitals", term: "Core Web Vitals" },
+          { href: "/glossary/what-is-lcp", term: "LCP" },
+          { href: "/glossary/what-is-cls", term: "CLS" },
+          { href: "/glossary/what-is-inp", term: "INP" },
+          { href: "/glossary/what-is-technical-seo", term: "Technical SEO" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

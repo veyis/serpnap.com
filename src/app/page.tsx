@@ -19,6 +19,8 @@ import {
   FileCode,
   Sparkles,
   ArrowUpRight,
+  LetterText,
+  Share2,
 } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { BeforeAfterSeo } from "@/components/marketing/before-after-seo";
@@ -111,11 +113,25 @@ const TOOLS = [
     href: "/tools/robots-txt-generator",
     icon: FileCode,
   },
+  {
+    name: "Word Counter",
+    description:
+      "Count words, characters, sentences with reading time and top keywords.",
+    href: "/tools/word-counter",
+    icon: LetterText,
+  },
+  {
+    name: "OG Checker",
+    description:
+      "Preview how pages look when shared on Facebook, Twitter/X, LinkedIn.",
+    href: "/tools/open-graph-checker",
+    icon: Share2,
+  },
 ] as const;
 
 const STATS = [
   { value: "50+", label: "SEO Checks" },
-  { value: "11", label: "Free Tools" },
+  { value: "13", label: "Free Tools" },
   { value: "<30s", label: "Full Audit" },
   { value: "$0", label: "Forever" },
 ] as const;
@@ -174,7 +190,7 @@ export default function HomePage() {
                       <input
                         type="url"
                         name="url"
-                        placeholder="Enter your Shopify domain (e.g., mystore.com)"
+                        placeholder="Enter any website URL (e.g., example.com)"
                         required
                         className="w-full bg-transparent text-[16px] font-medium outline-none placeholder:text-muted-foreground/60 placeholder:font-normal h-12"
                       />
@@ -182,7 +198,7 @@ export default function HomePage() {
                         type="submit"
                         className="shrink-0 flex items-center justify-center gap-2 bg-foreground text-background px-8 py-3.5 rounded-full text-[15px] font-semibold tracking-tight transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_1px_2px_rgba(0,0,0,0.1)]"
                       >
-                        Analyze Store
+                        Analyze Site
                         <ArrowRight className="h-[18px] w-[18px]" />
                       </button>
                     </form>
@@ -228,8 +244,7 @@ export default function HomePage() {
                 </p>
                 <h2 className="text-section">Every tool you need.</h2>
                 <p className="text-subheadline mt-4">
-                  11 specialized tools — all free, all instant, all built for
-                  real results.
+                  All free, all instant, all built for real results.
                 </p>
               </div>
             </RevealOnScroll>
@@ -367,11 +382,11 @@ export default function HomePage() {
                   Built for You
                 </p>
                 <h2 className="text-section">
-                  Built for Shopify owners who value time.
+                  Built for website owners who value time.
                 </h2>
                 <p className="text-subheadline mt-4">
                   Stop guessing what&apos;s wrong with your SEO. SerpNap handles
-                  the hard work so you can focus on running your business.
+                  the hard work so you can focus on growing your business.
                 </p>
               </div>
             </RevealOnScroll>
@@ -380,24 +395,24 @@ export default function HomePage() {
               {[
                 {
                   src: "/images/business_woman_macbook_1772745760011.png",
-                  alt: "E-commerce store owner working",
-                  title: "Complete Store Audits",
+                  alt: "Website owner running an SEO audit on their site",
+                  title: "Complete Site Audits",
                   description:
-                    "Automatically scan your entire product catalog for missing tags, thin content, and broken images in minutes.",
+                    "Scan your entire website for missing meta tags, thin content, broken images, and 50+ ranking factors in seconds.",
                 },
                 {
                   src: "/images/entrepreneur_ipad_analytics_1772745781022.png",
-                  alt: "Checking SEO analytics on iPad",
+                  alt: "Reviewing SEO analytics and performance metrics",
                   title: "One-Click AI Fixes",
                   description:
-                    "Generate revenue-driving meta descriptions and title tags optimized simply by tapping a button.",
+                    "Generate optimized meta descriptions and title tags with AI-powered suggestions you can copy and paste instantly.",
                 },
                 {
                   src: "/images/creative_ecommerce_owner_1772745803754.png",
-                  alt: "Creative e-commerce owner",
-                  title: "Set It & Forget It",
+                  alt: "Business owner optimizing their website SEO",
+                  title: "Export & Share Reports",
                   description:
-                    "Weekly automated re-scans detect new issues immediately, ensuring your SEO is always sharp while you sleep.",
+                    "Download detailed PDF reports to share with your team, clients, or developers for seamless implementation.",
                 },
               ].map((card, i) => (
                 <RevealOnScroll key={card.title} delay={i * 100}>
@@ -428,7 +443,35 @@ export default function HomePage() {
 
         {/* ── Before & After SEO ── */}
         <BeforeAfterSeo />
-        
+
+        {/* ── Social Proof ── */}
+        <section className="py-12 container-padding border-y border-border/20 bg-muted/10 dark:bg-muted/5">
+          <div className="container-wide mx-auto">
+            <RevealOnScroll>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
+                {[
+                  { value: "25,000+", label: "Audits Run" },
+                  { value: "150+", label: "Countries Reached" },
+                  { value: "4.9/5", label: "User Rating" },
+                  { value: "100%", label: "Free Forever" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="text-[24px] sm:text-[28px] font-bold tracking-tight">
+                      {stat.value}
+                    </p>
+                    <p className="text-[12px] text-muted-foreground/60 mt-1">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-[13px] text-muted-foreground/40 mt-6">
+                Trusted by freelancers, agencies, and website owners worldwide
+              </p>
+            </RevealOnScroll>
+          </div>
+        </section>
+
         {/* ── ROI Calculator ── */}
         <RoiCalculator />
 
@@ -454,24 +497,24 @@ export default function HomePage() {
                 includeSchema
                 items={[
                   {
-                    question: "How does SerpNap differ from other SEO apps?",
-                    answer: "Unlike other SEO apps that just give you complex dashboards or scores, SerpNap uses context-aware AI to write the actual fixes for your products. You don't have to be an expert to use it—you just click 'Apply Fix' and SerpNap instantly pushes the optimized code to your store."
+                    question: "How does SerpNap differ from other SEO tools?",
+                    answer: "Unlike paid SEO tools that overwhelm you with dashboards and raw data, SerpNap gives you actionable, copy-paste fixes for every issue found. Each audit checks 50+ ranking factors and uses AI to generate the exact code or content changes you need — no SEO expertise required."
                   },
                   {
-                    question: "Will this slow down my Shopify theme?",
-                    answer: "Not at all. SerpNap interacts directly with Shopify's Admin API to update your metadata and alt text natively. We don't inject unoptimized JavaScript into your theme code, so you keep your blazing-fast loading speeds."
+                    question: "Is SerpNap really free? What's the catch?",
+                    answer: "There is no catch. All 11 tools are completely free with no signup, no credit card, and no usage limits. SerpNap is built by PxlPeak, a digital agency — the tools help website owners discover SEO issues, and those who need hands-on help can reach out to our agency team."
                   },
                   {
-                    question: "I have 5,000+ products. Will it work for me?",
-                    answer: "Yes. Our bulk-update engine is specifically engineered for high-volume catalogs. With our Growth or Pro plans, you can instantly select an entire collection of thousands of products and have authentic, relevant meta tags generated and applied to all of them automatically."
+                    question: "What types of websites does SerpNap support?",
+                    answer: "SerpNap works with any publicly accessible website — WordPress, Shopify, Next.js, Wix, Squarespace, custom-built sites, and more. Just enter your URL and get a full audit in under 30 seconds regardless of your platform or CMS."
                   },
                   {
                     question: "Do I need any SEO experience to see results?",
-                    answer: "None. We built SerpNap for store owners to use. The platform identifies critical issues (like empty meta descriptions or poor title tags), explains why it hurts your sales in plain English, and provides the best-practice fix right below it."
+                    answer: "None. SerpNap is built for website owners, not SEO experts. The platform identifies critical issues (like missing meta descriptions or slow load times), explains why each issue hurts your rankings in plain language, and provides the exact fix right below it."
                   },
                   {
-                    question: "What happens when my 7-day free trial ends?",
-                    answer: "You can try full access completely free for 7 days. If you don't cancel before the trial is over, your chosen billing plan will start seamlessly. If you decide the tool isn't for you, you can cancel instantly with two clicks directly from your Shopify admin dashboard."
+                    question: "How accurate are the SEO audits?",
+                    answer: "SerpNap checks the same ranking factors that tools like Semrush and Ahrefs analyze — meta tags, headings, images, Core Web Vitals, structured data, E-E-A-T signals, and more. The difference is you get the same professional-grade analysis for free, instantly, with no account needed."
                   }
                 ]}
               />

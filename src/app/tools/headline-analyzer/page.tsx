@@ -8,6 +8,7 @@ import {
 } from "@/lib/utils/seo";
 import { config } from "@/lib/config";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 
 export const metadata: Metadata = {
   title: "Free Headline Analyzer Tool | Score Your Headlines",
@@ -172,6 +173,23 @@ export default function HeadlineAnalyzerPage() {
       />
       <HeadlineAnalyzer />
       <FAQSection />
+      <RelatedResources
+        tools={[
+          { href: "/tools/meta-tag-generator", label: "Meta Tag Generator", description: "Generate optimized title tags and meta descriptions with SERP preview." },
+          { href: "/tools/word-counter", label: "Word Counter", description: "Count words, characters, and check reading time." },
+          { href: "/tools/keyword-density-checker", label: "Keyword Density Checker", description: "Analyze keyword frequency and avoid over-optimization." },
+        ]}
+        articles={[
+          { href: "/blog/seo/how-to-write-meta-tags", title: "How to Write Perfect Meta Tags" },
+          { href: "/blog/seo/content-quality-seo-strategies-2026", title: "Content Quality & SEO Strategies for 2026" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-title-tag", term: "Title Tag" },
+          { href: "/glossary/what-is-meta-description", term: "Meta Description" },
+          { href: "/glossary/what-is-search-intent", term: "Search Intent" },
+          { href: "/glossary/what-is-featured-snippet", term: "Featured Snippet" },
+        ]}
+      />
       <ToolsNav />
     </>
   );

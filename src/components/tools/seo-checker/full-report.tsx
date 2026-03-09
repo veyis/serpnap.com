@@ -7,6 +7,7 @@ import {
   FileText,
   Wrench,
   Accessibility,
+  ClipboardCheck,
 } from "lucide-react";
 import type { SEOCheckResult } from "@/schemas/seo-checker";
 import { ReportSectionGroup } from "./report-section-group";
@@ -32,6 +33,7 @@ import { InternalLinksSection } from "./internal-links-section";
 import { WaterfallSection } from "./waterfall-section";
 import { ShareModal } from "./share-modal";
 import { ReferencesSummarySection } from "./references-summary-section";
+import { CheckpointSection } from "./checkpoint-section";
 
 // ============================================================================
 // Full Report (sections below score hero)
@@ -184,7 +186,17 @@ export function FullReport({
           </div>
         </ReportSectionGroup>
 
-        {/* Group 6: Get Help — always flat (no collapsible wrapper) */}
+        {/* Group 6: SEO Checkpoint Audit — collapsed */}
+        <ReportSectionGroup
+          icon={ClipboardCheck}
+          iconColor="bg-primary/10 text-primary"
+          title="Rank #1 Checkpoint Audit"
+          description="16-pillar SEO checklist — auto-evaluated against your page"
+        >
+          <CheckpointSection result={result} />
+        </ReportSectionGroup>
+
+        {/* Group 7: Get Help — always flat (no collapsible wrapper) */}
         <ServiceCTA categories={result.categories} />
       </div>
 

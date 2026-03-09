@@ -17,6 +17,11 @@ import {
   Gauge,
   Brain,
   FileCode,
+  LetterText,
+  Share2,
+  Unlink,
+  Lock,
+  Server,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +37,11 @@ const tools = [
   { href: "/tools/page-speed-estimator", icon: Gauge, label: "Speed Estimator" },
   { href: "/tools/redirect-checker", icon: Route, label: "Redirect Checker" },
   { href: "/tools/robots-txt-generator", icon: FileCode, label: "Robots.txt" },
+  { href: "/tools/word-counter", icon: LetterText, label: "Word Counter" },
+  { href: "/tools/open-graph-checker", icon: Share2, label: "OG Checker" },
+  { href: "/tools/broken-link-checker", icon: Unlink, label: "Broken Links" },
+  { href: "/tools/ssl-checker", icon: Lock, label: "SSL Checker" },
+  { href: "/tools/http-header-checker", icon: Server, label: "Header Checker" },
 ] as const;
 
 export function ToolsNav() {

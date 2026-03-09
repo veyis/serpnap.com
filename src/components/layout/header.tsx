@@ -11,7 +11,8 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { label: "Tools", href: "/tools" },
   { label: "Blog", href: "/blog" },
-  { label: "Docs", href: "/docs" },
+  { label: "Glossary", href: "/glossary" },
+  { label: "Compare", href: "/compare" },
 ] as const;
 
 export function Header() {
@@ -37,6 +38,15 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen]);
+
   return (
     <>
       <header
@@ -55,7 +65,7 @@ export function Header() {
           >
             <Image
               src="/pxlpeak-logo.png"
-              alt="PxlPeak Logo"
+              alt="SerpNap"
               width={26}
               height={26}
               className="rounded-lg"
@@ -64,7 +74,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden sm:flex items-center gap-0.5">
+          <nav aria-label="Main navigation" className="hidden sm:flex items-center gap-0.5">
             {NAV_ITEMS.map((item) => {
               const isActive = pathname.startsWith(item.href);
               return (
@@ -92,6 +102,7 @@ export function Header() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="inline-flex sm:hidden h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors duration-200 hover:text-foreground hover:bg-accent/50"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? (
                 <X className="h-4 w-4" />
@@ -111,7 +122,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
           />
           <div className="absolute top-14 left-0 right-0 glass border-b border-border/40 p-5">
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname.startsWith(item.href);
                 return (

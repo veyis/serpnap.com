@@ -22,6 +22,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 // ────────────────────────────────────────────────────────────────
@@ -676,6 +677,22 @@ export default function RobotsTxtGeneratorPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/sitemap-validator", label: "Sitemap Validator", description: "Validate your XML sitemap alongside your robots.txt." },
+          { href: "/tools/technical-audit", label: "Technical Audit", description: "Full technical SEO analysis including crawlability." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Comprehensive 50+ check SEO audit." },
+        ]}
+        articles={[
+          { href: "/blog/seo/technical-seo-checklist-2026-complete-guide", title: "Technical SEO Checklist 2026" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-robots-txt", term: "Robots.txt" },
+          { href: "/glossary/what-is-crawlability", term: "Crawlability" },
+          { href: "/glossary/what-is-xml-sitemap", term: "XML Sitemap" },
+          { href: "/glossary/what-is-technical-seo", term: "Technical SEO" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

@@ -40,6 +40,10 @@ export function RoiCalculator() {
                 step="10"
                 value={products}
                 onChange={(e) => setProducts(Number(e.target.value))}
+                aria-label="Number of products in your store"
+                aria-valuemin={10}
+                aria-valuemax={2000}
+                aria-valuenow={products}
                 className="w-full h-1.5 bg-muted/50 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-background [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-md hover:[&::-webkit-slider-thumb]:scale-110 active:[&::-webkit-slider-thumb]:scale-95 transition-all outline-none"
                 style={{
                   background: `linear-gradient(to right, var(--color-primary) ${(products / 2000) * 100}%, transparent ${(products / 2000) * 100}%)`,

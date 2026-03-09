@@ -20,6 +20,9 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "ClaudeBot", allow: "/" },
       { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "Bytespider", allow: "/" },
+      { userAgent: "cohere-ai", allow: "/" },
+      { userAgent: "meta-externalagent", allow: "/" },
     ],
     sitemap: `${config.appUrl}/sitemap.xml`,
   };

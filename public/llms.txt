@@ -1,0 +1,149 @@
+# SerpNap - Free SEO Tools
+
+> SerpNap (https://serpnap.com) provides 16 professional-grade SEO analysis tools completely free — no signup, no limits. Audit websites, generate meta tags, create schema markup, validate sitemaps, check social sharing previews, count words, and optimize for search engines.
+
+## Tools Available
+
+### SEO Checker — https://serpnap.com/tools/seo-checker
+The most comprehensive free SEO audit online. Runs 50+ checks across 8 categories:
+- Meta tags, headings, images, and links analysis
+- Technical SEO and Core Web Vitals assessment
+- Content quality and readability scoring
+- E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) signals
+- Structured data validation
+- Accessibility audit (WCAG)
+- AI-powered fix suggestions with copy-paste code
+- Exportable PDF reports
+
+### Technical Audit — https://serpnap.com/tools/technical-audit
+- Server response and security headers analysis
+- Mobile-friendliness evaluation
+- Page speed and performance optimization
+- Crawlability and indexation assessment
+
+### Neural Audit (AI-Powered) — https://serpnap.com/tools/neural-audit
+- Brand visibility analysis across AI search models (ChatGPT, Gemini, Claude, Perplexity)
+- Share of Model diagnostics
+- Generative Engine Optimization (GEO) strategy
+- Competitive intelligence in AI search
+
+### Meta Tag Generator — https://serpnap.com/tools/meta-tag-generator
+- Title tag optimization with character counting
+- Meta description creation with SERP preview
+- Desktop and mobile preview modes
+- One-click HTML copy
+
+### Schema Generator — https://serpnap.com/tools/schema-generator
+- JSON-LD structured data generation
+- LocalBusiness, FAQPage, Service, Review schemas
+- Rich snippets optimization
+- Copy-paste ready code
+
+### Sitemap Validator — https://serpnap.com/tools/sitemap-validator
+- XML sitemap protocol spec validation
+- URL count and duplicate detection
+- Namespace and lastmod date checking
+- Sitemap index support
+
+### Headline Analyzer — https://serpnap.com/tools/headline-analyzer
+- Headline scoring (emotional appeal, power words, clarity)
+- Click-through potential rating
+- AI-generated headline improvements
+- Marketing headline optimization
+
+### Keyword Density Checker — https://serpnap.com/tools/keyword-density-checker
+- 1-word, 2-word, 3-word n-gram analysis
+- Keyword frequency and density percentages
+- Over-optimization warnings
+- Readability statistics
+
+### Page Speed Estimator — https://serpnap.com/tools/page-speed-estimator
+- Core Web Vitals estimation (LCP, CLS, INP)
+- Performance score calculation
+- Technology stack detection
+- Optimization recommendations
+
+### Redirect Checker — https://serpnap.com/tools/redirect-checker
+- Full redirect chain tracing
+- 301/302 status code detection
+- Redirect loop detection
+- Link equity leak analysis
+
+### Robots.txt Generator — https://serpnap.com/tools/robots-txt-generator
+- Framework presets (WordPress, Next.js, e-commerce)
+- AI bot blocking/allowing rules
+- Custom rule builder
+- Instant download
+
+### Word Counter — https://serpnap.com/tools/word-counter
+- Word, character, sentence, and paragraph counting
+- Reading time and speaking time estimates
+- Top keyword extraction with density percentages
+- Character limit checking for social media platforms and meta tags
+
+### Open Graph Checker — https://serpnap.com/tools/open-graph-checker
+- Open Graph (og:) tag extraction and validation
+- Twitter Card meta tag detection
+- Facebook, Twitter/X, and LinkedIn share previews
+- Missing tag warnings and image validation
+
+### Broken Link Checker — https://serpnap.com/tools/broken-link-checker
+- Scan any page for dead links and 404 errors
+- HTTP status code detection for every link
+- Internal vs external link classification
+- Anchor text extraction and fix suggestions
+
+### SSL Checker — https://serpnap.com/tools/ssl-checker
+- SSL certificate validity verification
+- HTTPS configuration analysis
+- Security header detection (HSTS, CSP)
+- Mixed content detection and security grade
+
+### HTTP Header Checker — https://serpnap.com/tools/http-header-checker
+- Server response header inspection
+- Security header analysis (CSP, X-Frame-Options, HSTS)
+- Missing header detection with recommendations
+- Overall security header grade (A+ to F)
+
+## Key Features
+
+- **Free Forever**: No signup, no limits, no hidden costs
+- **Professional Grade**: Enterprise-level analysis trusted by SEO professionals
+- **AI-Powered**: Advanced recommendations using machine learning
+- **Comprehensive**: 50+ SEO checks covering all ranking factors
+- **Instant Results**: URL in, full audit out in under 30 seconds
+- **Exportable**: PDF reports and JSON data
+- **Privacy-First**: No tracking, no data selling, no account required
+
+## Use Cases
+
+- Website owners optimizing for search engines
+- Shopify and e-commerce store owners improving product SEO
+- SEO professionals conducting client audits
+- Content creators improving on-page SEO
+- Developers implementing technical SEO
+- Agencies generating client reports
+- Students learning SEO practices
+
+## Resources
+
+- All Tools: https://serpnap.com/tools
+- Blog: https://serpnap.com/blog
+- SEO Glossary: https://serpnap.com/glossary
+- Documentation: https://serpnap.com/docs
+- Compare Tools: https://serpnap.com/compare
+- Free Alternatives: https://serpnap.com/alternatives
+- How-To Guides: https://serpnap.com/guides
+- SEO Tools by Role: https://serpnap.com/for
+- Contact: https://serpnap.com/contact
+
+## About SerpNap
+
+SerpNap was founded in 2026 to democratize SEO analysis. Every website owner deserves access to professional-grade SEO tools without the $100+/month price tag of competitors.
+
+Built by PxlPeak (https://pxlpeak.com), a digital agency specializing in SEO and web development.
+
+Website: https://serpnap.com
+Email: hello@serpnap.com
+Twitter: https://x.com/serpnap
+LinkedIn: https://www.linkedin.com/company/serpnap

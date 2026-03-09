@@ -9,6 +9,7 @@ import {
 } from "@/lib/utils/seo";
 import { config } from "@/lib/config";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 
 export const metadata: Metadata = {
   title: "Free SEO Checker — Comprehensive Audit in Seconds",
@@ -165,6 +166,26 @@ export default function SEOCheckerPage() {
       />
       <SEOCheckerTerminal />
       <FAQSection />
+      <RelatedResources
+        tools={[
+          { href: "/tools/technical-audit", label: "Technical Audit", description: "Deep technical analysis — server headers, crawlability, and security." },
+          { href: "/tools/neural-audit", label: "Neural Audit", description: "AI-powered brand visibility analysis across ChatGPT, Gemini, Perplexity." },
+          { href: "/tools/meta-tag-generator", label: "Meta Tag Generator", description: "Generate optimized title tags and meta descriptions with SERP preview." },
+        ]}
+        articles={[
+          { href: "/blog/seo/how-to-do-seo-audit", title: "How to Do a Complete SEO Audit" },
+          { href: "/blog/seo/technical-seo-playbook-2026", title: "Technical SEO Playbook for 2026" },
+          { href: "/blog/seo/eeat-complete-guide-2026", title: "E-E-A-T: The Complete Guide" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-seo", term: "SEO" },
+          { href: "/glossary/what-is-technical-seo", term: "Technical SEO" },
+          { href: "/glossary/what-is-on-page-seo", term: "On-Page SEO" },
+          { href: "/glossary/what-is-eeat", term: "E-E-A-T" },
+          { href: "/glossary/what-is-core-web-vitals", term: "Core Web Vitals" },
+          { href: "/glossary/what-is-schema-markup", term: "Schema Markup" },
+        ]}
+      />
       <ToolsNav />
     </>
   );

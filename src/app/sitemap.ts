@@ -3,6 +3,11 @@ import { config } from "@/lib/config";
 import { getAllPosts } from "@/lib/blog";
 import { getAllDocPaths } from "@/lib/docs/loader";
 import { getAllGlossarySlugs } from "@/lib/glossary";
+import { getAllComparisonSlugs } from "@/lib/data/comparisons";
+import { getAllAlternativeSlugs } from "@/lib/data/alternatives";
+import { getAllIndustrySlugs } from "@/lib/data/industries";
+import { getAllGuideSlugs } from "@/lib/data/guides";
+import { getAllUseCaseSlugs } from "@/lib/data/use-cases";
 
 const TOOLS = [
   "seo-checker",
@@ -16,6 +21,11 @@ const TOOLS = [
   "page-speed-estimator",
   "redirect-checker",
   "robots-txt-generator",
+  "word-counter",
+  "open-graph-checker",
+  "broken-link-checker",
+  "ssl-checker",
+  "http-header-checker",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -51,6 +61,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: "2026-03-05",
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: "2026-03-05",
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: "2026-03-05",
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: "2026-03-05",
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/docs`,
@@ -107,5 +135,82 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...toolPages, ...blogPages, ...docPages, ...glossaryIndex, ...glossaryPages];
+  // Comparison pages
+  const comparisonSlugs = getAllComparisonSlugs();
+  const comparisonIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/compare`,
+      lastModified: "2026-03-07",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+  const comparisonPages: MetadataRoute.Sitemap = comparisonSlugs.map((slug) => ({
+    url: `${baseUrl}/compare/${slug}`,
+    lastModified: "2026-03-07",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Alternative pages
+  const alternativeSlugs = getAllAlternativeSlugs();
+  const alternativeIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/alternatives`,
+      lastModified: "2026-03-07",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+  const alternativePages: MetadataRoute.Sitemap = alternativeSlugs.map((slug) => ({
+    url: `${baseUrl}/alternatives/${slug}`,
+    lastModified: "2026-03-07",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Industry-specific SEO checker pages
+  const industrySlugs = getAllIndustrySlugs();
+  const industryPages: MetadataRoute.Sitemap = industrySlugs.map((slug) => ({
+    url: `${baseUrl}/tools/seo-checker/${slug}`,
+    lastModified: "2026-03-07",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Guide pages
+  const guideSlugs = getAllGuideSlugs();
+  const guideIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/guides`,
+      lastModified: "2026-03-07",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+  const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: "2026-03-07",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Use-case pages
+  const useCaseSlugs = getAllUseCaseSlugs();
+  const useCaseIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/for`,
+      lastModified: "2026-03-07",
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+  const useCasePages: MetadataRoute.Sitemap = useCaseSlugs.map((slug) => ({
+    url: `${baseUrl}/for/${slug}`,
+    lastModified: "2026-03-07",
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...toolPages, ...blogPages, ...docPages, ...glossaryIndex, ...glossaryPages, ...comparisonIndex, ...comparisonPages, ...alternativeIndex, ...alternativePages, ...industryPages, ...guideIndex, ...guidePages, ...useCaseIndex, ...useCasePages];
 }

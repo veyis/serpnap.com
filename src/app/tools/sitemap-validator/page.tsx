@@ -28,6 +28,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 // ────────────────────────────────────────────────────────────────
@@ -848,6 +849,23 @@ export default function SitemapValidatorPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/robots-txt-generator", label: "Robots.txt Generator", description: "Create robots.txt rules to control crawling alongside your sitemap." },
+          { href: "/tools/technical-audit", label: "Technical Audit", description: "Full technical analysis including indexation and crawlability." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Comprehensive 50+ check SEO audit." },
+        ]}
+        articles={[
+          { href: "/blog/seo/technical-seo-checklist-2026-complete-guide", title: "Technical SEO Checklist 2026" },
+          { href: "/blog/seo/technical-seo-playbook-2026", title: "Technical SEO Playbook for 2026" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-xml-sitemap", term: "XML Sitemap" },
+          { href: "/glossary/what-is-crawlability", term: "Crawlability" },
+          { href: "/glossary/what-is-robots-txt", term: "Robots.txt" },
+          { href: "/glossary/what-is-technical-seo", term: "Technical SEO" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>

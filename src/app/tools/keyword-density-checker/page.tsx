@@ -22,6 +22,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/agency";
 import { ToolsNav } from "@/components/tools/tools-nav";
+import { RelatedResources } from "@/components/tools/related-resources";
 import { cn } from "@/lib/utils";
 
 // ────────────────────────────────────────────────────────────────
@@ -566,6 +567,22 @@ export default function KeywordDensityCheckerPage() {
         </div>
       </section>
 
+      <RelatedResources
+        tools={[
+          { href: "/tools/word-counter", label: "Word Counter", description: "Count words, characters, sentences with reading time estimates." },
+          { href: "/tools/headline-analyzer", label: "Headline Analyzer", description: "Score headlines for emotional impact and SEO effectiveness." },
+          { href: "/tools/seo-checker", label: "SEO Checker", description: "Full SEO audit covering content quality and keyword usage." },
+        ]}
+        articles={[
+          { href: "/blog/seo/content-quality-seo-strategies-2026", title: "Content Quality & SEO Strategies for 2026" },
+          { href: "/blog/seo/keyword-research-guide", title: "Complete Keyword Research Guide" },
+        ]}
+        glossaryTerms={[
+          { href: "/glossary/what-is-keyword-density", term: "Keyword Density" },
+          { href: "/glossary/what-is-keyword-stuffing", term: "Keyword Stuffing" },
+          { href: "/glossary/what-is-on-page-seo", term: "On-Page SEO" },
+        ]}
+      />
       <ToolsNav />
       <CTASection />
     </main>
