@@ -35,7 +35,7 @@ export function getSoftwareApplicationSchema(app: {
 		applicationCategory: app.applicationCategory || "WebApplication",
 		operatingSystem: app.operatingSystem || "Web Browser",
 		datePublished: app.datePublished || "2025-01-15",
-		dateModified: app.dateModified || "2026-03-07",
+		dateModified: app.dateModified || "2026-03-10",
 		offers: {
 			"@type": "Offer",
 			price: app.offers?.price || "0",
@@ -126,12 +126,40 @@ export function getOrganizationSchema(options?: {
 		"@type": "Organization",
 		"@id": `${config.appUrl}/#organization`,
 		name: config.brand.name,
+		legalName: config.business.legalName,
 		url: config.appUrl,
 		description: config.brand.description,
+		foundingDate: options?.foundingDate || config.business.foundingDate,
+		publishingPrinciples: `${config.appUrl}/editorial-policy`,
+		knowsAbout: [
+			"Search Engine Optimization",
+			"SEO Audit",
+			"Technical SEO",
+			"On-Page SEO",
+			"Core Web Vitals",
+			"Schema Markup",
+			"Meta Tags",
+			"Website Performance",
+			"E-E-A-T",
+			"Generative Engine Optimization",
+		],
 	};
 
 	if (options?.email) {
-		schema.email = options.email;
+		schema.contactPoint = {
+			"@type": "ContactPoint",
+			contactType: "customer service",
+			email: options.email,
+			availableLanguage: ["English"],
+		};
+	}
+
+	if (options?.numberOfEmployees) {
+		schema.numberOfEmployees = {
+			"@type": "QuantitativeValue",
+			minValue: options.numberOfEmployees.min,
+			maxValue: options.numberOfEmployees.max,
+		};
 	}
 
 	if (options?.socialLinks?.length) {

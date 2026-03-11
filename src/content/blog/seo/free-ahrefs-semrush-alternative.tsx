@@ -23,7 +23,7 @@ import {
 export const metadata: BlogPostMetadata = {
   slug: "free-ahrefs-semrush-alternative",
   title: "Free Ahrefs & Semrush Alternative for SEO Audits (2026)",
-  excerpt: "Can't justify $99-$449/month for Ahrefs or Semrush? SerpNap offers 11 free SEO tools that cover site audits, meta tags, schema, speed checks, and more — no signup required.",
+  excerpt: "Can't justify $99-$449/month for Ahrefs or Semrush? SerpNap offers 16 free SEO tools that cover site audits, meta tags, schema, speed checks, and more — no signup required.",
   category: "seo",
   tags: [
     "ahrefs alternative",
@@ -57,7 +57,7 @@ export function Content({ className }: BlogContentProps) {
   return (
     <article className={className}>
       <P>Ahrefs starts at $99/month. Semrush at $129/month. Moz Pro at $99/month. For agencies and enterprise teams, these tools are worth every penny. But if you're a small business owner, freelancer, or solo developer who just needs to audit your site, generate meta tags, and fix technical issues — that's $1,200-$5,400/year for features you'll use 20% of.</P>
-      <P>SerpNap isn't trying to replace Ahrefs or Semrush. Those tools have massive backlink databases, rank tracking, and competitive intelligence that we don't offer. What SerpNap does offer is <Strong>11 free SEO tools</Strong> that handle the most common SEO tasks — instantly, with no signup, and no monthly bill.</P>
+      <P>SerpNap isn't trying to replace Ahrefs or Semrush. Those tools have massive backlink databases, rank tracking, and competitive intelligence that we don't offer. What SerpNap does offer is <Strong>16 free SEO tools</Strong> that handle the most common SEO tasks — instantly, with no signup, and no monthly bill.</P>
 
       <H2 id="what-serpnap-covers">What SerpNap Covers (That You'd Pay For Elsewhere)</H2>
       <P>Here's a breakdown of the specific tasks where SerpNap's free tools compete directly with paid alternatives:</P>
@@ -115,16 +115,16 @@ export function Content({ className }: BlogContentProps) {
       <H2 id="get-started">Get Started (30 Seconds, No Signup)</H2>
       <P>Try the <Link href="/tools/seo-checker">{"SEO Checker"}</Link> right now — paste any URL and get a full audit in under 30 seconds. No email, no credit card, no account creation. If the free tools cover your needs (and for most website owners, they will), you just saved $1,200+/year.</P>
 
-      <CalloutBox variant="info" title="All 11 tools are completely free">
+      <CalloutBox variant="info" title="All 16 tools are completely free">
         <P>Browse the full toolkit at <Link href="/tools">{"serpnap.com/tools"}</Link>. Every tool runs instantly with no signup required.</P>
       </CalloutBox>
 
       <TopicLinks
         title="Related Resources"
         links={[
-          { href: "/tools", label: "Browse All 11 Free SEO Tools" },
+          { href: "/tools", label: "Browse All 16 Free SEO Tools" },
           { href: "/tools/seo-checker", label: "Free SEO Checker" },
-          { href: "/blog/seo/best-free-seo-tools-2026", label: "11 Best Free SEO Tools in 2026" },
+          { href: "/blog/seo/best-free-seo-tools-2026", label: "16 Best Free SEO Tools in 2026" },
           { href: "/blog/seo/seo-checklist-2026", label: "Complete SEO Checklist for 2026" },
           { href: "/blog/seo/digital-marketing-tools-comparison", label: "Digital Marketing Tools Comparison" },
         ]}

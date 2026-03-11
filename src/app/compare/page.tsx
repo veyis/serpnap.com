@@ -27,7 +27,13 @@ export const metadata: Metadata = {
     title: "SerpNap vs Paid SEO Tools — Free Alternative Comparison",
     description:
       "Feature-by-feature comparison of SerpNap's free tools vs Semrush, Ahrefs, Moz, and Screaming Frog.",
+    url: `${config.appUrl}/compare`,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SerpNap vs Paid SEO Tools — Free Alternative Comparison",
+    description: "Feature-by-feature comparison of SerpNap's free SEO tools vs Semrush, Ahrefs, Moz, and Screaming Frog.",
   },
 };
 

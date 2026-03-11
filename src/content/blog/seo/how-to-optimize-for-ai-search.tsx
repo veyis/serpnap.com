@@ -35,8 +35,9 @@ export const metadata: BlogPostMetadata = {
   readingTimeMinutes: 15,
   featured: true,
   relatedSlugs: [
+    "geo-content-playbook-data-driven-ai-citations",
+    "aeo-technical-stack-robots-txt-llms-txt-ai-crawlers",
     "what-is-geo-optimization",
-    "geo-vs-traditional-seo",
     "ai-citations-optimization-guide",
   ],
 };

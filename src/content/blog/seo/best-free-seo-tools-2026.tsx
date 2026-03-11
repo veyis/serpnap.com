@@ -22,8 +22,8 @@ import {
 // ============================================================================
 export const metadata: BlogPostMetadata = {
   slug: "best-free-seo-tools-2026",
-  title: "11 Best Free SEO Tools in 2026 (No Signup Required)",
-  excerpt: "Stop paying $100+/month for basic SEO audits. These 11 free tools cover everything from technical audits to AI search optimization — with zero signup friction.",
+  title: "16 Best Free SEO Tools in 2026 (No Signup Required)",
+  excerpt: "Stop paying $100+/month for basic SEO audits. These 16 free tools cover everything from technical audits to AI search optimization — with zero signup friction.",
   category: "seo",
   tags: ["free seo tools", "seo tools", "free seo checker", "seo audit tools", "best seo tools 2026", "free website analysis"],
   author: {
@@ -52,7 +52,7 @@ export function Content({ className }: BlogContentProps) {
       <P>Whether you're a small business owner, freelance developer, or agency just getting started, these tools cover every aspect of modern SEO: technical audits, content optimization, structured data, page speed, and even AI search visibility.</P>
 
       <CalloutBox variant="info" title="Quick Summary">
-        <P>All 11 tools below are available at <Link href="/tools">{"SerpNap.com/tools"}</Link> — completely free, no account required. Enter a URL and get results in seconds.</P>
+        <P>All 16 tools below are available at <Link href="/tools">{"SerpNap.com/tools"}</Link> — completely free, no account required. Enter a URL and get results in seconds.</P>
       </CalloutBox>
 
       <H2 id="seo-checker">1. SEO Checker — Comprehensive Site Audit</H2>
@@ -128,7 +128,7 @@ export function Content({ className }: BlogContentProps) {
       <TopicLinks
         title="Related Resources"
         links={[
-          { href: "/tools", label: "Browse All 11 Free SEO Tools" },
+          { href: "/tools", label: "Browse All 16 Free SEO Tools" },
           { href: "/tools/seo-checker", label: "Free SEO Checker" },
           { href: "/tools/technical-audit", label: "Technical Audit Report Generator" },
           { href: "/tools/neural-audit", label: "Neural Search Audit" },

@@ -5,23 +5,23 @@ import { Footer } from "@/components/layout/footer";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Contact Us | SerpNap",
+  title: "Contact SerpNap — Free SEO Tools Support & Inquiries",
   description:
-    "Get in touch with SerpNap. Contact us for questions about our free SEO tools or general inquiries.",
+    "Contact SerpNap for questions about our 16 free SEO tools, partnership inquiries, or SEO support. We respond within 24-48 hours. Email: hello@serpnap.com.",
   keywords: ["contact", "support", "help", "SEO tools contact"],
   alternates: {
     canonical: `${config.appUrl}/contact`,
   },
   openGraph: {
-    title: "Contact Us | SerpNap",
-    description: "Get in touch with SerpNap. Contact us for questions about our free SEO tools or general inquiries.",
+    title: "Contact SerpNap — Free SEO Tools Support & Inquiries",
+    description: "Contact SerpNap for questions about our 16 free SEO tools, partnership inquiries, or SEO support. We respond within 24-48 hours.",
     url: `${config.appUrl}/contact`,
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Contact Us | SerpNap",
-    description: "Get in touch with SerpNap for questions about our free SEO tools.",
+    title: "Contact SerpNap — Free SEO Tools Support & Inquiries",
+    description: "Contact SerpNap for questions about our 16 free SEO tools, partnership inquiries, or SEO support.",
   },
 };
 

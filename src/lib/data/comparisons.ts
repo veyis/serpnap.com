@@ -266,7 +266,7 @@ export const comparisons: ComparisonData[] = [
       {
         question: "Does Ahrefs have a free tier?",
         answer:
-          "Ahrefs offers limited free tools (Webmaster Tools for verified sites), but full access starts at $129/month. SerpNap provides all 11 tools completely free with no verification or signup required.",
+          "Ahrefs offers limited free tools (Webmaster Tools for verified sites), but full access starts at $129/month. SerpNap provides all 16 tools completely free with no verification or signup required.",
       },
       {
         question: "Which tool is better for beginners?",
@@ -380,7 +380,7 @@ export const comparisons: ComparisonData[] = [
       {
         question: "Does Moz have free tools?",
         answer:
-          "Moz offers some free tools (Domain Analysis, Keyword Explorer with limited queries), but their full audit capabilities require Moz Pro at $99/month. SerpNap offers all 11 tools free without limits.",
+          "Moz offers some free tools (Domain Analysis, Keyword Explorer with limited queries), but their full audit capabilities require Moz Pro at $99/month. SerpNap offers all 16 tools free without limits.",
       },
       {
         question: "What does Moz offer that SerpNap doesn't?",

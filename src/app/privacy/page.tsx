@@ -2,12 +2,14 @@ import { Metadata } from "next";
 import { config } from "@/lib/config";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MultipleStructuredData } from "@/components/seo/structured-data";
+import { getBreadcrumbSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SerpNap",
+  title: "Privacy Policy — How SerpNap Protects Your Data | Free SEO Tools",
   description:
-    "Privacy policy for SerpNap&apos;s free SEO tools. Learn how we collect, use, and protect your data.",
-  keywords: ["privacy policy", "data protection", "SEO tools privacy"],
+    "SerpNap's privacy policy explains how we handle your data when using our 16 free SEO tools. No tracking, no data selling, no account required. Your privacy matters.",
+  keywords: ["privacy policy", "data protection", "SEO tools privacy", "serpnap privacy"],
   alternates: {
     canonical: `${config.appUrl}/privacy`,
   },
@@ -25,8 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: config.appUrl },
+    { name: "Privacy Policy", url: `${config.appUrl}/privacy` },
+  ]);
+
   return (
     <>
+    <MultipleStructuredData schemas={[breadcrumbSchema]} />
     <Header />
     <main id="main" className="min-h-screen pt-14">
     <div className="container-wide container-padding py-16">

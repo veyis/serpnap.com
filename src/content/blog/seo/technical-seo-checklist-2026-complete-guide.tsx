@@ -38,10 +38,11 @@ export const metadata: BlogPostMetadata = {
   readingTimeMinutes: 22,
   featured: true,
   relatedSlugs: [
+    "geo-content-playbook-data-driven-ai-citations",
+    "aeo-technical-stack-robots-txt-llms-txt-ai-crawlers",
     "technical-seo-playbook-2026",
     "website-speed-optimization-guide",
     "structured-data-implementation-guide",
-    "technical-seo-audit",
   ],
 };
 
@@ -114,6 +115,7 @@ export function Content({ className }: BlogContentProps) {
         <LI>Never block CSS or JavaScript files</LI>
         <LI>Test changes in Google Search Console before deploying</LI>
         <LI>Use separate rules for different user agents if needed</LI>
+        <LI>Configure AI crawler rules (GPTBot, ClaudeBot, PerplexityBot) — see our <Link href="/blog/seo/aeo-technical-stack-robots-txt-llms-txt-ai-crawlers">complete AEO technical stack guide</Link> for the full AI crawler taxonomy and recommended robots.txt configuration</LI>
       </UL>
       <P>#### 1.3 XML Sitemap</P>
       <P><Strong>Check: Is Your Sitemap Properly Configured?</Strong></P>

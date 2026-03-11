@@ -29,8 +29,24 @@ import { Pricing } from "@/components/marketing/pricing";
 import { FAQ } from "@/components/blog/faq-section";
 
 export const metadata: Metadata = {
+  title: "Free SEO Tools — 16 Professional-Grade SEO Audit & Analysis Tools | SerpNap",
+  description:
+    "SerpNap offers 16 free SEO tools: SEO checker with 50+ audit checks, meta tag generator, schema markup generator, broken link checker, page speed estimator, and more. No signup required. Instant results.",
   alternates: {
     canonical: config.appUrl,
+  },
+  openGraph: {
+    title: "Free SEO Tools — 16 Professional-Grade SEO Audit & Analysis Tools",
+    description:
+      "Audit, analyze, and optimize your website with 16 free SEO tools. 50+ checks, AI-powered fixes, instant results — no signup, no limits.",
+    url: config.appUrl,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free SEO Tools — 16 Professional-Grade SEO Audit Tools",
+    description:
+      "Audit, analyze, and optimize your website with 16 free SEO tools. 50+ checks, AI-powered fixes, instant results.",
   },
 };
 
@@ -127,11 +143,32 @@ const TOOLS = [
     href: "/tools/open-graph-checker",
     icon: Share2,
   },
+  {
+    name: "Broken Link Checker",
+    description:
+      "Scan any page for dead links, 404 errors, and broken URLs.",
+    href: "/tools/broken-link-checker",
+    icon: RefreshCw,
+  },
+  {
+    name: "SSL Checker",
+    description:
+      "Verify SSL certificates, HTTPS config, and security headers.",
+    href: "/tools/ssl-checker",
+    icon: Shield,
+  },
+  {
+    name: "HTTP Headers",
+    description:
+      "Inspect server response headers and security header grades.",
+    href: "/tools/http-header-checker",
+    icon: FileCode,
+  },
 ] as const;
 
 const STATS = [
   { value: "50+", label: "SEO Checks" },
-  { value: "13", label: "Free Tools" },
+  { value: "16", label: "Free Tools" },
   { value: "<30s", label: "Full Audit" },
   { value: "$0", label: "Forever" },
 ] as const;
@@ -502,7 +539,7 @@ export default function HomePage() {
                   },
                   {
                     question: "Is SerpNap really free? What's the catch?",
-                    answer: "There is no catch. All 11 tools are completely free with no signup, no credit card, and no usage limits. SerpNap is built by PxlPeak, a digital agency — the tools help website owners discover SEO issues, and those who need hands-on help can reach out to our agency team."
+                    answer: "There is no catch. All 16 tools are completely free with no signup, no credit card, and no usage limits. SerpNap is built by PxlPeak, a digital agency — the tools help website owners discover SEO issues, and those who need hands-on help can reach out to our agency team."
                   },
                   {
                     question: "What types of websites does SerpNap support?",

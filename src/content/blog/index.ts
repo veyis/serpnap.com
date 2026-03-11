@@ -63,6 +63,8 @@ import * as google_march_2026_core_update from "./seo/google-march-2026-core-upd
 import * as ai_overviews_seo_impact from "./seo/ai-overviews-seo-impact";
 import * as seo_for_ai_era from "./seo/seo-for-ai-era";
 import * as seo_for_local_businesses_2026 from "./seo/seo-for-local-businesses-2026";
+import * as geo_content_playbook_data_driven_ai_citations from "./seo/geo-content-playbook-data-driven-ai-citations";
+import * as aeo_technical_stack_robots_txt_llms_txt_ai_crawlers from "./seo/aeo-technical-stack-robots-txt-llms-txt-ai-crawlers";
 
 // ============================================================================
 // ALL POSTS
@@ -121,6 +123,9 @@ const allPosts: BlogPost[] = [
   { ...ai_overviews_seo_impact.metadata, Content: ai_overviews_seo_impact.Content },
   { ...seo_for_ai_era.metadata, Content: seo_for_ai_era.Content },
   { ...seo_for_local_businesses_2026.metadata, Content: seo_for_local_businesses_2026.Content },
+  // GEO + AEO CLUSTER
+  { ...geo_content_playbook_data_driven_ai_citations.metadata, Content: geo_content_playbook_data_driven_ai_citations.Content },
+  { ...aeo_technical_stack_robots_txt_llms_txt_ai_crawlers.metadata, Content: aeo_technical_stack_robots_txt_llms_txt_ai_crawlers.Content },
 ];
 
 // Initialize the registry

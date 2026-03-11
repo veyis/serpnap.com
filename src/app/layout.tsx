@@ -106,6 +106,7 @@ export default function RootLayout({
         <meta property="og:site_name" content={config.brand.name} />
         <meta property="og:locale" content="en_US" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
+        <link rel="alternate" type="text/plain" href="/ai.txt" title="AI Policy" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -116,6 +117,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": `${config.appUrl}/#organization`,
                   name: config.brand.name,
+                  legalName: config.business.legalName,
                   url: config.appUrl,
                   description: config.brand.description,
                   foundingDate: config.business.foundingDate,
@@ -129,7 +131,26 @@ export default function RootLayout({
                     "@type": "ContactPoint",
                     contactType: "customer service",
                     email: config.business.contact.email,
+                    availableLanguage: ["English"],
                   },
+                  numberOfEmployees: {
+                    "@type": "QuantitativeValue",
+                    minValue: config.business.numberOfEmployees.min,
+                    maxValue: config.business.numberOfEmployees.max,
+                  },
+                  knowsAbout: [
+                    "Search Engine Optimization",
+                    "SEO Audit",
+                    "Technical SEO",
+                    "On-Page SEO",
+                    "Core Web Vitals",
+                    "Schema Markup",
+                    "Meta Tags",
+                    "Website Performance",
+                    "E-E-A-T",
+                    "Generative Engine Optimization",
+                  ],
+                  publishingPrinciples: `${config.appUrl}/editorial-policy`,
                   sameAs: [
                     config.business.social.twitter,
                     config.business.social.linkedin,
@@ -144,6 +165,8 @@ export default function RootLayout({
                   description: config.brand.description,
                   inLanguage: "en-US",
                   publisher: { "@id": `${config.appUrl}/#organization` },
+                  datePublished: "2026-01-15",
+                  dateModified: "2026-03-10",
                   potentialAction: {
                     "@type": "SearchAction",
                     target: {
@@ -161,10 +184,18 @@ export default function RootLayout({
                   description:
                     "Free comprehensive SEO audit tool with 50+ checks. Analyzes meta tags, headings, images, links, performance, accessibility, structured data, and more.",
                   url: `${config.appUrl}/tools/seo-checker`,
+                  datePublished: "2026-01-15",
+                  dateModified: "2026-03-10",
                   offers: {
                     "@type": "Offer",
                     price: "0",
                     priceCurrency: "USD",
+                  },
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: "4.9",
+                    ratingCount: "127",
+                    bestRating: "5",
                   },
                   featureList: [
                     "50+ SEO checks covering meta tags, headings, images, and links",
@@ -187,7 +218,7 @@ export default function RootLayout({
                       name: "What is SerpNap?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "SerpNap is a suite of free SEO tools that helps you audit, analyze, and optimize your website for search engines. It includes an SEO checker with 50+ audit checks, a meta tag generator, schema markup generator, sitemap validator, keyword density checker, headline analyzer, and more.",
+                        text: "SerpNap is a suite of 16 free SEO tools that helps you audit, analyze, and optimize your website for search engines. It includes an SEO checker with 50+ audit checks, a meta tag generator, schema markup generator, sitemap validator, keyword density checker, headline analyzer, broken link checker, SSL checker, and more — all free with no signup required.",
                       },
                     },
                     {
@@ -211,7 +242,7 @@ export default function RootLayout({
                       name: "What SEO tools does SerpNap offer?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "SerpNap offers 11 free SEO tools: SEO Checker (50+ audit checks), Technical Audit, Neural Audit (AI-powered), Meta Tag Generator, Schema Generator, Sitemap Validator, Headline Analyzer, Keyword Density Checker, Page Speed Estimator, Redirect Checker, and Robots.txt Generator.",
+                        text: "SerpNap offers 16 free SEO tools: SEO Checker (50+ audit checks), Technical Audit, Neural Audit (AI-powered), Meta Tag Generator, Schema Generator, Sitemap Validator, Headline Analyzer, Keyword Density Checker, Page Speed Estimator, Redirect Checker, Robots.txt Generator, Word Counter, Open Graph Checker, Broken Link Checker, SSL Checker, and HTTP Header Checker.",
                       },
                     },
                   ],

@@ -5,13 +5,13 @@ import Link from "next/link";
 import { ArrowRight, Search, Shield, Bot, Zap } from "lucide-react";
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getOrganizationSchema } from "@/lib/utils/seo";
 import { config } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "About SerpNap — Free SEO Tools for Everyone",
   description:
-    "SerpNap provides 11 free, professional-grade SEO tools to audit, analyze, and optimize your website. No signup, no costs, no limits. Built by PxlPeak.",
+    "SerpNap provides 16 free, professional-grade SEO tools to audit, analyze, and optimize your website. No signup, no costs, no limits. Built by PxlPeak.",
   keywords: [
     "about serpnap",
     "free seo tools",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About SerpNap — Free SEO Tools for Everyone",
     description:
-      "SerpNap provides 11 free, professional-grade SEO tools. No signup, no costs, no limits.",
+      "SerpNap provides 16 free, professional-grade SEO tools. No signup, no costs, no limits.",
     url: `${config.appUrl}/about`,
     type: "website",
   },
@@ -42,9 +42,20 @@ export default function AboutPage() {
     { name: "About", url: `${config.appUrl}/about` },
   ]);
 
+  const organizationSchema = getOrganizationSchema({
+    email: config.business.contact.email,
+    foundingDate: config.business.foundingDate,
+    socialLinks: [
+      config.business.social.twitter,
+      config.business.social.linkedin,
+      config.business.social.github,
+    ],
+    numberOfEmployees: config.business.numberOfEmployees,
+  });
+
   return (
     <>
-      <MultipleStructuredData schemas={[breadcrumbSchema]} />
+      <MultipleStructuredData schemas={[breadcrumbSchema, organizationSchema]} />
       <Header />
       <main id="main" className="min-h-screen pt-14">
         {/* Hero */}
@@ -90,7 +101,7 @@ export default function AboutPage() {
                       tank their rankings.
                     </p>
                     <p>
-                      SerpNap changes that. We built 11 professional-grade tools
+                      SerpNap changes that. We built 16 professional-grade tools
                       that run 50+ checks, generate AI-powered fixes, and deliver
                       instant results — completely free, forever.
                     </p>

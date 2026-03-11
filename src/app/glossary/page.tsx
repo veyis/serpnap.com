@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { glossaryTerms } from "@/lib/glossary";
 import { config } from "@/lib/config";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema, getItemListSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getItemListSchema, getFAQPageSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
   title: "SEO Glossary — Every SEO Term Explained Simply",
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SEO Glossary — Every SEO Term Explained",
     description: "Plain-English definitions for every SEO term you need to know. From Core Web Vitals to E-E-A-T.",
+    url: `${config.appUrl}/glossary`,
     type: "website",
   },
   twitter: {
@@ -53,6 +54,21 @@ export default function GlossaryPage() {
     })),
   });
 
+  const faqSchema = getFAQPageSchema([
+    {
+      question: "What are the most important SEO terms to know?",
+      answer: "The most important SEO terms include: Core Web Vitals (LCP, CLS, INP), E-E-A-T (Experience, Expertise, Authoritativeness, Trust), crawlability, indexing, schema markup, canonical tags, meta tags, backlinks, and domain authority. Understanding these fundamentals is essential for any SEO strategy.",
+    },
+    {
+      question: "What is the difference between on-page SEO and technical SEO?",
+      answer: "On-page SEO focuses on optimizing individual page content — titles, meta descriptions, headings, keyword usage, and internal linking. Technical SEO deals with website infrastructure — site speed, crawlability, indexing, HTTPS, XML sitemaps, robots.txt, and structured data. Both are essential for ranking.",
+    },
+    {
+      question: "What does E-E-A-T stand for in SEO?",
+      answer: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness. It's Google's framework for evaluating content quality. Pages demonstrating first-hand experience, deep expertise, authoritative sources, and trustworthy information rank higher in search results.",
+    },
+  ]);
+
   // Group terms alphabetically by first letter of the term
   const grouped = glossaryTerms.reduce<Record<string, typeof glossaryTerms>>((acc, term) => {
     const letter = term.term[0].toUpperCase();
@@ -65,7 +81,7 @@ export default function GlossaryPage() {
 
   return (
     <>
-      <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema]} />
+      <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema, faqSchema]} />
       <Header />
       <main id="main" className="min-h-screen pt-14">
         <section className="hero-padding container-padding">

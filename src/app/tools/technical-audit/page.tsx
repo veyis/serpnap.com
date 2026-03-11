@@ -8,35 +8,34 @@ import { config } from '@/lib/config';
 import { ToolsNav } from '@/components/tools/tools-nav';
 
 export const metadata: Metadata = {
-  title: 'Technical Audit Report Generator | Client Diagnostic Tool',
+  title: 'Free Technical SEO Audit — Website Performance & Crawlability Analysis',
   description:
-    'Generate professional technical audit reports for high-ticket clients. Clinical diagnostic PDFs that analyze website performance, lead response times, and competitive positioning.',
+    'Run a free technical SEO audit on any website. Analyze Core Web Vitals, page speed, crawlability, server response, mobile optimization, and security headers. Export PDF reports.',
   keywords: [
-    'technical audit report',
-    'client diagnostic',
+    'technical seo audit',
+    'free technical seo audit',
     'website performance audit',
-    'lead response analysis',
-    'competitive analysis tool',
-    'sales closing tool',
-    'dental marketing audit',
-    'healthcare marketing audit',
+    'core web vitals checker',
+    'crawlability analysis',
+    'technical seo checker',
+    'website audit tool free',
+    'page speed audit',
   ],
   alternates: {
     canonical: `${config.appUrl}/tools/technical-audit`,
   },
   openGraph: {
-    title: 'Technical Audit Report Generator | SerpNap',
+    title: 'Free Technical SEO Audit — Performance & Crawlability Analysis',
     description:
-      'Generate clinical diagnostic reports that close high-ticket clients. Not marketing fluff - technical proof.',
+      'Analyze Core Web Vitals, page speed, crawlability, and security headers. Free technical SEO audit with PDF export.',
     url: `${config.appUrl}/tools/technical-audit`,
     type: 'website',
   },
   twitter: {
-      card: "summary_large_image",
-      title: "Technical Audit Report Generator | SerpNap",
-      description: "Generate professional technical audit reports for high-ticket clients. Clinical diagnostic PDFs that analyze website performance, lead response times, and competitive positioning.",
+    card: "summary_large_image",
+    title: "Free Technical SEO Audit | SerpNap",
+    description: "Run a free technical SEO audit. Analyze Core Web Vitals, page speed, crawlability, and security headers.",
   },
-  // Indexable: public tool page linked from /tools and included in sitemap.
 };
 
 function HeroSection() {
@@ -45,18 +44,18 @@ function HeroSection() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Badge */}
         <p className="text-[13px] font-medium tracking-[0.12em] text-muted-foreground/60 uppercase mb-6">
-          Internal Tool
+          Free Tool
         </p>
 
         {/* Title */}
         <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-[-0.03em] leading-[1.1] text-foreground">
-          Technical Audit Report Generator
+          Technical SEO Audit
         </h1>
 
         {/* Description */}
         <p className="text-[17px] sm:text-[19px] text-muted-foreground/80 mt-6 max-w-2xl mx-auto leading-relaxed">
-          Generate a clinical diagnostic that looks like an MRI of their business failures.
-          Not marketing material - technical proof that closes high-ticket clients.
+          Deep technical analysis of any website — Core Web Vitals, page speed, crawlability,
+          server response, and competitive positioning. Export professional PDF reports.
         </p>
       </div>
     </section>
@@ -79,33 +78,33 @@ function HowItWorksSection() {
   const steps = [
     {
       number: '01',
-      title: 'Enter Client Data',
+      title: 'Enter Your URL',
       description:
-        'Input practice name, location, and the estimated lost revenue figure. This becomes the headline hook.',
+        'Paste any website URL to begin the technical SEO audit. The tool fetches and analyzes the page automatically.',
     },
     {
       number: '02',
-      title: 'Add Performance Metrics',
+      title: 'Review Performance Scores',
       description:
-        'Enter PageSpeed data, Core Web Vitals, and bounce rates. This creates the "LCP Death Spiral" technical proof.',
+        'See your Core Web Vitals estimates (LCP, CLS, INP), page speed score, and server response analysis.',
     },
     {
       number: '03',
-      title: 'Document Lead Response',
+      title: 'Check Crawlability Issues',
       description:
-        'Show how leads go cold with the "Ghost Lead Timeline". The 7-minute half-life stat is devastating.',
+        'Identify crawl blockers, missing meta tags, broken canonical tags, and indexing problems that hurt rankings.',
     },
     {
       number: '04',
-      title: 'Compare Competition',
+      title: 'Analyze Security & Mobile',
       description:
-        'Side-by-side GBP comparison. They\'re not being out-dentisted, they\'re being out-programmed.',
+        'Review HTTPS configuration, security headers, mobile responsiveness, and viewport optimization.',
     },
     {
       number: '05',
-      title: 'Generate & Send',
+      title: 'Export Your Report',
       description:
-        'Export a 5-page PDF that looks like a technical autopsy, not a sales pitch. Send with confidence.',
+        'Download a professional PDF report with all findings and actionable recommendations to share with your team.',
     },
   ];
 
@@ -117,7 +116,7 @@ function HowItWorksSection() {
             How It Works
           </p>
           <h2 className="text-[clamp(1.5rem,4vw,2rem)] font-semibold tracking-[-0.02em] text-foreground">
-            From sales call to signed contract
+            Five steps to a complete technical audit
           </h2>
         </div>
 
@@ -151,16 +150,16 @@ function TipsSection() {
     <section className="section-padding container-padding">
       <div className="max-w-4xl mx-auto">
         <div className="p-8 rounded-2xl bg-zinc-900 text-white">
-          <h3 className="text-[18px] font-semibold mb-4">The Ruthless Reality Check</h3>
+          <h3 className="text-[18px] font-semibold mb-4">Pro Tip: Fix the Foundation First</h3>
           <p className="text-zinc-300 leading-relaxed mb-6">
-            Most agencies send a pretty slide deck with pictures of teeth. You are sending a{' '}
-            <span className="text-white font-medium">Technical Autopsy</span>.
+            Most SEO efforts fail because they skip the{' '}
+            <span className="text-white font-medium">technical foundation</span>.
+            No amount of content or backlinks will help if your site is slow, broken, or unindexable.
           </p>
           <p className="text-zinc-400 text-sm italic">
-            When you send this, you say: &ldquo;Dr. [Name], here is the diagnostic on your practice.
-            I don&apos;t want to discuss &lsquo;marketing&rsquo; on our next call. I want to discuss
-            how we&apos;re going to fix these infrastructure failures before the next quarter
-            begins.&rdquo;
+            Run this audit before investing in content strategy. Fix Core Web Vitals, crawl errors,
+            and security issues first — then watch your rankings climb as Google can finally
+            see and trust your site.
           </p>
         </div>
       </div>
@@ -172,14 +171,14 @@ export default function TechnicalAuditPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Tools', url: '/tools' },
-    { name: 'Technical Audit Report', url: '/tools/technical-audit' },
+    { name: 'Technical SEO Audit', url: '/tools/technical-audit' },
   ]);
   const appSchema = getSoftwareApplicationSchema({
-    name: 'Technical Audit Report Generator',
-    description: 'Generate professional technical audit reports analyzing website performance, lead response times, and competitive positioning.',
+    name: 'Free Technical SEO Audit',
+    description: 'Run a comprehensive technical SEO audit analyzing Core Web Vitals, page speed, crawlability, server response, and security headers.',
     url: `${config.appUrl}/tools/technical-audit`,
-    applicationCategory: 'BusinessApplication',
-    featureList: ['Performance analysis', 'Lead response audit', 'Competitive positioning', 'PDF export'],
+    applicationCategory: 'WebApplication',
+    featureList: ['Core Web Vitals analysis', 'Page speed audit', 'Crawlability check', 'Server response analysis', 'Security header inspection', 'Mobile optimization review', 'PDF report export'],
   });
   const faqSchema = getFAQPageSchema([
     {

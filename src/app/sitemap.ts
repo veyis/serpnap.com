@@ -34,63 +34,69 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/tools`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/blog/seo`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/docs`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/editorial-policy`,
+      lastModified: "2026-03-10",
+      changeFrequency: "yearly",
+      priority: 0.4,
     },
   ];
 
   const toolPages: MetadataRoute.Sitemap = TOOLS.map((tool) => ({
     url: `${baseUrl}/tools/${tool}`,
-    lastModified: "2026-03-05",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -110,7 +116,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const docPaths = await getAllDocPaths();
     docPages = docPaths.map((docPath) => ({
       url: `${baseUrl}/docs/${docPath}`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.6,
     }));
@@ -123,14 +129,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const glossaryIndex: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/glossary`,
-      lastModified: "2026-03-05",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
   ];
   const glossaryPages: MetadataRoute.Sitemap = glossarySlugs.map((slug) => ({
     url: `${baseUrl}/glossary/${slug}`,
-    lastModified: "2026-03-05",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.5,
   }));
@@ -140,14 +146,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const comparisonIndex: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/compare`,
-      lastModified: "2026-03-07",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
   ];
   const comparisonPages: MetadataRoute.Sitemap = comparisonSlugs.map((slug) => ({
     url: `${baseUrl}/compare/${slug}`,
-    lastModified: "2026-03-07",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -157,14 +163,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const alternativeIndex: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/alternatives`,
-      lastModified: "2026-03-07",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
   ];
   const alternativePages: MetadataRoute.Sitemap = alternativeSlugs.map((slug) => ({
     url: `${baseUrl}/alternatives/${slug}`,
-    lastModified: "2026-03-07",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -173,7 +179,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const industrySlugs = getAllIndustrySlugs();
   const industryPages: MetadataRoute.Sitemap = industrySlugs.map((slug) => ({
     url: `${baseUrl}/tools/seo-checker/${slug}`,
-    lastModified: "2026-03-07",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -183,14 +189,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guideIndex: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/guides`,
-      lastModified: "2026-03-07",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
   ];
   const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
-    lastModified: "2026-03-07",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -200,14 +206,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const useCaseIndex: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/for`,
-      lastModified: "2026-03-07",
+      lastModified: "2026-03-10",
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
   ];
   const useCasePages: MetadataRoute.Sitemap = useCaseSlugs.map((slug) => ({
     url: `${baseUrl}/for/${slug}`,
-    lastModified: "2026-03-07",
+    lastModified: "2026-03-10",
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

@@ -12,7 +12,7 @@ import { getAllUseCases } from "@/lib/data/use-cases";
 export const metadata: Metadata = {
 	title: "Free SEO Tools for Every Role — Find Your Perfect Toolkit",
 	description:
-		"Free SEO tools tailored for freelancers, agencies, bloggers, small businesses, developers, and startups. Find the right toolkit for your role and start optimizing today.",
+		"Free SEO tools for freelancers, agencies, bloggers, small businesses, developers, and startups. Find the right SEO toolkit for your role.",
 	keywords: [
 		"free seo tools",
 		"seo tools for freelancers",
@@ -29,7 +29,13 @@ export const metadata: Metadata = {
 		title: "Free SEO Tools for Every Role — Find Your Perfect Toolkit",
 		description:
 			"Free SEO tools tailored for freelancers, agencies, bloggers, small businesses, developers, and startups.",
+		url: `${config.appUrl}/for`,
 		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free SEO Tools for Every Role — Find Your Perfect Toolkit",
+		description: "Free SEO tools for freelancers, agencies, bloggers, small businesses, developers, and startups.",
 	},
 };
 

@@ -38,9 +38,10 @@ export const metadata: BlogPostMetadata = {
   readingTimeMinutes: 22,
   featured: true,
   relatedSlugs: [
+    "geo-content-playbook-data-driven-ai-citations",
+    "aeo-technical-stack-robots-txt-llms-txt-ai-crawlers",
     "technical-seo-checklist-2026-complete-guide",
     "seo-checklist-small-business",
-    "local-seo-checklist-2026",
     "eeat-complete-guide-2026",
   ],
 };
@@ -83,7 +84,7 @@ export function Content({ className }: BlogContentProps) {
         <Strong>1. Check robots.txt for blocking issues</Strong>
       </P>
       <P>
-        Visit yourdomain.com/robots.txt. Look for <Code>Disallow: /</Code> (blocks everything) or unintended blocks on important sections. I once found a client whose developer had left <Code>Disallow: /</Code> in place after a staging migration—they'd been invisible to Google for three months.
+        Visit yourdomain.com/robots.txt. Look for <Code>Disallow: /</Code> (blocks everything) or unintended blocks on important sections. I once found a client whose developer had left <Code>Disallow: /</Code> in place after a staging migration—they'd been invisible to Google for three months. In 2026, you also need to manage AI crawler access — our <Link href="/blog/seo/aeo-technical-stack-robots-txt-llms-txt-ai-crawlers">AEO technical stack guide</Link> covers the full robots.txt configuration for GPTBot, ClaudeBot, and other AI crawlers.
       </P>
       <P>
         <Strong>2. Verify pages are indexed in Google Search Console</Strong>

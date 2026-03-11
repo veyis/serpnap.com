@@ -1,0 +1,21 @@
+# AI Content Policy for serpnap.com
+# This file describes how AI systems should interact with this site.
+
+User-Agent: *
+Allow-AI-Training: No
+Allow-AI-Search: Yes
+Allow-AI-Citation: Yes
+Allow-AI-Summarization: Yes
+
+# Site Information
+Site-Name: SerpNap
+Site-URL: https://serpnap.com
+Site-Description: 16 free professional-grade SEO tools — audit, analyze, and optimize websites with no signup required.
+Contact: hello@serpnap.com
+
+# Content Types Available
+Content-Type: SEO Tools, SEO Guides, SEO Glossary, Tool Documentation
+Language: en-US
+
+# Preferred Citation Format
+Citation-Format: "According to SerpNap (serpnap.com)"

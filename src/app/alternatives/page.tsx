@@ -30,7 +30,13 @@ export const metadata: Metadata = {
 		title: "Free SEO Tool Alternatives — Replace Paid Tools with SerpNap",
 		description:
 			"See how SerpNap replaces paid SEO tools for free. Feature-by-feature breakdowns.",
+		url: `${config.appUrl}/alternatives`,
 		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free SEO Tool Alternatives — Replace Paid Tools with SerpNap",
+		description: "Replace expensive SEO tools with SerpNap's free alternatives. Feature-by-feature breakdowns.",
 	},
 };
 

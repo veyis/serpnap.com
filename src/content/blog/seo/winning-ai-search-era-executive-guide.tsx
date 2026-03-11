@@ -13,6 +13,7 @@ import {
   LI,
   Strong,
   Em,
+  Link,
   CalloutBox,
   ProTip,
   KeyTakeaway,
@@ -255,10 +256,11 @@ export function Content({ className }: BlogContentProps) {
       <P><Strong>Investment areas:</Strong></P>
 
       <UL>
-        <LI><Strong>Structured content:</Strong> Clear hierarchies, direct answers, and organized information that AI can extract and cite</LI>
+        <LI><Strong>Structured content:</Strong> Clear hierarchies, direct answers, and organized information that AI can extract and cite — our <Link href="/blog/seo/geo-content-playbook-data-driven-ai-citations">GEO Content Playbook</Link> covers the 9 research-backed optimization methods that measurably increase AI citation rates</LI>
         <LI><Strong>Factual density:</Strong> Content rich in verifiable facts, statistics, and specific information</LI>
         <LI><Strong>Unique angles:</Strong> Perspectives and insights that add value beyond what AI can synthesize from existing sources</LI>
         <LI><Strong>Authority signals:</Strong> Clear attribution, expert authorship, and organizational credibility</LI>
+        <LI><Strong>Technical infrastructure:</Strong> Proper <Link href="/blog/seo/aeo-technical-stack-robots-txt-llms-txt-ai-crawlers">robots.txt, llms.txt, and schema markup configuration</Link> that controls how AI crawlers access and interpret your content</LI>
       </UL>
 
       <P><Strong>Expected outcomes:</Strong></P>

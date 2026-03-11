@@ -22,12 +22,12 @@ import {
 import { RevealOnScroll } from "@/components/ui/reveal-on-scroll";
 import { config } from "@/lib/config";
 import { MultipleStructuredData } from "@/components/seo/structured-data";
-import { getBreadcrumbSchema, getItemListSchema } from "@/lib/utils/seo";
+import { getBreadcrumbSchema, getItemListSchema, getFAQPageSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
   title: "Free SEO Tools — Audit, Analyze & Optimize Your Website",
   description:
-    "Free SEO tools: SEO checker, meta tag generator, schema generator, sitemap validator, keyword density checker, page speed estimator, redirect checker, and more. No signup required.",
+    "16 free SEO tools: SEO checker, meta tag generator, schema generator, sitemap validator, broken link checker, SSL checker, and more. No signup required.",
   keywords: [
     "free seo tools",
     "seo tools online free",
@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     title: "Free SEO Tools — Audit, Analyze & Optimize",
     description:
       "Professional-grade SEO tools — all free, no signup. SEO checker, meta tag generator, schema generator, and more.",
+    url: `${config.appUrl}/tools`,
     type: "website",
   },
   twitter: {
@@ -170,9 +171,32 @@ export default function ToolsPage() {
     })),
   });
 
+  const faqSchema = getFAQPageSchema([
+    {
+      question: "What are the best free SEO tools in 2026?",
+      answer:
+        "SerpNap offers 16 free SEO tools that cover the most common SEO tasks: SEO Checker (50+ audit checks), Technical Audit, Neural Audit (AI-powered), Meta Tag Generator, Schema Generator, Sitemap Validator, Headline Analyzer, Keyword Density Checker, Page Speed Estimator, Redirect Checker, Robots.txt Generator, Word Counter, Open Graph Checker, Broken Link Checker, SSL Checker, and HTTP Header Checker. All tools are free with no signup required.",
+    },
+    {
+      question: "How can I check my website SEO for free?",
+      answer:
+        "Enter your website URL into SerpNap's free SEO Checker at serpnap.com/tools/seo-checker. It runs 50+ checks across 8 categories — meta tags, headings, images, performance, accessibility, structured data, mobile optimization, and E-E-A-T signals — and gives you a letter grade (A+ to F) with actionable fixes in under 30 seconds.",
+    },
+    {
+      question: "Are free SEO tools accurate enough for professional use?",
+      answer:
+        "Yes. SerpNap's free SEO tools check the same ranking factors that paid tools like Semrush ($129/month) and Ahrefs ($99/month) analyze — meta tags, heading structure, Core Web Vitals, structured data, and more. The difference is that SerpNap focuses on on-page and technical SEO auditing rather than backlink databases or rank tracking.",
+    },
+    {
+      question: "Do I need to create an account to use these SEO tools?",
+      answer:
+        "No. All 16 SerpNap tools work instantly with no signup, no email, and no credit card. Enter a URL, get results in seconds. You can also export detailed PDF reports without an account.",
+    },
+  ]);
+
   return (
     <>
-    <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema]} />
+    <MultipleStructuredData schemas={[breadcrumbSchema, itemListSchema, faqSchema]} />
     <section className="hero-padding container-padding">
       <div className="container-wide mx-auto">
         <RevealOnScroll>
@@ -220,6 +244,48 @@ export default function ToolsPage() {
               </RevealOnScroll>
             );
           })}
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ Section */}
+    <section className="section-padding container-padding border-t border-border/20">
+      <div className="max-w-3xl mx-auto">
+        <RevealOnScroll>
+          <h2 className="text-[22px] font-semibold tracking-tight mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+        </RevealOnScroll>
+        <div className="space-y-6">
+          {[
+            {
+              q: "What are the best free SEO tools in 2026?",
+              a: "SerpNap offers 16 free SEO tools that cover the most common SEO tasks: SEO Checker (50+ audit checks), Technical Audit, Neural Audit (AI-powered), Meta Tag Generator, Schema Generator, Sitemap Validator, Headline Analyzer, Keyword Density Checker, Page Speed Estimator, Redirect Checker, Robots.txt Generator, Word Counter, Open Graph Checker, Broken Link Checker, SSL Checker, and HTTP Header Checker. All tools are free with no signup required.",
+            },
+            {
+              q: "How can I check my website SEO for free?",
+              a: "Enter your website URL into SerpNap's free SEO Checker at serpnap.com/tools/seo-checker. It runs 50+ checks across 8 categories — meta tags, headings, images, performance, accessibility, structured data, mobile optimization, and E-E-A-T signals — and gives you a letter grade (A+ to F) with actionable fixes in under 30 seconds.",
+            },
+            {
+              q: "Are free SEO tools accurate enough for professional use?",
+              a: "Yes. SerpNap's free SEO tools check the same ranking factors that paid tools like Semrush ($129/month) and Ahrefs ($99/month) analyze — meta tags, heading structure, Core Web Vitals, structured data, and more. The difference is that SerpNap focuses on on-page and technical SEO auditing rather than backlink databases or rank tracking.",
+            },
+            {
+              q: "Do I need to create an account to use these SEO tools?",
+              a: "No. All 16 SerpNap tools work instantly with no signup, no email, and no credit card. Enter a URL, get results in seconds. You can also export detailed PDF reports without an account.",
+            },
+          ].map((item) => (
+            <RevealOnScroll key={item.q}>
+              <div>
+                <h3 className="text-[15px] font-semibold tracking-tight mb-2">
+                  {item.q}
+                </h3>
+                <p className="text-[14px] text-muted-foreground leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            </RevealOnScroll>
+          ))}
         </div>
       </div>
     </section>

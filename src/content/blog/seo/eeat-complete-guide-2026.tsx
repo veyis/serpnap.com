@@ -35,8 +35,9 @@ export const metadata: BlogPostMetadata = {
   readingTimeMinutes: 18,
   featured: true,
   relatedSlugs: [
+    "geo-content-playbook-data-driven-ai-citations",
+    "aeo-technical-stack-robots-txt-llms-txt-ai-crawlers",
     "google-algorithm-updates-2025-complete-guide",
-    "google-december-2025-core-update-what-changed",
     "content-quality-seo-strategies-2026",
     "winning-ai-search-era-executive-guide",
   ],
@@ -397,7 +398,7 @@ export function Content({ className }: BlogContentProps) {
       <H2 id="the-future-of-e-e-a-t">The Future of E-E-A-T</H2>
       <P>Looking ahead to 2026 and beyond, I expect E-E-A-T to become even more important:</P>
       <P><Strong>AI content amplifies the need for human expertise:</Strong></P>
-      <P>As AI-generated content floods the web, demonstrable human expertise becomes a competitive advantage. Google will increasingly favor content that shows genuinely human experience and expertise.</P>
+      <P>As AI-generated content floods the web, demonstrable human expertise becomes a competitive advantage. Google will increasingly favor content that shows genuinely human experience and expertise. But E-E-A-T isn't just about traditional search anymore — AI engines like ChatGPT and Perplexity also prioritize authoritative, expert content when selecting sources to cite. Learn the <Link href="/blog/seo/geo-content-playbook-data-driven-ai-citations">data-driven strategies for earning AI citations</Link> alongside your E-E-A-T efforts.</P>
       <P><Strong>Experience verification may become automated:</Strong></P>
       <P>Google already uses NLP to detect whether content sounds like it comes from first-hand experience. Expect this capability to improve.</P>
       <P><Strong>Cross-platform verification will grow:</Strong></P>

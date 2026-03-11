@@ -9,8 +9,8 @@ import { getBreadcrumbSchema, getSoftwareApplicationSchema, getFAQPageSchema, ge
 import { ToolsNav } from "@/components/tools/tools-nav";
 
 export const metadata: Metadata = {
-  title: "Neural Search Audit Tool | Brand Visibility Analysis 2026",
-  description: "Diagnose your brand's presence in AI search models like Gemini, ChatGPT, and Claude. Get a real-time 'Share of Model' audit and GEO strategy.",
+  title: "Free AI SEO Audit — Check Your Brand Visibility in ChatGPT, Gemini & Claude",
+  description: "Free AI visibility checker: diagnose your brand's presence in ChatGPT, Gemini, Perplexity, and Claude. Get a Share of Model audit and GEO optimization strategy.",
   keywords: [
     "ai seo audit",
     "neural search audit",
@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     canonical: `${config.appUrl}/tools/neural-audit`,
   },
   openGraph: {
-    title: "Neural Search Audit Tool | Brand Visibility Analysis",
-    description: "Diagnose your brand's presence in AI search models like Gemini, ChatGPT, and Claude. Get a real-time 'Share of Model' audit and GEO strategy.",
+    title: "Free AI SEO Audit — Brand Visibility in AI Search Engines",
+    description: "Check your brand's visibility in ChatGPT, Gemini, Perplexity, and Claude. Get a Share of Model audit and GEO optimization strategy.",
     url: `${config.appUrl}/tools/neural-audit`,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Neural Search Audit Tool | Brand Visibility Analysis",
-    description: "Diagnose your brand's presence in AI search models like Gemini, ChatGPT, and Claude.",
+    title: "Free AI SEO Audit — Brand Visibility in AI Search",
+    description: "Check your brand's visibility in ChatGPT, Gemini, Perplexity, and Claude. Free AI SEO audit tool.",
   },
 };
 

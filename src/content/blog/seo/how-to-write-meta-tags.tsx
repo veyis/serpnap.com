@@ -79,7 +79,7 @@ export function Content({ className }: BlogContentProps) {
       <P>Here are battle-tested title tag formulas that balance SEO and CTR:</P>
       <UL>
         <LI><Strong>How-to:</Strong> How to [Action] in [Year] ([Benefit]) — "How to Write Meta Tags in 2026 (Free Guide)"</LI>
-        <LI><Strong>List:</Strong> [Number] [Adjective] [Keyword] for [Audience] — "11 Free SEO Tools for Small Businesses"</LI>
+        <LI><Strong>List:</Strong> [Number] [Adjective] [Keyword] for [Audience] — "16 Free SEO Tools for Small Businesses"</LI>
         <LI><Strong>Question:</Strong> What Is [Keyword]? [Clarifier] — "What Is Schema Markup? A Beginner's Guide"</LI>
         <LI><Strong>Best of:</Strong> Best [Keyword] in [Year] ([Qualifier]) — "Best Free SEO Tools in 2026 (No Signup)"</LI>
       </UL>

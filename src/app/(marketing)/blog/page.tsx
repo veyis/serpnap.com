@@ -24,33 +24,33 @@ import type { Metadata } from "next";
 const POSTS_PER_PAGE = 18;
 
 export const metadata: Metadata = {
-  title: "AI Implementation Blog: Tools, Agents & Automation",
+  title: "SEO & AI Blog — Guides, Tools & Optimization Strategies",
   description:
-    "Expert insights on AI implementation: chatbots, voice agents, automation, AI tools, SEO, and web design. Practical guides from AI experts.",
+    "Expert guides on SEO, AI search optimization, technical SEO, and content strategy. Practical tutorials from SEO practitioners with actionable tips.",
   keywords: [
-    "AI implementation blog",
-    "AI agents blog",
-    "AI tools for business",
-    "AI automation blog",
-    "AI chatbot development",
-    "AI voice agents",
-    "business AI insights",
-    "AI strategy",
+    "SEO blog",
+    "SEO guides",
+    "technical SEO blog",
+    "AI SEO blog",
+    "GEO optimization",
+    "free SEO tools blog",
+    "SEO tips 2026",
+    "content strategy",
   ],
   alternates: {
     canonical: `${config.appUrl}/blog`,
   },
   openGraph: {
-    title: "AI Implementation Blog: Tools, Agents & Automation | SerpNap",
+    title: "SEO & AI Blog — Guides, Tools & Optimization Strategies",
     description:
-      "Expert insights on AI implementation: chatbots, voice agents, automation, AI tools, and business strategies.",
+      "Expert guides on SEO, AI search optimization, technical SEO, and content strategy. Practical tutorials with actionable tips.",
     type: "website",
     url: `${config.appUrl}/blog`,
   },
   twitter: {
       card: "summary_large_image",
-      title: "AI Implementation Blog: Tools, Agents & Automation | SerpNap",
-      description: "Expert insights on AI implementation: chatbots, voice agents, automation, AI tools, SEO, and web design. Practical guides from AI experts.",
+      title: "SEO & AI Blog — Guides, Tools & Optimization Strategies",
+      description: "Expert guides on SEO, AI search optimization, technical SEO, and content strategy. Practical tutorials with actionable tips.",
   },
 };
 
@@ -90,7 +90,7 @@ function BlogHero() {
         </nav>
 
         <h1 className="text-[32px] sm:text-[44px] lg:text-[52px] font-bold tracking-[-0.03em] text-foreground leading-[1.1]">
-          AI & Business Blog
+          SEO & AI Blog
         </h1>
         <p className="text-[17px] sm:text-[19px] text-muted-foreground mt-6 leading-relaxed max-w-2xl mx-auto">
           Expert insights, actionable tips, and proven strategies to help your

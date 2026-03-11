@@ -2,12 +2,14 @@ import { Metadata } from "next";
 import { config } from "@/lib/config";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MultipleStructuredData } from "@/components/seo/structured-data";
+import { getBreadcrumbSchema } from "@/lib/utils/seo";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | SerpNap",
+  title: "Terms of Service — SerpNap Free SEO Tools Usage Guidelines",
   description:
-    "Terms of service for SerpNap&apos;s free SEO tools. Understand the rules and guidelines for using our platform.",
-  keywords: ["terms of service", "terms and conditions", "SEO tools terms"],
+    "Terms of service for SerpNap's 16 free SEO tools. Understand acceptable use, intellectual property rights, limitations of liability, and service guidelines.",
+  keywords: ["terms of service", "terms and conditions", "SEO tools terms", "serpnap terms"],
   alternates: {
     canonical: `${config.appUrl}/terms`,
   },
@@ -25,8 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: config.appUrl },
+    { name: "Terms of Service", url: `${config.appUrl}/terms` },
+  ]);
+
   return (
     <>
+    <MultipleStructuredData schemas={[breadcrumbSchema]} />
     <Header />
     <main id="main" className="min-h-screen pt-14">
     <div className="container-wide container-padding py-16">

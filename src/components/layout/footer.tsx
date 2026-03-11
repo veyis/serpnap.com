@@ -26,8 +26,10 @@ const RESOURCE_LINKS = [
 const COMPANY_LINKS = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Editorial Policy", href: "/editorial-policy" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
+  { label: "Sitemap", href: "/sitemap.xml" },
 ] as const;
 
 export function Footer() {

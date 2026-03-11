@@ -41,9 +41,10 @@ export const metadata: BlogPostMetadata = {
     updatedAt: "2026-02-26",
     readingTimeMinutes: 18,
     relatedSlugs: [
+        "geo-content-playbook-data-driven-ai-citations",
+        "aeo-technical-stack-robots-txt-llms-txt-ai-crawlers",
         "what-is-geo-optimization",
         "geo-vs-traditional-seo",
-        "winning-ai-search-era-executive-guide",
     ],
     seo: {
         metaTitle: "SEO in the Age of AI: What Works in 2026",

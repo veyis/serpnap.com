@@ -31,7 +31,13 @@ export const metadata: Metadata = {
 		title: "SEO How-To Guides — Step-by-Step Tutorials with Free Tools",
 		description:
 			"Step-by-step SEO guides with free tools. Learn how to audit, optimize, and fix your website.",
+		url: `${config.appUrl}/guides`,
 		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "SEO How-To Guides — Step-by-Step Tutorials with Free Tools",
+		description: "Step-by-step SEO guides with free tools. Learn how to audit, optimize, and fix your website.",
 	},
 };
 
